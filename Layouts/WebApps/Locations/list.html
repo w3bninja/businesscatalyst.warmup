@@ -1,9 +1,15 @@
 <div class="pull-left location">
-    <h5>{tag_name_nolink}</h5>
-    {tag_address1}<br>
-    {tag_address2}
-    {tag_addresscity}, {tag_addressstate} {tag_addresszipcode}
+    <h4>{{this.name}}</h4>
+    {% if this.phone != '' %}
+        <div class="phone"><b>Phone</b><br> {{this.phone}}</div>
+    {% endif %}
+    {% if this.fax != '' %}
+        <div class="fax"><b>Fax</b><br> {{this.fax}}</div>
+    {% endif %}
     <br>
-    <div class="phone"><i class="fa fa-phone"></i> {tag_phone}</div>
-    <div class="fax"><i class="fa fa-fax"></i> {tag_fax}</div>
+    {{this.address1}}<br>
+    {{this.address2}}
+    {{this.city}}, {{this.state}} {{this.zipcode}}
+    
+    
 </div>
