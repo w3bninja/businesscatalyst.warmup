@@ -1,0 +1,22 @@
+.navigation-inner ul,
+.navigation-inner li							{ margin:0; padding:0; }
+
+/* Level 1 */
+.navigation-inner ul						{ position:relative; list-style:none;  z-index:999;}
+.navigation-inner ul li						{ white-space:normal; list-style:none; zoom:1; margin:0; padding:0;}
+.navigation-inner ul li a:hover				{ }
+.navigation-inner ul li a:active			{ }
+.navigation-inner ul li a					{ display:block; outline:0; text-decoration:none;}
+.navigation-inner ul li.hover,
+.navigation-inner ul li:hover				{ position:relative; }
+.navigation-inner ul li.hover a				{ }
+
+
+/* Level 2 */
+.navigation-inner ul ul						{ width:auto; visibility:hidden; position:absolute; top:100%; left:0; background:#002963;}
+.navigation-inner ul ul li					{ float:none; font-weight:normal; display:block!important;  width:100%;}
+.navigation-inner ul ul li a				{min-width:200px!important; font-size:12px; display:block!important; width:100%;}
+
+/* Level 3 */
+.navigation-inner ul ul ul					{ top:0; left:100%!important; }
+.navigation-inner ul ul ul li:first-child	{ margin-top:2px; }
