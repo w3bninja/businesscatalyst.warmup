@@ -44,10 +44,10 @@ $(function () {
 	// Sidebars
 	 $('.sidebar-section').wrapAll('<div class="col-md-3 sidebar"/>');
 	$('.sidebar-section').appendTo($('.sidebar-inner'));
-	$('.sidebar').prependTo( $('.content-inner') );
+	$('.sidebar').appendTo( $('.content-inner') );
 	
 	if ($('.sidebar').length > 0) { 
-		$('.content-col').wrapAll('<div class="col-md-9"/>');
+		$('.content-col').wrapAll('<div class="col-md-9 pull-right"/>');
 	}
 	
 });

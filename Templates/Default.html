@@ -1,14 +1,14 @@
-{%include "/Templates/template-peices/Header.html"-%}
+{module_contentholder name="Header"}
 <div class="content">
 	<div class="container">
         <div class="content-header">
             <h3>{module_pagename}</h3>
         </div>
         <div class="content-inner">
-            <!--{%include "/Templates/template-peices/GenericContent.html"-%}-->
-            {tag_pagecontent} 
+        	<div class="content-col">
+            	{tag_pagecontent}
+            </div> 
         </div>
     </div>
 </div>
-{%include "/Templates/template-peices/Footer.html"-%}
-
+{module_contentholder name="Footer"}

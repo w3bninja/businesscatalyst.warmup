@@ -1,8 +1,10 @@
+@color1:red;
+@color2:green;
 
 .section-title{font-size:16px; text-transform:uppercase; background:#EEE; padding:10px; margin:20px 0;}
 .color{width: 50px; height:50px; border:1px solid #EEE; box-shadow:0 0 10px rgba(0, 0, 0, .2); display:inline-block; margin:0 10px;}
-.color1{}
-.color2{}
+.color1{background:@color1;}
+.color2{background:@color2;}
 .color3{}
 .color4{}
 .color5{}
@@ -10,6 +12,9 @@
 .color7{}
 
 .content-header{background:#999; padding:10px 20px; margin:-60px 0 40px 0; color:#FFF;}
+
+xmp{background:#EEE; border-radius:5px;}
+
 
 /* TEMPLATE STYLES */
 .back-to-top{position: fixed; bottom:100px; right:50px; display:none; z-index:9999;}
@@ -36,6 +41,21 @@
 
 .fancybox-wrap{max-width:800px;}
 .fancybox-inner{max-width:780px;}
+
+.btn{border:0;
+	&.btn-primary, &input[type="submit"]{background:@color1;
+		&:hover{background:darken(@color1, 10%);}
+	}
+	&.btn-default{background:#EEE; color:#666;
+		&:hover{background:darken(#EEE, 10%);}
+	}
+	&.btn-secondary{background:@color2;
+		&:hover{background:darken(@color2, 10%);}
+	}
+}
+
+
+
 
 @media (max-width: 1200px) { 
 .nav>li>a:hover{}

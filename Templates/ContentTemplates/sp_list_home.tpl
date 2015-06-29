@@ -7,9 +7,15 @@
                 {% endif %}
             </div>
             <div class="col-md-12 col-sm-6">
-                <h3><a href="/services#{{this.name}}">{{this.name}}</a></h3>
+                <h3><a href="{{this.url}}">{{this.name}}</a></h3>
                 {tag_description, 150}
-                <a href="/services#{{this.name}}" class="btn btn-yellow">{{this.name}}</a>
+                <a href="{{this.url}}" class="btn btn-primary">
+                	{% if this.["Button Text"] != '' %}
+                        {{this.["Button Text"]}}
+                    {% else %}
+                        Read More
+                    {% endif %}
+                </a>
             </div>
         </div>
     </div>

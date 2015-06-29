@@ -3,7 +3,16 @@
     	<div class="container">
         	<div class="col-md-7">
             	<h1>{{this.name}}<span>{{this.["Sub Text"]}}</span></h1>
-            	<span class="text"><a href="{{this.link}}" class="btn btn-primary">{{this.name}}</a></span>
+            	<div class="text">
+                	{tag_description}
+                	<a href="{{this.link}}" class="btn btn-primary">
+                    	{% if this.["Button Text"] != '' %}
+                            {{this.["Button Text"]}}
+                        {% else %}
+                            Read More
+                        {% endif %}
+                    </a>
+                </div>
             </div>
         </div>
     </div>

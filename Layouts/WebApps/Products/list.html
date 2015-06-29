@@ -1,0 +1,20 @@
+<div class="row">
+	{% if this.image != '' %}
+    <div class="col-md-3">
+        <img src="{{this.image}}?Action=thumbnail&Width=350&Height=250&algorithm=fill_proportional" onerror="this.style.display='none';" class="img-style img-responsive">
+    </div>
+    {% endif %}
+    <div class="{% if this.image != '' %}col-md-9{% else %}col-md-12{% endif %}">
+        <h3><a href="{{this.url}}" title="{{this.name}}">{{this.name}}</a></h3>
+        <div>{tag_description, 100}</div>
+        <a href="{{this.url}}" class="btn btn-primary" title="{{this.name}}">
+            {% if this.["Button Text"] != '' %}
+                {{this.["Button Text"]}}
+            {% else %}
+                Read More
+            {% endif %}
+        </a>
+    </div>
+</div>
+
+<hr>

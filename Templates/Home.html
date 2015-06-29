@@ -1,8 +1,8 @@
-{%include "/lab/bc-template/Templates/template-peices/Header.html"-%}
+{module_contentholder name="Header"}
 <div class="banner">
 	<div class="banner-inner">
         <div class="cycle-slideshow" data-cycle-fx="fadeout"  data-cycle-timeout="5000" data-cycle-pause-on-hover="true" data-cycle-slides="> div" data-cycle-pager="#custom-pager" data-cycle-pager-template="<strong><a href=#> {{slideNum}} </a></strong>" data-cycle-auto-height="container">
-            {module_webapps render="item" template="/ContentTemplates/home_header.tpl" id="25359" filter="all" filter="classified" itemId="639690"}
+            {module_webapps render="item" template="/Templates/ContentTemplates/home_header.tpl" id="31770" filter="all" filter="classified" itemId="669308"}
         </div>
     </div>
     <div id="custom-pager" class="controls"></div>
@@ -12,16 +12,8 @@
 <div class="content">
     <div class="content-inner container">
         <div class="row">
-            <div class="col-md-6">
-                {%include "/lab/bc-template/Templates/template-peices/Generic-Content.html"-%}<!--Replace with {tag_pagecontent}--> 
-            </div>
-            <div class="col-md-6">
-            	<div class="certifications">
-                	<h3>Certifications <a href="/about/licensing" class="btn btn-clear pull-right">Read More</a></h3>
-                    <div class="certification-list">
-                    	{module_webapps id="30188" filter="latest" resultsPerPage="5"}
-                    </div>
-                </div>
+            <div class="col-md-12">
+                {tag_pagecontent} 
             </div>
         </div>
     </div>
@@ -30,7 +22,13 @@
     	<div class="container">
         	<div class="row">
         		<div class="col-md-2"><h4>Latest News:</h4></div>
-                <div class="col-md-8 news-item">{module_blogpostlist rowCount="1" template="/ContentTemplates/blog_list_home.tpl"}</div>
+                <div class="col-md-8 news-item" id="webticker">
+                    <ul>
+                    	{module_blogpostlist rowCount="1" template="/Templates/ContentTemplates/blog_list_home.tpl"}
+                        <!--{module_blogpostlist,-1,5, template="/Layouts/Announcement/scroll.html"}-->
+
+                    </ul>
+                </div>
                 <div class="col-md-2"><a href="/news" class="btn btn-yellow">Read More</a></div>
             </div>
         </div>
@@ -39,11 +37,11 @@
     	<div class="container">
         	<h2>Our Services</h2>
             <div class="row">
-                {module_webapps render="item" id="25395" filter="classified" itemId="Services" resultsPerPage="3" template="/ContentTemplates/sp_list_home.tpl"}
+                {module_webapps id="31767" filter="all" resultsPerPage="3" template="/Templates/ContentTemplates/sp_list_home.tpl"}
             </div>
         </div>
     </div>
-{%include "/lab/bc-template/Templates/template-peices/Footer.html"-%}
+{module_contentholder name="Footer"}
 <style>
 .page-header{display:none;}
 </style>
