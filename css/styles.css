@@ -21,6 +21,42 @@ div.form div.item, div.webform div.item{padding:0;}
 table.webform td{padding:5px 2px;}
 
 
+.row.no-gutters{margin-right:0;margin-left:0}
+.row.no-gutters>[class^="col-"],
+.row.no-gutters>[class*=" col-"]{padding-right:0;padding-left:0}
+.col-xs-15,
+.col-sm-15,
+.col-md-15,
+.col-lg-15 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col-xs-15 {
+    width: 20%;
+    float: left;
+}
+@media (min-width: 768px) {
+.col-sm-15 {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-15 {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-15 {
+        width: 20%;
+        float: left;
+    }
+}
+
 .btn, input[type="submit"]{ text-transform:uppercase; letter-spacing:2px; font-size:14px; position:relative; padding:10px 20px; color:#FFF; margin-top:20px;}
 .btn:hover, input[type="submit"]:hover{color:#FFF;}
 .btn.lrg{padding:15px 20px; font-size:16px;}
@@ -68,7 +104,7 @@ table.webform td{padding:5px 2px;}
 
 
 
-
+.gallery a img{width:100%;}
 
 
 /* STANDARD QUOTES */

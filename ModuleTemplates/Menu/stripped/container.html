@@ -24,4 +24,13 @@
 	if ((null !== ulTagId) && ("" !== ulTagId)) {
 		catSetSelectedCSSItem(ulTagId);
 	}
+	
+	$(document).ready(function() {
+		$(".navigation a").each(function(index) {
+			if ($(this).prop("href") == app.url) {
+				$(this).addClass("active");
+			};
+		});
+	});
+
 </script>

@@ -1,5 +1,8 @@
+<!DOCTYPE html>{% capture page_url -%}{module_pageaddress}{% endcapture -%}
+{% capture site_url -%}http://{module_sitehost}/{% endcapture -%}
+{% capture isloggedin -%}{module_isloggedin}{% endcapture -%}
 <!--START HEADER-->
-<!doctype html>
+
 <html>
 <head>
 <meta charset="utf-8">
@@ -23,6 +26,11 @@
 <script type="text/javascript" src="http://malsup.github.io/jquery.cycle2.js"></script>
 <script type="text/javascript" src="http://malsup.github.io/min/jquery.cycle2.carousel.min.js"></script>
 
+<link rel="stylesheet" href="https://rawgit.com/jellekralt/Responsive-Tabs/master/css/responsive-tabs.css">
+<script type="text/javascript" src="https://rawgit.com/jellekralt/Responsive-Tabs/master/js/jquery.responsiveTabs.min.js"></script>
+
+
+
 
 <!-- Add fancyBox -->
 <link rel="stylesheet" href="/js/fancy/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
@@ -42,7 +50,7 @@
             </div>
         </form>
     </div>
-    {module_menu, version="2", menuId="1931027", moduleTemplateGroup="stripped"} 
+    {module_menu, version="2", menuId="1931027", moduleTemplateGroup="Accordion"} 
     {%comment-%}<!--Replace the abov Menu ID with the correct ID.-->{%endcomment-%}
 </div>
 <div class="bg">
@@ -52,7 +60,56 @@
         <div class="col-md-3"><div class="logo"><a href="/" title="{module_sitename}">{module_sitename}</a></div></div>
         <div class="col-md-9 header-text">
         	<div class="phone pull-left">
-                <span class="hidden-xs">Toll Free: (800) 401–4277</span>
+                <span class="hidden-xs">Toll Free: (800) 401–4277
+                    {% if isloggedin == 1 -%}
+                        Welcome, {module_username}. {module_logout} | {module_webapps id="34049" filter="all"}
+                    {% else -%}
+                        <a href="#login" class="various btn btn-default">Login</a>
+<div id="signup" style="display:none;width:500px;">
+<a href="#login" class="various btn btn-default">Cancel</a>
+{module_webform id="501228"}</div>
+                        <div id="login" style="display:none;width:500px;">
+                            <div class="secure-login">
+                                <h3>LOGIN</h3>
+                                <form name="catseczoneform76507" onsubmit="return checkWholeForm76507(this)" method="post" action="https://envoc.worldsecuresystems.com/ZoneProcess.aspx?ZoneID=51&amp;Referrer={module_siteUrl,true,true}&amp;OID={module_oid}&amp;OTYPE={module_otype}">
+                                    <div class="form">
+                                        <div class="item">
+                                            <label for="SZUsername">Username</label>
+                                            <br />
+                                            <input class="cat_textbox_small" type="text" name="Username" id="SZUsername" maxlength="255"> </div>
+                                        <div class="item">
+                                            <label for="SZPassword">Password</label>
+                                            <br />
+                                            <input class="cat_textbox_small" type="password" name="Password" id="SZPassword" maxlength="255" autocomplete="off"> </div>
+                                        <div class="item">
+                                            <input type="checkbox" name="RememberMe" id="RememberMe">
+                                            <label for="RememberMe">Remember Me</label>
+                                        </div>
+                                        <div class="item">
+                                            <input class="cat_button" type="submit" value="Log in">&nbsp;<a href="/_System/SystemPages/PasswordRetrieveRequest">Lost password?</a> </div>
+                                    </div>
+                                    <script type="text/javascript" src="/CatalystScripts/ValidationFunctions.js?vs=b1766.r468257-phase1"></script>
+                                    <script type="text/javascript">
+                                        //<![CDATA[
+                                        function checkWholeForm76507(theForm) {
+                                                var why = "";
+                                                if (theForm.Username) why += isEmpty(theForm.Username.value, "Username");
+                                                if (theForm.Password) why += isEmpty(theForm.Password.value, "Password");
+                                                if (why != "") {
+                                                    alert(why);
+                                                    return false;
+                                                }
+                                                theForm.submit();
+                                                return false;
+                                            }
+                                            //]]>
+                                    </script>
+                                </form>
+<a href="#signup" class="various">Signup</a>
+                            </div>
+                            <br /> </div>
+                    {% endif -%}
+                </span>
                 <a href="tel:1-800-401-4277" class="pull-right btn btn-primary hidden-sm hidden-md hidden-lg toggle-menu menu-right push-body"><i class="fa fa-phone"></i></a>
                 <a class="nav-mobile-control btn btn-primary pull-right hidden-sm hidden-md hidden-lg toggle-menu menu-right push-body"><i class="fa fa-bars"></i></a>
             </div>
@@ -65,4 +122,4 @@
         </div>
     </div>
 </div>
-<div class="page-header"></div>
+{% if page_url == site_url %}<div class="page-header"></div>{% endif -%}

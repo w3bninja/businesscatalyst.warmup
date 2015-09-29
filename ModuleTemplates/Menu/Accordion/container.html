@@ -1,0 +1,11 @@
+<ul class="nav-accordion">{tag_menugroup}</ul>
+<script type="text/javascript">
+  $(document).ready(function() {
+	$(".nav-accordion li:has(ul li)").find("a:first").addClass("subs");
+	$( "<i class='fa fa-chevron-down'></i>" ).appendTo( ".nav-accordion .subs" );
+	$('.nav-accordion .subs i').click(function(e){
+		e.preventDefault();
+		$(this).parent().parent().find('ul').toggle();
+    });
+  });
+</script>

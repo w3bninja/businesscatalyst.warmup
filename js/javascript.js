@@ -34,7 +34,11 @@ $(function () {
         $('ul:first',this).css('visibility', 'hidden');
     });
 	
-	$('.toggle-menu').jPushMenu();
+	//Push Navigation Menu
+	$('.toggle-menu').jPushMenu({
+		closeOnClickLink   : false,
+		closeOnClickOutside: false
+	});
 	
 	$("#webticker ul").webTicker();
 	
@@ -47,8 +51,49 @@ $(function () {
 	$('.sidebar').appendTo( $('.content-inner') );
 	
 	if ($('.sidebar').length > 0) { 
-		$('.content-col').wrapAll('<div class="col-md-9 pull-right"/>');
+		$('.content-col').wrapAll('<div class="col-md-9"/>');
 	}
+	
+	if ($('.cycle-carousel-wrap .box').length <= 5) { 
+		$('.areas .controls').hide();
+	}
+	
+	//responsive Tabs 
+	$('.tab-label').wrap($('<li class="tab-li"></li>'));
+	$('.tab-li').wrapAll($('<ul class="tab-nav"></ul>'));
+	$('.tab-description').wrapAll($('<div class="responsiveTabs"></div>'));
+	$('.responsiveTabs').prepend($('.tab-nav'));
+	
+	$('.responsiveTabs').responsiveTabs({
+		startCollapsed: 'accordion'
+	});
+	
+	//responsive photogallery
+	if ($('table.photogalleryTable').length > 0) { 
+		$('table.photogalleryTable').replaceWith($('table.photogalleryTable').html()
+		   .replace(/<tbody/gi, "<div id='photogalleryTable' class='gallery row'")
+		   .replace(/<tr/gi, "<span")
+		   .replace(/<\/tr>/gi, "</span>")
+		   .replace(/<td class="photogalleryItem"/gi, "<div class='col-md-2 col-xs-6 col-sm-4'")
+		   .replace(/<\/td>/gi, "</div>")
+		   .replace(/<\/tbody/gi, "<\/div")
+		);
+		$('.gallery a').prop( "onclick", null ).removeAttr('onclick').removeAttr('rel').addClass('thumb fancy');
+	}
+    
+	
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
 	
 });
 
@@ -70,7 +115,19 @@ $(document).ready(function() {
 		closeEffect	: 'none'
 	});
 	$(".fancy.ajax").fancybox({type: 'ajax'});
-	
+	$(".various").fancybox({
+		maxWidth	: 800,
+		maxHeight	: 600,
+		fitToView	: false,
+		width		: '70%',
+		height		: '70%',
+		autoSize	: true,
+		closeClick	: false,
+		openEffect	: 'none',
+		closeEffect	: 'none',
+		padding		: 0,
+		margin		: 0
+	});
 	
 	var offset = 220;
     var duration = 500;
