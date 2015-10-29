@@ -3,28 +3,7 @@
 // Firm: Envoc (envoc.com)
 
 $(function () {
-	
-	window.location.origin || (window.location.origin = window.location.protocol + '//' + window.location.host);
-	window.app = {};
-	var url = app.url = (location.href); //Cached for heavy general use
 
-	//Add the name of the page to the body ID for better CSS targeting
-	url = url.split('?')[0];
-	
-	var urlPieces = app.urlPieces = $.trim((url.replace(window.location.origin, '')).split("/").join(" "));
-	
-	var bodyID = (url).split("/").pop();
-	if (urlPieces == "") {
-		urlPieces = "home";
-	}
-
-	$("body").addClass(urlPieces);
-	$("body").attr('id', bodyID);
-	
-	app.isOnPage = function(pageName) {
-		return app.url.split("?")[0].split("/").pop() == pageName;
-	}
-	
 	//Navigation helper
     $(".navigation-inner ul li").hover(function(){
         $(this).addClass("hover");
