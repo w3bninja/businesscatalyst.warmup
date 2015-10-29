@@ -4,4 +4,10 @@
 <file name="header.inc" server="dynastyhealthcare.businesscatalyst.com//" local="130903706810000000" remote="130903706810000000" Dst="2" />
 <file name="footer.inc" server="dynastyhealthcare.businesscatalyst.com//" local="130903703570000000" remote="130903703570000000" Dst="2" />
 <file name="head.inc" server="dynastyhealthcare.businesscatalyst.com//" local="130903652772378160" remote="130903652590000000" Dst="2" />
+<file name="footer.inc" server="envoc.businesscatalyst.com//" local="130903703570000000" remote="130906069850000000" Dst="2" />
+<file name="head.inc" server="envoc.businesscatalyst.com//" local="130903652772378160" remote="130906069850000000" Dst="2" />
+<file name="header.inc" server="envoc.businesscatalyst.com//" local="130906071411923240" remote="130906069860000000" Dst="2" />
+<file name="login.inc" server="envoc.businesscatalyst.com//" local="130903582433393412" remote="130906069860000000" Dst="2" />
+<file name="settings.inc" server="envoc.businesscatalyst.com//" local="130906070658427898" remote="130906070580000000" Dst="2" />
+<file name="menu.inc" server="envoc.businesscatalyst.com//" local="130906072122894330" remote="130906072020000000" Dst="2" />
 </dwsync>
