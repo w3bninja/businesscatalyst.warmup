@@ -1,8 +1,13 @@
-<div class="shop-product-small clear">
-    <h5>{tag_name}</h5>
-    <div class="image">{tag_smallimage}</div>
-    <ul>
+<div class="col-sm-4">
+<a href="{{url}}">
+      <h5>{{name}}</h5>
+      <div class="image"><img src="{{smallImage}}?Action=thumbnail&Width=200&Height=200&algorithm=fill_proportional" width="100%"></div>
+      <ul>
         <li class="price">Price: <strong>{tag_saleprice}</strong>&nbsp;</li>
         <li class="stock">In stock: <strong>{tag_instock}</strong>&nbsp;</li>
-        <li class="quantity">Qty: <strong>{tag_addtocartinputfield}</strong> {tag_addtocart}</li>
-    </ul> {tag_addtofavorites} </div>
+        <li class="quantity">Qty: <strong>{tag_addtocartinputfield}</strong> </li>
+      </ul>
+  </a>
+  {tag_addtocart}
+  {tag_addtofavorites}
+</div>

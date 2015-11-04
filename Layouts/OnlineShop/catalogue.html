@@ -1,5 +1,10 @@
-
-<div class="shop-catalogue clear">
-  <h4>{tag_name}</h4>
-  <div class="image">{tag_image}</div>
+<div>
+<a href="{{url}}">
+{% if imageUrl != '' %}
+    <img src="{{imageUrl}}?Action=thumbnail&Width=200&Height=200&algorithm=fill_proportional" width="100%">
+{% else %}
+    <img src="https://placeholdit.imgix.net/~text?txtsize=30&txt=Not+Available&w=200&h=200" width="100%">
+{% endif %}
+{{name}}
+</a>
 </div>

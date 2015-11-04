@@ -1,4 +1,43 @@
-<div class="row">
+<div class="hidden">{tag_poplets collection="poplets" template=""}</div>
+<script type="text/javascript">
+         function swap(image) {
+             document.getElementById("main").src = image.href;
+         }
+     </script>
+
+	<div class="col-md-2">
+    	<div class="poplet-images">
+        	<a href="{{largeImageUrl}}?Action=thumbnail&Width=1000&Height=400&algorithm=fill_proportional" rel="poplets" onclick="swap(this); return false;"><img src="{{largeImageUrl}}?Action=thumbnail&Width=100&Height=100&algorithm=fill_proportional" class="img-responsive"></a>
+            {% for item in poplets -%}
+                <a href="{{item.path}}?Action=thumbnail&Width=1000&Height=400&algorithm=fill_proportional" rel="poplets" onclick="swap(this); return false;"><img src="{{item.path}}?Action=thumbnail&Width=100&Height=100&algorithm=fill_proportional"></a>
+            {% endfor -%}
+        </div>
+    </div>
+	<div class="col-md-10">
+    	<div class="image">
+        	<a href="{{largeImageUrl}}"><img src="{{largeImageUrl}}?Action=thumbnail&Width=1000&Height=400&algorithm=fill_proportional" class="img-responsive" id="main" width="100%"></a>
+            
+        </div>
+        <img src="{{smallImageUrl}}" class="img-responsive">
+        
+        
+        <ul>
+          <li class="price"><strong>{{salePrice}}</strong></li>
+          <li class="instock">In stock: <strong>{{inStock}}</strong></li>
+          <li class="quantity">
+          Option<br>
+          <textarea id="catProdInstructions_{{id}}" class="productTextarea">{module_url param="desc"}</textarea>
+          
+            {tag_addtocartinputfield}
+            <button class="btn btn-primary" onclick="AddToCart({{catalogId}},{{id}},'',4,'','',false);return false;">Add to Cart</button>
+          </li>
+        </ul>
+        <div class="description">{{description}}</div>
+    </div>
+
+
+
+<!--<div class="row">
 	<div class="col-md-6">
     	<div class="image">
         	<a href="/img/nathan.png" class="fancy"><img src="{{largeImageUrl}}" class="img-responsive"></a>
@@ -19,3 +58,4 @@
     </div>
 </div>
 
+-->

@@ -2,6 +2,13 @@
 <div class="shop-cart">
 <div class="breadcrumbs">You are here: {tag_cataloguebreadcrumbs}</div>
 <h1>Your Shopping Cart</h1>
+{% include "/_System/includes/shop/cart.inc" -%}
+
+
+
+
+
+<!--
 <table class="cart">
 		<tr class="var">
 			<th>Product</th>
@@ -11,14 +18,15 @@
 			<th>Total</th>
 			<th>Remove</th>
 		</tr>
-		<tr class="val">
-			<td>{tag_productname}</td>
-			<td>{tag_productextaxamount}</td>
-			<td class="quantity">{tag_productquantity}</td>
-			<td>{tag_producttaxrate}</td>
-			<td>{tag_producttotal}</td>
-			<td>{tag_productremovelink}</td>
-		</tr>
+        <tr class="val">
+            <td>{tag_productname}</td>
+            <td>{tag_productextaxamount}</td>
+            <td class="quantity">{tag_productquantity}</td>
+            <td>{tag_producttaxrate}</td>
+            <td>{tag_producttotal}</td>
+            <td>{tag_productremovelink}</td>
+        </tr>
+		
 		<tr class="sub-total">
 			<td colspan="2">Sub-Total</td>
 			<td class="quantity">{tag_totalunits} units</td>
@@ -60,5 +68,5 @@
 		<tr>
 			<td class="actions" colspan="6"> {tag_clearcartbutton,<img src="/CatalystImages/shop_clearcart.png" />} {tag_getquotebutton,<img src="/CatalystImages/shop_getaquote.png" />} {tag_buybutton,<img src="/CatalystImages/shop_checkout.png" />}</td>
 		</tr>
-</table>
+</table>-->
 </div>
