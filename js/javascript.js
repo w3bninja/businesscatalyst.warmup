@@ -62,8 +62,22 @@ $(function () {
     
 	
 
-
-
+// FAVORITE INTERACTION //
+jQuery(document).unbind().on('click', '.favoritelink', function(e) {
+	e.preventDefault();
+	var $el = jQuery(this);
+	jQuery.ajax({
+		url: $el.attr('href'),
+		cache: false
+	});
+	if ($el.hasClass('fav-add')) {
+		$el.attr('href', $el.attr('href').replace('FavoriteProcess.aspx?', 'FavoriteProcess.aspx?A=Remove&'));
+	} else {
+		$el.attr('href', $el.attr('href').replace('FavoriteProcess.aspx?A=Remove&', 'FavoriteProcess.aspx?'));
+	}
+	$el.toggleClass('fav-add').toggleClass('fav-remove');
+	$el.find('i').toggleClass('fa-heart').toggleClass('fa-heart-o');
+});
 
 	
 	

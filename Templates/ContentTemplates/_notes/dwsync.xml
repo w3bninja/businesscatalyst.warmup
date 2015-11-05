@@ -12,10 +12,11 @@
 <file name="sp_list.tpl" server="aaronlandrynet.businesscatalyst.com" local="130754152080000000" remote="130786183650000000" Dst="2" />
 <file name="sp_list_home.tpl" server="aaronlandrynet.businesscatalyst.com" local="130743581245025326" remote="130786183660000000" Dst="2" />
 <file name="team_3col.tpl" server="aaronlandrynet.businesscatalyst.com" local="130728895060000000" remote="130786183660000000" Dst="2" />
-<file name="blog_list_home.tpl" server="envoc.businesscatalyst.com//" local="130741058580710454" remote="130794842990000000" Dst="2" />
-<file name="careers_list.tpl" server="envoc.businesscatalyst.com//" local="130729949656871979" remote="130794842990000000" Dst="2" />
-<file name="home_header.tpl" server="envoc.businesscatalyst.com//" local="130798270000000000" remote="130798270000000000" Dst="2" />
-<file name="sp_list.tpl" server="envoc.businesscatalyst.com//" local="130754152080000000" remote="130794843010000000" Dst="2" />
-<file name="sp_list_home.tpl" server="envoc.businesscatalyst.com//" local="130798267820000000" remote="130798267820000000" Dst="2" />
-<file name="team_3col.tpl" server="envoc.businesscatalyst.com//" local="130728895060000000" remote="130794843020000000" Dst="2" />
+<file name="blog_list_home.tpl" server="envoc.businesscatalyst.com//" local="130741058580710454" remote="130794878990000000" Dst="1" />
+<file name="careers_list.tpl" server="envoc.businesscatalyst.com//" local="130729949656871979" remote="130794878990000000" Dst="1" />
+<file name="home_header.tpl" server="envoc.businesscatalyst.com//" local="130798270000000000" remote="130798306000000000" Dst="1" />
+<file name="sp_list.tpl" server="envoc.businesscatalyst.com//" local="130754152080000000" remote="130794879010000000" Dst="1" />
+<file name="sp_list_home.tpl" server="envoc.businesscatalyst.com//" local="130798267820000000" remote="130798303820000000" Dst="1" />
+<file name="team_3col.tpl" server="envoc.businesscatalyst.com//" local="130728895060000000" remote="130794879020000000" Dst="1" />
+<file name="full-calendar.tpl" server="envoc.businesscatalyst.com//" local="130858537936958902" remote="130911499060000000" Dst="1" />
 </dwsync>

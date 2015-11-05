@@ -161,6 +161,24 @@ q q:after { content: '\2019'; }
 .table td{border:1px solid #EEE;}
 
 
+/* STORE */
+
+.shop-main h2, .shop-cart h2{ padding:0 0 20px 0; border-bottom:1px solid #EEE; margin-bottom:20px;}
+.catalogueitemdump, .catalogueitemdump ul, .catalogueitemdump li{margin:0; padding:0; list-style-type:none;}
+.catalogueitemdump li a{background:#EEE; margin-bottom:20px; font-size:40px; padding:40px; display:block;}
+.shop-product-small{border:1px solid #EEE; padding:20px;}
+.shop-product-small .image{width:100%; height:auto;}
+.shop-product-small .fav{float:right;}
+.shop-product-small .btn{width:100%;}
+
+.total{font-size:20px; font-weight:bold;}
+.total-title{text-align:right;}
+
+.catalog-levels{background:#EEE; margin-bottom:20px; padding:50px;}
+.catalog-list{text-align:center; margin-bottom:20px;}
+.catalog-list h4{ margin-top:10px;}
+
+
 @media (max-width: 768px) {
 .logo a{background-size:100%; width:135px; height:32px;}
 
@@ -181,7 +199,7 @@ h2{font-size:24px;}
 
 .content-bg .content{margin-top:40px;}
 
-
+.total-title{text-align:left;}
 
 
 
