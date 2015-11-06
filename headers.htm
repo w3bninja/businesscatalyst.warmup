@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <title>Headers</title>
+    </head>
+
+    <body>Headers are placed based on the layout type. By changing the template to on of the available layouts you can change the look and functionality of the
+        header
+        <div>
+            <br /> </div>
+        <h3>Home Page Header</h3>
+        The home page header cannot be placed inside the "content" container. It must be outside of it. It can be accessed by using the Home Page Header Include (/_System/includes/template/home-header.inc).
+        
+        <hr>
+        <h3>Standard Page Header</h3>
+        When a single item is output onto the page, using the normal list view, it will show in the specified place on the page using the "page-header" class. The page header div can be found in the header of the template and can be moved wherever it needs to show on the page.
+        <xmp><div class="page-header"></div></xmp>
+         <div class="page-header"></div>
+        {module_webapps id="31770" filter="item" itemId="11126052"}
+        
+        <hr>
+        <h3>Rotating Slideshow</h3>
+        A rotating header can be used anywhere in the content and is created by using the "Slider" template (/_System/includes/template-content/slider.tpl) and including the Header backup template in the description. This can also work for other contetnt types because this layout type cycles through whatever repeated div structure you give it.
+        {module_webapps id="31770" filter="item" itemId="12042392" template="/_System/includes/template-content/slider.tpl"}
+        
+    </body>
+
+</html>

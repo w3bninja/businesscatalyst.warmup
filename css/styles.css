@@ -103,9 +103,15 @@ table.webform td{padding:5px 2px;}
 /* BANNER */
 
 
+.page-header{height:200px;}
 
 .gallery a img{width:100%;}
 
+
+.slideshow .nav{text-align:center; margin-top:10px;}
+.slideshow .nav a{width:10px; height:10px; background:#CCC; text-indent:-9999px; display:inline-block; margin:0 2px; border-radius:300px;}
+.slideshow .cycle-pager-active a{background:#0099CB;}
+.slideshow .item{ background-size:cover; height:260px; width:100%; box-shadow: inset 0px 0px 30px 0px rgba(0, 0, 0, .4); border-radius:5px;}
 
 /* STANDARD QUOTES */
 q { quotes: "\201C" "\201D" "\2018" "\2019"; }

@@ -2,6 +2,7 @@
 {% capture page_url -%}{module_pageaddress}{% endcapture -%}
 {% capture is_home -%}http://{module_sitehost}/{% endcapture -%}
 {% capture site_name_default -%}{module_sitename}{% endcapture -%}
+{% capture isloggedin -%}{module_isloggedin}{% endcapture -%}
 
 {module_siteurl collection="domain" template=""}
 {module_pageaddress collection="pageaddress" template=""}

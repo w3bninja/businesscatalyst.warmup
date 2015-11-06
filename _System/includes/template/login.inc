@@ -2,12 +2,12 @@
                         Welcome, {module_username}. {module_logout} | {module_webapps id="34049" filter="all"}
                     {% else -%}
                         <a href="#login" class="various btn btn-default">Login</a>
-<div id="signup" style="display:none;width:500px;">
+<div id="signup" style="display:none;width:300px;">
 <a href="#login" class="various btn btn-default">Cancel</a>
 {module_webform id="501228"}</div>
                         <div id="login" style="display:none;width:500px;">
                             <div class="secure-login">
-                                <h3>LOGIN</h3>
+                                <h3>Login</h3>
                                 <form name="catseczoneform76507" onsubmit="return checkWholeForm76507(this)" method="post" action="https://envoc.worldsecuresystems.com/ZoneProcess.aspx?ZoneID=51&amp;Referrer={module_siteUrl,true,true}&amp;OID={module_oid}&amp;OTYPE={module_otype}">
                                     <div class="form">
                                         <div class="item">
