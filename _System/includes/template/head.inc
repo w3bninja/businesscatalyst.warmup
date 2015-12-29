@@ -22,7 +22,8 @@
 <link rel="stylesheet" href="https://rawgit.com/jellekralt/Responsive-Tabs/master/css/responsive-tabs.css">
 <script type="text/javascript" src="https://rawgit.com/jellekralt/Responsive-Tabs/master/js/jquery.responsiveTabs.min.js"></script>
 
-
+<link href="https://rawgit.com/eternicode/bootstrap-datepicker/master/dist/css/bootstrap-datepicker.min.css" rel="stylesheet" />
+<script type="text/javascript" src="https://rawgit.com/eternicode/bootstrap-datepicker/master/js/bootstrap-datepicker.js"></script>
 
 
 <!-- Add fancyBox -->

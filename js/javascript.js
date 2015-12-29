@@ -3,6 +3,9 @@
 // Firm: Envoc (envoc.com)
 
 $(function () {
+	window.location.origin || (window.location.origin = window.location.protocol + '//' + window.location.host);
+	window.app = {};
+	var url = app.url = (location.href); //Cached for heavy general use
 
 	//Navigation helper
     $(".navigation-inner ul li").hover(function(){
@@ -38,28 +41,50 @@ $(function () {
 	}
 	
 	//responsive Tabs 
-	$('.tab-label').wrap($('<li class="tab-li"></li>'));
-	$('.tab-li').wrapAll($('<ul class="tab-nav"></ul>'));
-	$('.tab-description').wrapAll($('<div class="responsiveTabs"></div>'));
-	$('.responsiveTabs').prepend($('.tab-nav'));
+	//$('.tab-label').wrap($('<li class="tab-li"></li>'));
+//	$('.tab-li').wrapAll($('<ul class="tab-nav"></ul>'));
+//	$('.tab-description').wrapAll($('<div class="responsiveTabs"></div>'));
+//	$('.responsiveTabs').prepend($('.tab-nav'));
 	
 	$('.responsiveTabs').responsiveTabs({
 		startCollapsed: 'accordion'
 	});
 	
+	// FAQ Control
+	$('.faq-nav').appendTo($('.faq-control'));
+	
 	//responsive photogallery
-	if ($('table.photogalleryTable').length > 0) { 
-		$('table.photogalleryTable').replaceWith($('table.photogalleryTable').html()
-		   .replace(/<tbody/gi, "<div id='photogalleryTable' class='gallery row'")
-		   .replace(/<tr/gi, "<span")
-		   .replace(/<\/tr>/gi, "</span>")
-		   .replace(/<td class="photogalleryItem"/gi, "<div class='col-md-2 col-xs-6 col-sm-4'")
-		   .replace(/<\/td>/gi, "</div>")
-		   .replace(/<\/tbody/gi, "<\/div")
-		);
-		$('.gallery a').prop( "onclick", null ).removeAttr('onclick').removeAttr('rel').addClass('thumb fancy');
-	}
-    
+	jQuery(".photogalleryTable").each(function(index,elem){
+		var gallery = jQuery(elem),
+			bootstrapGallery = jQuery('<div class="gallery row"></div>');
+	 
+		gallery.find(".photogalleryItem > a").each(function(index,elem){
+			var galleryItem = jQuery(elem),
+				image = galleryItem.find("img"),
+				imageSrc = image.attr("src").split("?"),
+				bootstrapGalleryItem = jQuery('<div class="col-sm-3 gallery-item" />');
+	 
+			image.prop("src",imageSrc[0] + "?Action=thumbnail&Width=400&Height=200&algorithm=fill_proportional");
+			image.addClass("thumbnail img-responsive");
+	 
+			bootstrapGalleryItem.append(galleryItem);
+			bootstrapGallery.append(bootstrapGalleryItem);
+		});
+	 
+		gallery.after(bootstrapGallery);
+		gallery.remove();
+	});
+	$('.gallery a').prop( "onclick", null ).removeAttr('onclick').removeAttr('rel').addClass('thumb fancy');
+	
+	
+
+// DATE PICKER //
+$('#DOB').prop( "onfocus", null ).removeAttr('onfocus').removeAttr('title');
+$('#DOB').datepicker({
+	toggleActive: true
+}); 
+
+$('.dropdown-toggle').dropdown();   
 	
 
 // FAVORITE INTERACTION //
@@ -99,10 +124,10 @@ $(document).ready(function() {
 	$(".fancy").fancybox({
 		maxWidth	: 800,
 		maxHeight	: 600,
-		fitToView	: false,
+		fitToView	: true,
 		width		: '70%',
 		height		: '70%',
-		autoSize	: false,
+		autoSize	: true,
 		closeClick	: false,
 		openEffect	: 'none',
 		closeEffect	: 'none'

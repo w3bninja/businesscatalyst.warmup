@@ -35,4 +35,4 @@
         </div>
     </div>
 </div>
-{% if page_url == site_domain %}<div class="page-header"></div>{% endif -%}
+{% if page_url == is_home %}{% else -%}<div class="page-header"></div>{% endif -%}

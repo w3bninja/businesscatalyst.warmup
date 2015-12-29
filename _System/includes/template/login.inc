@@ -1,13 +1,30 @@
 {% if isloggedin == 1 -%}
-                        Welcome, {module_username}. {module_logout} | {module_webapps id="34049" filter="all"}
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://rawgit.com/twbs/bootstrap/master/js/dropdown.js"></script>
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    {module_username}
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    {module_webapps id="34049" filter="all"}
+    <li role="separator" class="divider"></li>
+    <li>{module_logout}</li>
+  </ul>
+</div>
+
+						
+						
+						
                     {% else -%}
                         <a href="#login" class="various btn btn-default">Login</a>
 <div id="signup" style="display:none;width:300px;">
 <a href="#login" class="various btn btn-default">Cancel</a>
 {module_webform id="501228"}</div>
                         <div id="login" style="display:none;width:500px;">
-                            <div class="secure-login">
-                                <h3>Login</h3>
+                            <div class="panel panel-default secure-login">
+                                <div class="panel-heading">Login</div>
+									<div class="panel-body">
                                 <form name="catseczoneform76507" onsubmit="return checkWholeForm76507(this)" method="post" action="https://envoc.worldsecuresystems.com/ZoneProcess.aspx?ZoneID=51&amp;Referrer={module_siteUrl,true,true}&amp;OID={module_oid}&amp;OTYPE={module_otype}">
                                     <div class="form">
                                         <div class="item">
@@ -42,7 +59,8 @@
                                             //]]>
                                     </script>
                                 </form>
-<a href="#signup" class="various">Signup</a>
+								</div>
+								<div class="panel-footer"><a href="#signup" class="various">Signup</a></div>
                             </div>
-                            <br /> </div>
+                          </div>
                     {% endif -%}

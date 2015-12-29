@@ -1,0 +1,17 @@
+{module_data resource="tags" version="v3" fields="objectId,tagId,objectType,siteId,tag,post" subresource="posts" resourceId="{module_url,tagid}" skip="0" limit="10" order="objectType" collection="posts"}
+
+	{% for post in posts.items -%}
+
+			<a href="{{post.post.postUrl}}"><h1>{{ post.post.postTitle }}</h1></a>
+			<div class="tags">
+				{module_data resource="blogposts" version="v3" fields="tag" subresource="tags" resourceId="{{post.objectId}}" skip="0" limit="10" order="objectType" collection="postTags"}
+				
+				Tags - 
+				<ul class="reset">
+					{% for item in postTags.items -%}
+					<li><a href="/blog/retreivepostsbytag?tagid={{ item.tag.id }}">#{{ item.tag.tagName }}</a></li>
+					{% endfor -%}
+				</ul>
+			</div>
+
+	{% endfor -%} 

@@ -1,1 +1,11 @@
-<div class="faq-question">{tag_question}</div>
+{% if counter == '1' -%}
+<div class="faq-control">
+
+</div>
+{% endif -%}
+<a href="#{{question | downcase | split: " " | join: "-"}}" class="faq-nav"><i class="fa fa-question-circle"></i> {{question}}</a>
+<div class="faq">
+    <div class="faq-question" id="{{question | downcase | split: " " | join: "-"}}"><h4><i class="fa fa-question-circle"></i> {{question}}</h4></div>
+    <div class="answer">{{answer}}</div>
+</div>
+<hr>

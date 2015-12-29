@@ -1,6 +1,7 @@
 {% if comments == 1 -%}
 
 {module_ratingfeedback}
+{tag_commentspaged}
 <hr>
 <div class="comment-form">
     <h3>Comment</h3>
