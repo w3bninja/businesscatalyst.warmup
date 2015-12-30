@@ -84,7 +84,7 @@ $('#DOB').datepicker({
 	toggleActive: true
 }); 
 
-$('.dropdown-toggle').dropdown();   
+//$('.dropdown-toggle').dropdown();   
 	
 
 // FAVORITE INTERACTION //
@@ -162,6 +162,8 @@ $(document).ready(function() {
         jQuery('html, body').animate({scrollTop: 0}, duration);
         return false;
     });
+	
+	$('.dropdown-toggle').dropdown();
 });
 
 

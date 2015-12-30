@@ -5,7 +5,7 @@
 {% assign url = "" -%}
 {% endcomment -%}
 
-<script type="text/javascript" src="https://rawgit.com/AyumuKasuga/SocialShare/master/SocialShare.min.js"></script>
+<script type="text/javascript" src="/js/SocialShare.min.js"></script>
 <script>
 $(document).ready(function(){
 	$('.share').ShareLink({

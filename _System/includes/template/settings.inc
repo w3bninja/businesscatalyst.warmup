@@ -4,17 +4,37 @@
 {% capture site_name_default -%}{module_sitename}{% endcapture -%}
 {% capture isloggedin -%}{module_isloggedin}{% endcapture -%}
 
+{% comment -%}Page Slug{% endcomment -%}
 {module_siteurl collection="domain" template=""}
 {module_pageaddress collection="pageaddress" template=""}
 {% assign page_slug = pageaddress.pageUrl | remove: domain.siteUrl | remove: 'https://' | remove: 'http://' | split: '/' | join: " " -%}
 
 
-{% if page_url contains "facility-1" %}
-	{% assign site_name = "Facility 1" -%}
-	{% assign site_domain = "http://{module_sitehost}/facility-1/home" -%}
-    {% capture menu_id -%}2040584{% endcapture -%}
-{% elseif page_url contains is_home -%}
-	{% assign site_name = site_name_default -%}
-    {% assign site_domain = is_home -%}
-    {% capture menu_id -%}1931027{% endcapture -%}
-{% endif -%}
+
+
+{% comment -%}
+{% comment -%}WEBAPP VARIABLES PER SITE{% endcomment -%}
+{% assign is_facility = "true" -%}
+
+{module_webapps id="31768" filter="all" collection="sites" template=""}
+{% assign site = "" -%}
+{% assign site_name = site_name_default -%}
+{% assign site_domain = is_home -%}
+{% assign is_facility = "false" -%}
+{% assign logo = "/img/logo.png" -%}
+{% capture menu_id -%}1931027{% endcapture -%}
+{% capture class_id -%}669308{% endcapture -%}
+{% assign phone = "800-401–4277" -%}
+{% for item in sites.items -%}
+	{% if page_url contains item.folder -%}
+		{% assign site = item.folder -%}
+        {% assign site_name = item.name -%}
+        {% capture site_domain -%}http://{module_sitehost}{{item.folder}}/home{% endcapture -%}
+        {% assign logo = item.image -%}
+        {% assign menu_id = item.["Menu ID"] -%}
+        {% assign class_id = item.["Classification ID"] -%}
+        {% assign phone = item.phone -%}
+        {% assign is_facility = "true" -%}
+    {% endif -%}
+{% endfor -%}
+{% endcomment -%}

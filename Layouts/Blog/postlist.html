@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-sm-12">
-    	<div class="featured"><img src="{{postFeaturedImage}}?Action=thumbnail&Width=1000&Height=300&algorithm=fill_proportional" class="img-responsive"></div>
-    	<h2 title="{{title}} - {{date | date: "MM\\dd\\yyyy" }}">{{title}}</h2>
+    	<div class="featured"><a href="{{url}}" title="{{title}}"><img src="{{postFeaturedImage}}?Action=thumbnail&Width=1000&Height=300&algorithm=fill_proportional" class="img-responsive" alt="{{title}}"></a></div>
+    	<h2 title="{{title}} - {{date | date: "MM\\dd\\yyyy" }}"><a href="{{url}}" title="{{title}}">{{title}}</a></h2>
         <div class="meta">
             <div class="date">{{date | date: "MM\\dd\\yyyy" }}</div>
             <div class="sharing">
@@ -21,3 +21,4 @@
         <a href="{{url}}" class="btn btn-default" title="{{title}} - {{date | date: "MM\\dd\\yyyy" }}">Read More</a>
     </div>
 </div>
+<hr>
