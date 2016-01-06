@@ -16,10 +16,10 @@
 						
 						
 {% else -%}
-    <a href="#login" class="various btn btn-default">Login</a>
+    <a href="#login" class="signin-box btn btn-default">Login</a>
     
     
-    <div id="signup" style="display:none;width:500px;">
+    <div id="signup" style="display:none;">
     <div class="panel panel-default secure-login">
                 <div class="panel-heading">Signup</div>
                     <div class="panel-body">
@@ -31,7 +31,7 @@
 
 
 
-<div id="login" style="display:none;width:500px;">
+<div id="login" style="display:none;">
     <div class="panel panel-default secure-login">
         <div class="panel-heading">Login</div>
             <div class="panel-body">
@@ -70,7 +70,7 @@
             </script>
         </form>
         </div>
-        <div class="panel-footer"><a href="#signup" class="various">Signup</a></div>
+        <div class="panel-footer"><a href="#signup" class="signin-box">Signup</a></div>
     </div>
 </div>
 {% endif -%}

@@ -11,12 +11,6 @@
 
 
 
-
-{% comment -%}
-{% comment -%}WEBAPP VARIABLES PER SITE{% endcomment -%}
-{% assign is_facility = "true" -%}
-
-{module_webapps id="31768" filter="all" collection="sites" template=""}
 {% assign site = "" -%}
 {% assign site_name = site_name_default -%}
 {% assign site_domain = is_home -%}
@@ -25,6 +19,13 @@
 {% capture menu_id -%}1931027{% endcapture -%}
 {% capture class_id -%}669308{% endcapture -%}
 {% assign phone = "800-401–4277" -%}
+
+{% comment -%}
+{% comment -%}WEBAPP VARIABLES PER SITE{% endcomment -%}
+{% assign is_facility = "true" -%}
+
+{module_webapps id="31768" filter="all" collection="sites" template=""}
+
 {% for item in sites.items -%}
 	{% if page_url contains item.folder -%}
 		{% assign site = item.folder -%}

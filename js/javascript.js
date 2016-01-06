@@ -46,8 +46,14 @@ $(function () {
 //	$('.tab-description').wrapAll($('<div class="responsiveTabs"></div>'));
 //	$('.responsiveTabs').prepend($('.tab-nav'));
 	
+	
 	$('.responsiveTabs').responsiveTabs({
-		startCollapsed: 'accordion'
+		rotate: false,
+		startCollapsed:	'accordion',
+		collapsible: 	'accordion',
+		setHash: 		true,
+		active:			0,
+		scrollToAccordion: true
 	});
 	
 	// FAQ Control
@@ -78,14 +84,10 @@ $(function () {
 	
 	
 
-// DATE PICKER //
-$('#DOB').prop( "onfocus", null ).removeAttr('onfocus').removeAttr('title');
-$('#DOB').datepicker({
-	toggleActive: true
-}); 
 
-//$('.dropdown-toggle').dropdown();   
-	
+if ($('.dropdown-toggle').length > 0) {
+	$('.dropdown-toggle').dropdown();   
+}
 
 // FAVORITE INTERACTION //
 jQuery(document).unbind().on('click', '.favoritelink', function(e) {
@@ -105,11 +107,62 @@ jQuery(document).unbind().on('click', '.favoritelink', function(e) {
 });
 
 	
+
+// BOOTSTRAP FORMS
+	// Reset Layout
+	$('form[name*=catwebform]:not(".skip-form-reset")').each(function() {
+		$(this).wrapAll($('<div class="content-form"/>'));
+	});
 	
+	var contentForm = $('.content-form');
+	contentForm.find('table').each(function() {
+		$(this).replaceWith($(this).html()
+			.replace(/<tbody/gi, "<div class='row'")
+			.replace(/<tr/gi, "<div class='col-sm-12'><div class='form-group'")
+			.replace(/<\/tr>/gi, "</div></div>")
+			.replace(/<td/gi, "<div")
+			.replace(/<\/td>/gi, "</div>")
+			.replace(/<\/tbody/gi, "<\/div")
+		);
+	});
+	contentForm.find('input[type=text], textarea, select').addClass('form-control');
 	
+	contentForm.find('input[type=checkbox]').each(function(){
+		$(this).parent().addClass('hide').addClass('form-label');
+		$(this).prev("label").appendTo($(this).parent().parent());
+		$(this).appendTo($(this).parent().parent()).wrap('<div class="checkbox"><label>');
+		$(this).after($(this).val());
+		$('.form-group .form-label.hide label').prependTo($(this).parent().parent().parent());
+	});
+	contentForm.find('input[type=radio]').each(function(){
+		$(this).parent().addClass('hide').addClass('form-label');
+		$(this).prev("label").appendTo($(this).parent().parent());
+		$(this).appendTo($(this).parent().parent()).wrap('<div class="radio"><label>');
+		$(this).after($(this).val());
+		$('.form-group .form-label.hide label').prependTo($(this).parent().parent().parent());
+	});
+	contentForm.find('input[type=submit]').removeClass('form-control').addClass('btn btn-primary pull-right');
+	// Remove Title
+	contentForm.find('select[name=Title]').parent().parent().remove();
+	// Split Name Layout
+	contentForm.find('input[name=FirstName]').parent().parent().parent().addClass('col-sm-6');
+	contentForm.find('input[name=LastName]').parent().parent().parent().addClass('col-sm-6');
+	// Split Address Layout
+	contentForm.find('input[name=WorkCity]').parent().parent().parent().addClass('col-sm-6');
+	contentForm.find('input[name=WorkState]').parent().parent().parent().addClass('col-sm-4');
+	contentForm.find('label[for=WorkZip]').html('Zip Code *');
+	contentForm.find('input[name=WorkZip]').parent().parent().parent().addClass('col-sm-2');
+	contentForm.find('select[name=WorkCountry]').parent().parent().parent().remove();
+	// Remove <br>
+	contentForm.find('br').remove();	
 	
-	
-	
+	// Update Date Picker //
+	if ($('#DOB').length > 0) {
+		$('#DOB').prop("onfocus", null).removeAttr('onfocus').removeAttr('title');
+		$('#DOB').datepicker({
+			toggleActive: true
+		});	
+	}
 	
 	
 	
@@ -146,6 +199,19 @@ $(document).ready(function() {
 		padding		: 0,
 		margin		: 0
 	});
+	$(".signin-box").fancybox({
+		maxWidth	: 800,
+		maxHeight	: 600,
+		fitToView	: false,
+		width		: '70%',
+		height		: '70%',
+		autoSize	: true,
+		closeClick	: false,
+		openEffect	: 'none',
+		closeEffect	: 'none',
+		padding		: 0,
+		margin		: 0
+	});
 	
 	var offset = 220;
     var duration = 500;
@@ -162,8 +228,6 @@ $(document).ready(function() {
         jQuery('html, body').animate({scrollTop: 0}, duration);
         return false;
     });
-	
-	$('.dropdown-toggle').dropdown();
 });
 
 

@@ -14,7 +14,8 @@ a:hover{text-decoration:underline;}
 label, .form label{font-size:14px!important; font-weight:normal; text-transform:uppercase;}
 *::selection{background:#ec150a; color:#FFF; /* Safari */}
 *::-moz-selection{background:#ec150a; color:#FFF;}
-input, select, textarea{ border:1px solid #CCC; border-radius:5px; padding:7px 0; text-indent:10px; width:100%!important; margin:0; line-height:14px;}
+input, select, textarea{width:100%!important;}
+input[type="submit"], input[type="checkbox"], input[type="radio"]{width:auto!important;}
 hr{border:0; height:1px; background:#FFF; box-shadow:0 0 1px 0 rgba(0, 0, 0, .4); margin:30px 0 ;}
 
 div.form div.item, div.webform div.item{padding:0;}
@@ -66,6 +67,7 @@ table.webform td{padding:5px 2px;}
 .btn-secondary, .btn-secondary:hover{background:#e19b42;}
 .search .input-group-addon{padding:0;}
 .input-group-addon .btn, .input-group-addon input{padding:8px 12px; margin:0;}
+.back-to-top{position:fixed;bottom:100px;right:50px;display:none;z-index:9999;}
 
 /* NAVIGATION */
 .navigation ul{ text-transform:uppercase; letter-spacing:2px; font-size:14px;}
@@ -129,6 +131,51 @@ table.webform td{padding:5px 2px;}
 .content .content-col ul.tab-nav li a{padding:10px; display:block;}
 .content .content-col ul.tab-nav li:before{content:""; display:none;}
 ul.tab-nav .r-tabs-state-active{background:#EEE;}
+
+
+.responsiveTabs{ margin-top:20px;}
+.responsiveTabs ul.ui-tabs-nav{overflow:hidden; border-bottom:1px solid #0068ab; margin-bottom:30px!important;}
+.responsiveTabs ul.ui-tabs-nav, .responsiveTabs ul.ui-tabs-nav li{list-style-type:none; margin:0; padding:0;}
+.responsiveTabs ul.ui-tabs-nav li{float:left; overvlow:hidden;}
+.responsiveTabs ul.ui-tabs-nav li a{background:#004d82; color:#FFF; padding:5px 15px; margin-right:2px; display:block; border-radius:3px 3px 0px 0px; font-size:14px; font-family: 'Garamond';}
+.responsiveTabs ul li.ui-tabs-active a, .responsiveTabs ul li.ui-state-active a{background:#0068ab!important;}
+.r-tabs .r-tabs-nav {margin: 0; padding:0;}
+.r-tabs .r-tabs-tab {display: inline-block; margin: 0; list-style: none;}
+.r-tabs .r-tabs-panel {padding: 15px; display: none; overflow:hidden; border:1px solid #EEE;}
+.r-tabs .r-tabs-accordion-title {display: none;}
+.r-tabs .r-tabs-accordion-title a{display:block; padding: 10px; background:#004D82; color:#FFF; font-family: 'Garamond'; font-size:14px; border-bottom:1px solid rgba(0, 0, 0, .2);}
+.r-tabs .r-tabs-accordion-title a:before{
+	float:right;
+	position:relative; top:2px;
+	content: "\f106";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.r-tabs .r-tabs-accordion-title.r-tabs-state-active a:before{
+	content: "\f107"; top:5px;
+}
+.r-tabs .r-tabs-accordion-title.r-tabs-state-active a{background:#0068AB;}
+.r-tabs .r-tabs-panel.r-tabs-state-active {display: block;}
+
+
+.responsiveTabs.accordion{}
+.responsiveTabs.accordion.r-tabs .r-tabs-nav {display: none;}
+.responsiveTabs.accordion.r-tabs .r-tabs-accordion-title {display: block;}
+
+
+/* Accordion responsive breakpoint */
+@media only screen and (max-width: 768px) {
+    .r-tabs .r-tabs-nav {display: none;}
+    .r-tabs .r-tabs-accordion-title {display: block;}
+}
+
+
+
+
 
 /* CONTENT */
 

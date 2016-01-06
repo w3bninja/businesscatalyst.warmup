@@ -14,3 +14,4 @@
         </div>
     </div>
 </div>
+<a href="#" class="btn btn-default back-to-top"><i class="fa fa-chevron-up"></i></a>

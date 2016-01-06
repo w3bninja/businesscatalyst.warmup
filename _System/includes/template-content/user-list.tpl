@@ -14,3 +14,44 @@
         </div>
     </div>
 </div>
+
+
+{% comment -%}
+{% if counter == "1" -%}
+<div class="bio-col-head hidden-xs">
+    <div class="row">
+        <div class="col-sm-6">
+            Name & Title
+        </div>
+        <div class="col-sm-3">
+            Phone/Ext
+        </div>
+        <div class="col-sm-3">
+            &nbsp;
+        </div>
+    </div>
+</div>
+{% endif -%}
+<div class="bio-item">
+    <div class="row">
+        <div class="col-sm-6">
+            <h4>{{this.name}}</h4>
+            <h5>{{this.["title"]}}</h5>
+        </div>
+        <div class="col-sm-3">
+            {% if this.phone != '' %}
+             <a class="phone" href="tel:{{this.phone}}">{{this.phone}}</a>
+            {% else -%}
+            N/A
+            {% endif %}
+        </div>
+        <div class="col-sm-3">
+            {% if this.email != '' %}
+             <a class="email btn btn-default pull-right" href="mailto:{{this.email}}">Email Me</a>
+            {% else -%}
+                <div class="pull-right">N/A</div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endcomment -%}

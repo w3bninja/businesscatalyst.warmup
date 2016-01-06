@@ -4,11 +4,11 @@
 <file name="header.inc" server="dynastyhealthcare.businesscatalyst.com//" local="130903706810000000" remote="130903706810000000" Dst="2" />
 <file name="footer.inc" server="dynastyhealthcare.businesscatalyst.com//" local="130903703570000000" remote="130903703570000000" Dst="2" />
 <file name="head.inc" server="dynastyhealthcare.businesscatalyst.com//" local="130903652772378160" remote="130903652590000000" Dst="2" />
-<file name="footer.inc" server="envoc.businesscatalyst.com//" local="130903703570000000" remote="130906105850000000" Dst="1" />
+<file name="footer.inc" server="envoc.businesscatalyst.com//" local="130960686895748226" remote="130960686700000000" Dst="1" />
 <file name="head.inc" server="envoc.businesscatalyst.com//" local="130958961535191916" remote="130958960500000000" Dst="1" />
 <file name="header.inc" server="envoc.businesscatalyst.com//" local="130948383886967580" remote="130948383880000000" Dst="1" />
-<file name="login.inc" server="envoc.businesscatalyst.com//" local="130958954408871916" remote="130958954300000000" Dst="1" />
-<file name="settings.inc" server="envoc.businesscatalyst.com//" local="130958991148321916" remote="130958990620000000" Dst="1" />
+<file name="login.inc" server="envoc.businesscatalyst.com//" local="130960597202138226" remote="130960596120000000" Dst="1" />
+<file name="settings.inc" server="envoc.businesscatalyst.com//" local="130959899712874652" remote="130959899600000000" Dst="1" />
 <file name="menu.inc" server="envoc.businesscatalyst.com//" local="130906072122894330" remote="130906108120000000" Dst="1" />
 <file name="home-header.inc" server="envoc.businesscatalyst.com//" local="130912952022300934" remote="130912952030000000" Dst="1" />
 </dwsync>

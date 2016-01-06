@@ -1,10 +1,13 @@
-{% capture results -%}{module_webappsresults}{% endcapture -%}
-{% capture results_map -%}{module_webappsresultsmap}{% endcapture -%}
-
-{% if results_map != '' -%}
-    {{results_map}}
+{module_webappsresults collection="results" template=""}
+{module_webappsresultsmap collection="map" template=""}
+{% if page_url contains "PageID" -%}
+	{% if map.items != null -%}
+		{module_webappsresultsmap}
+    {% else -%}
+        
+    {% endif -%}
 {% else -%}
-    {module_webappsmap id="{{app_id}}" filter="all"}
+	{module_webappsmap id="{{app_id}}" filter="all"}
 {% endif -%}
 
 <div class="location-search">
@@ -50,8 +53,13 @@
 
 
 
-{% if results != '' -%}
-    {{results}}
+
+{% if page_url contains "PageID" -%}
+	{% if results.items != null -%}
+		{module_webappsresults}
+    {% else -%}
+        No Results Found.
+    {% endif -%}
 {% else -%}
-    {module_webapps id="{{app_id}}" filter="all"}
+	{module_webapps id="{{app_id}}" filter="all"}
 {% endif -%}
