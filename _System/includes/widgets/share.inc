@@ -3,6 +3,7 @@
 {% assign text = "" -%}
 {% assign image = "" -%}
 {% assign url = "" -%}
+{% include "/_System/includes/widgets/share.inc" -%}
 {% endcomment -%}
 
 <script type="text/javascript" src="/js/SocialShare.min.js"></script>
@@ -31,3 +32,4 @@ $(document).ready(function(){
 <a class="btn btn-default share s_twitter" title="Twitter"><i class="fa fa-twitter"></i></a>
 <a class="btn btn-default share s_facebook" title="Facebook"><i class="fa fa-facebook"></i></a>
 <a class="btn btn-default share s_pinterest" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+<a class="btn btn-default share s_linkedin" title="LinkedIn"><i class="fa fa-linkedin"></i></a>

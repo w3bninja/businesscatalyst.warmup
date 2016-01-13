@@ -1,0 +1,33 @@
+<tr>
+    <td>{{this.name}}</td>
+    <td>
+        {% if this.address1 != '' -%}
+            <div class="address">
+            {{this.address1}}, {% if this.address2 != '' -%}{{this.address2}},{% endif -%}
+            {{this.city}}, {{this.state}} {{this.zipcode}}
+            </div>
+            {% capture addressLink -%}{{this.address1 | split: " " | join: "+"}},{% if this.address2 != '' -%}{{this.address2 | split: " " | join: "+"}},{% endif -%}{{this.city | split: " " | join: "+"}},{{this.state | split: " " | join: "+"}}+{{this.zipcode | split: " " | join: "+"}}{% endcapture -%}
+            <div class="directions pull-left"><i class="fa fa-map-marker"></i> <a href="https://www.google.com/maps/dir/{{addressLink | split: "," | join: ",+"}}//" target="_blank">Get Directions</a></div>
+        {% endif -%}
+    </td>
+    <td>
+        {% if this.phone != '' -%}
+            <div class="phone pull-left"><i class="fa fa-phone"></i> {{this.phone}}</div>
+        {% endif -%}
+    </td>
+    <td>
+        {% if this.fax != '' -%}
+            <div class="fax pull-left"><i class="fa fa-fax"></i> {{this.fax}}</div>
+        {% endif -%}
+    </td>
+    <td>
+        {% if this.company != '' -%}
+            <div class="company">{{this.company}}</div>
+        {% endif -%}
+    </td>
+    <td>
+        {% if this.email != '' -%}
+            <div class="email">{{this.email}}</div>
+        {% endif -%}
+    </td>
+</tr>

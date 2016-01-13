@@ -19,20 +19,29 @@
 <div class="header clearfix">
 	<div class="container">
         <div class="col-md-3"><div class="logo"><a href="{{site_domain}}" title="{{site_name}}">{{site_name}}</a></div></div>
-        <div class="col-md-9 header-text">
-        	<div class="phone pull-left">
-                <span class="hidden-xs">Toll Free: (800) 401–4277</span>
-                {% include "/_System/includes/template/login.inc" -%}
-                <a href="tel:1-800-401-4277" class="pull-right btn btn-primary hidden-sm hidden-md hidden-lg toggle-menu menu-right push-body"><i class="fa fa-phone"></i></a>
-                <a class="nav-mobile-control btn btn-primary pull-right hidden-sm hidden-md hidden-lg toggle-menu menu-right push-body"><i class="fa fa-bars"></i></a>
+        <div class="col-md-9">
+        	<div class="row">
+            	<div class="col-sm-4 hidden-xs">
+                	{module_contentholder name="Phone Number"}
+                    {module_contentholder name="Social Links"}
+                </div>
+                <div class="col-sm-4">
+                    {% assign searchID = "4425" -%}
+                    {% assign resultsPageID = "18679764" -%}
+                    {% include "/_System/includes/widgets/search.inc" -%}
+                </div>
+                <div class="col-sm-4">
+                	{% include "/_System/includes/template/login.inc" -%}
+                    <a href="tel:1-800-401-4277" class="pull-right btn btn-primary hidden-sm hidden-md hidden-lg toggle-menu menu-right push-body"><i class="fa fa-phone"></i></a>
+                    <a class="nav-mobile-control btn btn-primary pull-right hidden-sm hidden-md hidden-lg toggle-menu menu-right push-body"><i class="fa fa-bars"></i></a>
+                </div>
             </div>
         </div>
     </div>
-    <div class="navigation col-md-12 hidden-xs">
-        <div class="container navigation-inner main-nav clearfix">
-        	{% assign menu-type-value ="stripped" -%}
-           {% include "/_System/includes/template/menu.inc" -%}
-        </div>
+    <div class="container">
+        {% assign menu-type-value ="stripped" -%}
+        {% include "/_System/includes/template/menu.inc" -%}
     </div>
+        
 </div>
 {% if page_url == is_home %}{% else -%}<div class="page-header"></div>{% endif -%}

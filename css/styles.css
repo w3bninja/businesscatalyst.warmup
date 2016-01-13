@@ -79,7 +79,7 @@ table.webform td{padding:5px 2px;}
 
 .nav-mobile{overflow-x:hidden; background:#012d6b!important;}
 .nav-mobile li{float:none; display:block; width:100%;}
-.nav-mobile li a{margin:0!important; border-bottom:1px solid rgba(255, 255, 255, .1); border-radius:0;}
+.nav-mobile li a{margin:0!important; border-bottom:1px solid rgba(255, 255, 255, .1); border-radius:0; padding:1em; display:block;}
 .nav-mobile li a:hover{background:rgba(0, 0, 0, .3);}
 .nav-mobile li, .nav-mobile li ul{padding:0!important; margin:0!important;}
 .nav-mobile li ul li {background:rgba(0, 0, 0, .2);}
@@ -288,8 +288,8 @@ q q:after { content: '\2019'; }
 .navigation-bg{display:none;}
 h2{font-size:24px;}
 
-.banner{background-size:auto; width:100%; height:auto; padding:20px;}
-.banner-inner{padding:20px;}
+.banner{background-size:auto; width:100%; height:auto;}
+.banner-inner{}
 .banner-inner h1{font-size:24px;}
 .banner-inner h3{font-size:16px;}
 .slide{height:auto; min-height:100%;}
@@ -308,8 +308,8 @@ h2{font-size:24px;}
 .navigation ul{letter-spacing:1px!important; font-size:12px;}
 .nav-justified li{display:block!important; float:left; width:auto;}
 
-.banner{background-size:auto; width:100%; height:auto; padding:20px;}
-.banner-inner{padding:20px;}
+.banner{background-size:auto; width:100%; height:auto;}
+.banner-inner{}
 .slide{height:auto; min-height:100%;}
 .slide-inner{width:auto;}
 .slide-inner .text{width:auto;}
@@ -318,9 +318,9 @@ h2{font-size:24px;}
 .navigation ul{letter-spacing:1px!important; font-size:14px;}
 .nav-justified li{display:block!important; float:left; width:auto;}
 
-.banner{background-size:auto; width:100%; height:auto; padding:20px;}
-.banner-inner{padding:20px;}
-.slide{height:auto; min-height:100%;}
+.banner{background-size:auto; width:100%; height:auto;}
+.banner-inner{}
+.slide{height:auto; min-height:100%;padding:20px;}
 .slide-inner{width:auto;}
 .slide-inner .text{width:auto;}
 }

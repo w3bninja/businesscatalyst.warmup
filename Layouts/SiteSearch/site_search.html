@@ -1,1 +1,24 @@
-  <div class="search-result">   <h3>{tag_counter}. {tag_image} {tag_name}</h3>   <p>{tag_description}</p>  </div>  
+{% if type == "Blog" -%}
+    {module_data resource="blogposts" version="v3" fields="id,blogId,postUrl" skip="0" limit="10" order="id" collection="Blogs"}
+    {% for item in Blogs.items -%}
+    	{% if item.id == id -%}
+    		{% assign url = item.postUrl -%}
+        {% endif -%}
+    {% endfor -%}
+{% elseif type == "Pages" -%}
+    {module_data resource="pages" version="v3" fields="id,roleId,livePageId,pageUrl,name,displayFileName" skip="0" limit="10" order="id" collection="Pages"}
+    {% for item in Pages.items -%}
+    	{% if item.id == id -%}
+    		{% assign url = item.pageUrl -%}
+        {% endif -%}
+    {% endfor -%}
+{% endif -%}
+
+<div class="search-result">
+  <h3><a href="{{url}}">{{name}}</a></h3>
+  <p>{{description | strip_html | truncate:300 }}</p>
+</div>
+
+
+
+

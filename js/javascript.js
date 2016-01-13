@@ -110,7 +110,7 @@ jQuery(document).unbind().on('click', '.favoritelink', function(e) {
 
 // BOOTSTRAP FORMS
 	// Reset Layout
-	$('form[name*=catwebform]:not(".skip-form-reset")').each(function() {
+	$('.content form[name*=catwebform]:not(".skip-form-reset")').each(function() {
 		$(this).wrapAll($('<div class="content-form"/>'));
 	});
 	

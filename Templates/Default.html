@@ -8,7 +8,6 @@
 </head>
 <body class="{{page_slug}}">
 {% include "/_System/includes/template/header.inc" -%}
-{% include "/_System/includes/lib/breadcrumbs.inc" -%}
 {% if page_url == site_domain %}
 {% include "/_System/includes/template/home-header.inc" -%}
 <div class="content">
@@ -24,7 +23,7 @@
     <div class="container">
         <h2>Our Services</h2>
         <div class="row">
-            {module_webapps id="31767" filter="all" resultsPerPage="3" template="/Templates/ContentTemplates/sp_list_home.tpl"}
+            {module_webapps id="31767" filter="all" resultsPerPage="3" template="/_System/includes/template-content/sp_list_home.tpl"}
         </div>
     </div>
 </div>
