@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="styles.css" server="doriltoncapital.businesscatalyst.com//" local="130694648020000000" remote="130694648020000000" Dst="1" />
-<file name="webticker.css" server="doriltoncapital.businesscatalyst.com//" local="130692695550000000" remote="130692695550000000" Dst="1" />
-<file name="nav.css" server="doriltoncapital.businesscatalyst.com//" local="130694635870000000" remote="130694635870000000" Dst="1" />
-<file name="nav.css" server="aaronlandrynet.businesscatalyst.com" local="130694635870000000" remote="130786183680000000" Dst="2" />
-<file name="styles.css" server="aaronlandrynet.businesscatalyst.com" local="130788783526923344" remote="130788783490000000" Dst="2" />
-<file name="template.css" server="aaronlandrynet.businesscatalyst.com" local="130788802716463344" remote="130788794360000000" Dst="2" />
-<file name="webticker.css" server="aaronlandrynet.businesscatalyst.com" local="130692695550000000" remote="130786183690000000" Dst="2" />
-<file name="template.less" server="aaronlandrynet.businesscatalyst.com" local="130788802710893344" remote="130788802720000000" Dst="2" />
-<file name="nav.css" server="envoc.businesscatalyst.com//" local="130863102696629135" remote="130863138700000000" Dst="1" />
-<file name="styles.css" server="envoc.businesscatalyst.com//" local="130967690128160319" remote="130967689930000000" Dst="1" />
+<file name="bootstrap-datepicker.min.css" server="envoc.businesscatalyst.com//" local="130958961760000000" remote="130958961760000000" Dst="1" />
+<file name="jPushMenu.css" server="envoc.businesscatalyst.com//" local="130958961760000000" remote="130958961760000000" Dst="1" />
+<file name="nav.css" server="envoc.businesscatalyst.com//" local="130863138700000000" remote="130863138700000000" Dst="1" />
+<file name="responsive-tabs.css" server="envoc.businesscatalyst.com//" local="130958961770000000" remote="130958961770000000" Dst="1" />
+<file name="styles.css" server="envoc.businesscatalyst.com//" local="130967690150000000" remote="130967690150000000" Dst="1" />
 <file name="template.css" server="envoc.businesscatalyst.com//" local="130951251500000000" remote="130951251500000000" Dst="1" />
-<file name="template.less" server="envoc.businesscatalyst.com//" local="130904440176839040" remote="130904476190000000" Dst="1" />
-<file name="webticker.css" server="envoc.businesscatalyst.com//" local="130692695550000000" remote="130794878550000000" Dst="1" />
-<file name="bootstrap-datepicker.min.css" server="envoc.businesscatalyst.com//" local="130958957618131916" remote="130958961760000000" Dst="1" />
-<file name="jPushMenu.css" server="envoc.businesscatalyst.com//" local="130958960885641916" remote="130958961760000000" Dst="1" />
-<file name="responsive-tabs.css" server="envoc.businesscatalyst.com//" local="130958959063821916" remote="130958961770000000" Dst="1" />
+<file name="template.less" server="envoc.businesscatalyst.com//" local="130904476190000000" remote="130904476190000000" Dst="1" />
+<file name="webticker.css" server="envoc.businesscatalyst.com//" local="130794878550000000" remote="130794878550000000" Dst="1" />
 </dwsync>
