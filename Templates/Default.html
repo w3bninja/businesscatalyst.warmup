@@ -8,6 +8,8 @@
 </head>
 <body class="{{page_slug}}">
 {% include "/_System/includes/template/header.inc" -%}
+
+{% comment -%}HOME PAGE LAYOUT{% endcomment -%}
 {% if page_url == site_domain %}
 {% include "/_System/includes/template/home-header.inc" -%}
 <div class="content">
@@ -27,6 +29,7 @@
         </div>
     </div>
 </div>
+{% comment -%}INTERNAL PAGE LAYOUT{% endcomment -%}
 {% else -%}
 <div class="content">
     <div class="container">

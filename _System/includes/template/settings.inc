@@ -8,7 +8,9 @@
 {module_siteurl collection="domain" template=""}
 {module_pageaddress collection="pageaddress" template=""}
 {% assign page_slug = pageaddress.pageUrl | remove: domain.siteUrl | remove: 'https://' | remove: 'http://' | split: '/' | join: " " -%}
-
+{% if page_slug == "" -%}
+	{% assign page_slug = "home" -%}
+{% endif -%}
 
 
 {% assign site = "" -%}
