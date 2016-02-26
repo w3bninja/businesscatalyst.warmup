@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="footer.inc" server="envoc.businesscatalyst.com//" local="130967634630000000" remote="130967634630000000" Dst="1" />
-<file name="head.inc" server="envoc.businesscatalyst.com//" local="130958961560000000" remote="130958961560000000" Dst="1" />
-<file name="header.inc" server="envoc.businesscatalyst.com//" local="130967648310000000" remote="130967648310000000" Dst="1" />
-<file name="home-header.inc" server="envoc.businesscatalyst.com//" local="130973431582729148" remote="130973429060000000" Dst="1" />
-<file name="login.inc" server="envoc.businesscatalyst.com//" local="130960597220000000" remote="130960597220000000" Dst="1" />
-<file name="menu.inc" server="envoc.businesscatalyst.com//" local="130906108120000000" remote="130906108120000000" Dst="1" />
-<file name="settings.inc" server="envoc.businesscatalyst.com//" local="130973437248965715" remote="130959899730000000" Dst="1" />
-<file name="home-header.tpl" server="envoc.businesscatalyst.com//" local="130973427786789592" remote="130973427790000000" Dst="1" />
+<file name="footer.inc" server="envoc.businesscatalyst.com" local="130967634630000000" remote="130967634630000000" Dst="1" />
+<file name="head.inc" server="envoc.businesscatalyst.com" local="130993680960000000" remote="130993680960000000" Dst="1" />
+<file name="header.inc" server="envoc.businesscatalyst.com" local="130987496110000000" remote="130987496110000000" Dst="1" />
+<file name="home-header.inc" server="envoc.businesscatalyst.com" local="130973431580000000" remote="130973431580000000" Dst="1" />
+<file name="login.inc" server="envoc.businesscatalyst.com" local="130987550450000000" remote="130987550450000000" Dst="1" />
+<file name="menu.inc" server="envoc.businesscatalyst.com" local="130987545520000000" remote="130987545520000000" Dst="1" />
+<file name="settings.inc" server="envoc.businesscatalyst.com" local="130973437250000000" remote="130973437250000000" Dst="1" />
 </dwsync>

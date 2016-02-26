@@ -1,5 +1,6 @@
 {%comment-%}
 {% assign app_id = "WEBAPP ID" -%}
+{% assign groupClass = "GROUP CLASSIFICATION ID" -%}
 {% assign groupType = "VALUE TO GROUP BY" -%}
 {% assign groupTitle = "h2" -%}
 {% capture groupHead %}
@@ -17,11 +18,15 @@
 </table>
 {% endcapture -%}
 {% assign groupTemplate = "" -%}
-{% assign groupReverse = "reversed" -%}
+{% assign groupReverse = "true" -%}
 {% include "/_System/includes/lib/web-apps/grouping.inc" -%}
 {%endcomment-%}
 
-{module_webapps render="collection" id="{{app_id}}" filter="all" collection="items-to-group" template=""}
+{% if groupClass == '' -%}
+	{module_webapps render="collection" id="{{app_id}}" filter="all" collection="items-to-group" template=""}
+{% else -%}
+	{module_webapps render="collection" id="{{app_id}}" filter="classified" itemId="{{groupClass}}" collection="items-to-group" template=""}
+{% endif -%}
 
 {%comment-%} GROUP BY {%endcomment-%}
 

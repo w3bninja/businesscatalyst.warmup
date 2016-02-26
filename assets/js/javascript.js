@@ -40,13 +40,7 @@ $(function () {
 		$('.areas .controls').hide();
 	}
 	
-	//responsive Tabs 
-	//$('.tab-label').wrap($('<li class="tab-li"></li>'));
-//	$('.tab-li').wrapAll($('<ul class="tab-nav"></ul>'));
-//	$('.tab-description').wrapAll($('<div class="responsiveTabs"></div>'));
-//	$('.responsiveTabs').prepend($('.tab-nav'));
-	
-	
+	//responsive Tabs
 	$('.responsiveTabs').responsiveTabs({
 		rotate: false,
 		startCollapsed:	'accordion',
@@ -59,16 +53,20 @@ $(function () {
 	// FAQ Control
 	$('.faq-nav').appendTo($('.faq-control'));
 	
+	
+	
+	
+	
 	//responsive photogallery
 	jQuery(".photogalleryTable").each(function(index,elem){
 		var gallery = jQuery(elem),
-			bootstrapGallery = jQuery('<div class="gallery row"></div>');
-	 
+		bootstrapGallery = jQuery('<div class="custom-gallery row"></div>');
+		
 		gallery.find(".photogalleryItem > a").each(function(index,elem){
 			var galleryItem = jQuery(elem),
-				image = galleryItem.find("img"),
-				imageSrc = image.attr("src").split("?"),
-				bootstrapGalleryItem = jQuery('<div class="col-sm-3 gallery-item" />');
+			image = galleryItem.find("img"),
+			imageSrc = image.attr("src").split("?"),
+			bootstrapGalleryItem = jQuery('<div class="col-sm-3 gallery-item" />');
 	 
 			image.prop("src",imageSrc[0] + "?Action=thumbnail&Width=400&Height=200&algorithm=fill_proportional");
 			image.addClass("thumbnail img-responsive");
@@ -76,39 +74,46 @@ $(function () {
 			bootstrapGalleryItem.append(galleryItem);
 			bootstrapGallery.append(bootstrapGalleryItem);
 		});
-	 
+		
 		gallery.after(bootstrapGallery);
+		// Add Pager
+		$('.photogalleryNavigation a').wrap('<li></li>');
+		$('.photogalleryNavigation li').wrapAll('<ul class="pager"/>');
+		$('.photogalleryNavigation ul').appendTo('.custom-gallery');
+		$('.custom-gallery .pager li').first().addClass('previous');
+		$('.custom-gallery .pager li').last().addClass('next');
+			
 		gallery.remove();
 	});
-	$('.gallery a').prop( "onclick", null ).removeAttr('onclick').removeAttr('rel').addClass('thumb fancy');
+	$('.gallery-item a').prop( "onclick", null ).removeAttr('onclick').removeAttr('rel').addClass('thumb fancy').attr('rel', 'group');
 	
 	
 
 
-if ($('.dropdown-toggle').length > 0) {
-	$('.dropdown-toggle').dropdown();   
-}
-
-// FAVORITE INTERACTION //
-jQuery(document).unbind().on('click', '.favoritelink', function(e) {
-	e.preventDefault();
-	var $el = jQuery(this);
-	jQuery.ajax({
-		url: $el.attr('href'),
-		cache: false
-	});
-	if ($el.hasClass('fav-add')) {
-		$el.attr('href', $el.attr('href').replace('FavoriteProcess.aspx?', 'FavoriteProcess.aspx?A=Remove&'));
-	} else {
-		$el.attr('href', $el.attr('href').replace('FavoriteProcess.aspx?A=Remove&', 'FavoriteProcess.aspx?'));
+	if ($('.dropdown-toggle').length > 0) {
+		$('.dropdown-toggle').dropdown();   
 	}
-	$el.toggleClass('fav-add').toggleClass('fav-remove');
-	$el.find('i').toggleClass('fa-heart').toggleClass('fa-heart-o');
-});
+
+	// FAVORITE INTERACTION //
+	jQuery(document).unbind().on('click', '.favoritelink', function(e) {
+		e.preventDefault();
+		var $el = jQuery(this);
+		jQuery.ajax({
+			url: $el.attr('href'),
+			cache: false
+		});
+		if ($el.hasClass('fav-add')) {
+			$el.attr('href', $el.attr('href').replace('FavoriteProcess.aspx?', 'FavoriteProcess.aspx?A=Remove&'));
+		} else {
+			$el.attr('href', $el.attr('href').replace('FavoriteProcess.aspx?A=Remove&', 'FavoriteProcess.aspx?'));
+		}
+		$el.toggleClass('fav-add').toggleClass('fav-remove');
+		$el.find('i').toggleClass('fa-heart').toggleClass('fa-heart-o');
+	});
 
 	
 
-// BOOTSTRAP FORMS
+	// BOOTSTRAP FORMS
 	// Reset Layout
 	$('.content form[name*=catwebform]:not(".skip-form-reset")').each(function() {
 		$(this).wrapAll($('<div class="content-form"/>'));
@@ -126,7 +131,6 @@ jQuery(document).unbind().on('click', '.favoritelink', function(e) {
 		);
 	});
 	contentForm.find('input[type=text], textarea, select').addClass('form-control');
-	
 	contentForm.find('input[type=checkbox]').each(function(){
 		$(this).parent().addClass('hide').addClass('form-label');
 		$(this).prev("label").appendTo($(this).parent().parent());

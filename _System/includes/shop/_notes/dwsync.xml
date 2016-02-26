@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="cart.inc" server="lakeshorestudios.businesscatalyst.com//" local="130909662765138362" remote="130909661070000000" Dst="1" />
-<file name="product-page.inc" server="lakeshorestudios.businesscatalyst.com//" local="130909550269986671" remote="130907225640000000" Dst="1" />
-<file name="cart.inc" server="envoc.businesscatalyst.com//" local="130912272740000000" remote="130912272740000000" Dst="1" />
-<file name="product-page.inc" server="envoc.businesscatalyst.com//" local="130911498200000000" remote="130911498200000000" Dst="1" />
-<file name="options-layout.inc" server="envoc.businesscatalyst.com//" local="130973424043495300" remote="130973424050000000" Dst="1" />
+<file name="browse-panel.inc" server="envoc.businesscatalyst.com" local="130991097510000000" remote="130991097510000000" Dst="1" />
+<file name="cart.inc" server="envoc.businesscatalyst.com" local="130912272740000000" remote="130912272740000000" Dst="1" />
+<file name="cart-summary.inc" server="envoc.businesscatalyst.com" local="130991799230000000" remote="130991799230000000" Dst="1" />
+<file name="catalog-list.inc" server="envoc.businesscatalyst.com" local="130987675270000000" remote="130987675270000000" Dst="1" />
+<file name="custom-options.inc" server="envoc.businesscatalyst.com" local="130987492340000000" remote="130987492340000000" Dst="1" />
+<file name="options-layout.inc" server="envoc.businesscatalyst.com" local="130973424050000000" remote="130973424050000000" Dst="1" />
+<file name="product-page.inc" server="envoc.businesscatalyst.com" local="130911498200000000" remote="130911498200000000" Dst="1" />
 </dwsync>

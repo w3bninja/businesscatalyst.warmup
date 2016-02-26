@@ -43,3 +43,9 @@
     {tag_pagination}</div>
 	</div>
 {module_webapps id="31771" filter="classified" itemId="699573"} 
+{% include "/_System/includes/shop/browse-panel.inc" -%}
+{% if panelShow == true -%}
+<div class="sidebar-section">
+{tag_browsepanel,true,false,true}
+</div>
+{% endif -%}

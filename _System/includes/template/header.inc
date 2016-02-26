@@ -32,6 +32,7 @@
                 </div>
                 <div class="col-sm-4">
                 	{% include "/_System/includes/template/login.inc" -%}
+					{% include "/_System/includes/shop/cart-summary.inc" -%}
                     <a href="tel:1-800-401-4277" class="pull-right btn btn-primary hidden-sm hidden-md hidden-lg toggle-menu menu-right push-body"><i class="fa fa-phone"></i></a>
                     <a class="nav-mobile-control btn btn-primary pull-right hidden-sm hidden-md hidden-lg toggle-menu menu-right push-body"><i class="fa fa-bars"></i></a>
                 </div>

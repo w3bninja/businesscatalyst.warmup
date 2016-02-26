@@ -1,33 +1,33 @@
+{% comment -%}
+{% assign calendarAppID = "" -%}
+{% assign calendarClassID = "" -%}
+{% include "/_System/includes/widgets/calendar/calendar.inc" -%}
+{% endcomment -%}
+
+{% assign calendarAppID = calendarAppID | default: "" -%}
+{% assign calendarClassID = calendarClassID | default: "" -%}
+
 {% capture pageID %}{module_oid}{% endcapture %}
-
 {% capture output %}
-	{% if pageID contains '16696467' %}
-		{% comment %}
-			/schedule-events
-			{module_contentholder,4116979}
-			{module_contentholder name="Calendar Full"}
-		{% endcomment %}
-
-		{module_webapps render="item" id="30633" filter="all" template="/Layouts/WebApps/Events/list_backup_new.html"}
-	{% elsif pageID contains '16828418' %}	
-		{% comment %}
-			/schedules/schedule
-			{module_contentholder name="Calendar Schedule"}
-		{% endcomment %}
-
-		{module_webapps render="item" id="30633" filter="classified" itemId="645276" template="/Layouts/WebApps/Events/list_backup_new.html"}
-	{% elsif pageID contains '16828410' %}
-		{% comment %}
-			/schedules/events-1
-			{module_contentholder name="Calendar Events"}
-		{% endcomment %}
-
-		{module_webapps render="item" id="30633" filter="classified" itemId="645277" template="/Layouts/WebApps/Events/list_backup_new.html"}
-	{% else %}
-		No calendar IDs found
-	{% endif %}
+	{% if calendarClassID != '' -%}
+	classified
+		{module_webapps render="item" id="{{calendarAppID}}" filter="classified" itemId="{{calendarClassID}}" template="/_System/includes/widgets/calendar/json.inc"}
+	{% else -%}
+	not classified
+		{module_webapps render="item" id="{{calendarAppID}}" filter="all" template="/_System/includes/widgets/calendar/json.inc"}
+	{% endif -%}
 {% endcapture %}
 
+{% assign output = output | remove: "  " | strip -%}
+
+
+{% if output == '' -%}
+No Calendar Events Available
+{% else -%}
+<link href='//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.css' rel='stylesheet' />
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.js"></script>
 <script>
 	$(document).ready(function() {
 		$('#calendar').fullCalendar({
@@ -74,9 +74,25 @@
 				}	
 			},
 			events: [
-				{{output | remove: "  " | strip }}
+				{{output}}
 			]
 		});
+		
+		$(window).resize(function() {
+			setTimeout(function() {fullCalendarResizer();}, 0);
+		});
+		$(window).trigger('resize');
+	
+		function fullCalendarResizer() {
+			if ($(window).width() < 514){
+				$('#calendar').fullCalendar('changeView', 'agendaDay');
+			} else {
+				$('#calendar').fullCalendar('changeView', 'month');
+			}
+		}
+		
+		
 	});
 </script>
 <div id="calendar"></div>
+{% endif -%}

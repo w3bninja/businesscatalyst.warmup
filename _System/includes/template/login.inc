@@ -1,3 +1,12 @@
+{% capture page_url -%}{module_pageaddress}{% endcapture -%}
+{% if page_url contains "/Default.aspx?PageID=17769817" -%}
+{module_referreraddress collection="refer" template=""}
+{% capture referrer -%}{% for item in refer.referrer -%}{{item}}{% endfor -%}{% endcapture -%}
+<script>
+window.location.replace("{{referrer}}");
+</script>
+{% endif -%}
+
 {% if isloggedin == 1 -%}
 	
     <div class="dropdown">
