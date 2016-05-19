@@ -1,3 +1,4 @@
+{% assign product_large = "true" -%}
 <div class="hidden">{tag_poplets collection="poplets" template=""}</div>
 <script type="text/javascript">
          function swap(image) {
@@ -14,7 +15,7 @@
               {% elseif smallImage != '' -%}
                 <div class="image"><a href="{{largeImageUrl}}?Action=thumbnail&Width=1000&Height=400&algorithm=fill_proportional" rel="poplets" onclick="swap(this); return false;"><img src="{{largeImageUrl}}?Action=thumbnail&Width=100&Height=100&algorithm=fill_proportional" width="100%" class="img-responsive"></a></div>
               {% else -%}
-              	<div class="image"><img src="/img/x.png?Action=thumbnail&Width=200&Height=200&algorithm=fill_proportional" width="100%" class="img-responsive"></div>
+              	<div class="image"><img src="/assets/img/x.png?Action=thumbnail&Width=200&Height=200&algorithm=fill_proportional" width="100%" class="img-responsive"></div>
               {% endif -%}
         	
             {% for item in poplets -%}

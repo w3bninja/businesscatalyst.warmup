@@ -3,6 +3,8 @@
 // Firm: Envoc (envoc.com)
 
 $(function () {
+	$('#demo div').inview();
+	
 	window.location.origin || (window.location.origin = window.location.protocol + '//' + window.location.host);
 	window.app = {};
 	var url = app.url = (location.href); //Cached for heavy general use
@@ -50,44 +52,139 @@ $(function () {
 		scrollToAccordion: true
 	});
 	
+	
+	//Masonry Grid
+	var $grid = $('.grid').imagesLoaded( function() {
+	  // init Masonry after all images have loaded
+	  $grid.masonry({
+		itemSelector: ".item"
+	  });
+	});
+	//Auto Adust Height Grid
+	var $gridbox = $('.grid-box').imagesLoaded( function() {
+	  $gridbox.each(function(){  
+			 var $columns = $('.item',this);
+			 var maxHeight = Math.max.apply(Math, $columns.map(function(){
+				 return $(this).height();
+			 }).get());
+			 $columns.height(maxHeight);
+		});
+	});
+	
+	
 	// FAQ Control
 	$('.faq-nav').appendTo($('.faq-control'));
 	
 	
+	// Pagination
+	jQuery.fn.cleanWhitespace = function() {
+		textNodes = this.contents().filter(
+			function() { return (this.nodeType == 3 && !/\S/.test(this.nodeValue)); })
+			.remove();
+		return this;
+	}
+		
+	$('.pagination').cleanWhitespace();
 	
+	//WEBAPPS
+	$(function() {
+		$('.pag-current').contents().filter(
+			function() {
+				return this.nodeType == Node.TEXT_NODE;
+			}
+		).wrap("<span>").text()
+	});
+	$('.pag-current').addClass('active');
+	
+	//STORE
+	$(function() {
+		$('.pagination').contents().filter(
+			function() {
+				return this.nodeType == Node.TEXT_NODE;
+			}
+		).wrap("<li class='active'><a href='#'><span>").text()
+	});
+	$('.paginate a').wrap('<li/>');
+	$(".paginate li a:contains('Prev')").parent().prependTo('.pagination');
+	$(".paginate li a:contains('Next')").parent().appendTo('.pagination');
+	
+	//SEARCH RESULTS
+	$('#searchnext, #searchprev').wrap('<li></li>');
+	$('#searchnext, #searchprev').parent().wrapAll('<ul class="pager"/>');
+	$('#searchprev').parent().addClass('previous');
+	$('#searchnext').parent().addClass('next');
+	
+	
+	// GRID
+	if ($('.cards').length < 0) { 
+		function grid() {
+			minigrid({
+			  container: '.cards',
+			  item: '.card',
+			  gutter: 6
+			});
+		  }
+		
+		  window.addEventListener('resize', function(){
+			grid();
+		  });
+		
+		  grid();
+	}
+
 	
 	
 	//responsive photogallery
-	jQuery(".photogalleryTable").each(function(index,elem){
-		var gallery = jQuery(elem),
-		bootstrapGallery = jQuery('<div class="custom-gallery row"></div>');
-		
-		gallery.find(".photogalleryItem > a").each(function(index,elem){
-			var galleryItem = jQuery(elem),
-			image = galleryItem.find("img"),
-			imageSrc = image.attr("src").split("?"),
-			bootstrapGalleryItem = jQuery('<div class="col-sm-3 gallery-item" />');
-	 
-			image.prop("src",imageSrc[0] + "?Action=thumbnail&Width=400&Height=200&algorithm=fill_proportional");
-			image.addClass("thumbnail img-responsive");
-	 
-			bootstrapGalleryItem.append(galleryItem);
-			bootstrapGallery.append(bootstrapGalleryItem);
-		});
-		
-		gallery.after(bootstrapGallery);
-		// Add Pager
-		$('.photogalleryNavigation a').wrap('<li></li>');
-		$('.photogalleryNavigation li').wrapAll('<ul class="pager"/>');
-		$('.photogalleryNavigation ul').appendTo('.custom-gallery');
-		$('.custom-gallery .pager li').first().addClass('previous');
-		$('.custom-gallery .pager li').last().addClass('next');
+	
+		jQuery(".photogalleryTable").each(function(index,elem){
+			var gallery = jQuery(elem),
+			bootstrapGallery = jQuery('<div class="custom-gallery row"></div>');
 			
-		gallery.remove();
-	});
-	$('.gallery-item a').prop( "onclick", null ).removeAttr('onclick').removeAttr('rel').addClass('thumb fancy').attr('rel', 'group');
-	
-	
+			gallery.find(".photogalleryItem > a").each(function(index,elem){
+				var galleryItem = jQuery(elem),
+				image = galleryItem.find("img"),
+				imageSrc = image.attr("src").split("?"),
+				bootstrapGalleryItem = jQuery('<div class="col-sm-3 gallery-item" />');
+				
+				galleryItem.prop("href",imageSrc[0] + "?Action=thumbnail&Width=1200&Height=800&algorithm=fill_proportional");
+				image.prop("src",imageSrc[0] + "?Action=thumbnail&Width=400&Height=300&algorithm=fill_proportional");
+				image.addClass("thumbnail img-responsive");
+		 
+				bootstrapGalleryItem.append(galleryItem);
+				bootstrapGallery.append(bootstrapGalleryItem);
+			});
+			
+			gallery.after(bootstrapGallery);
+			// Add Pager
+			$('.photogalleryNavigation a').wrap('<li></li>');
+			$('.photogalleryNavigation li').wrapAll('<ul class="pager"/>');
+			$('.photogalleryNavigation ul').appendTo('.custom-gallery');
+			$('.custom-gallery .pager li').first().addClass('previous');
+			$('.custom-gallery .pager li').last().addClass('next');
+				
+			gallery.remove();
+		});
+		//Standard Gallery
+		$('.gallery-item a').prop( "onclick", null ).removeAttr('onclick').removeAttr('rel').addClass('thumb fancy').attr('rel', 'group');
+		
+		//Advanced Gallery
+		$('.gallery-item').first().clone().insertBefore('.custom-gallery').addClass('main');
+		$('.custom-gallery .gallery-item').removeClass('col-sm-3').addClass('col-md-6').wrapAll('<div class="col-sm-3"/>');
+		$('.gallery-item.main').removeClass('col-sm-3').wrapAll('<div class="col-sm-9"/>');
+		$('.custom-gallery .gallery-item a').removeClass('fancy');
+		
+		var s = $('.gallery-item.main img').attr("src");
+		if(typeof s !== 'undefined'){
+			s = s.substring(0, s.indexOf('?'));
+		}
+		$('.gallery-item.main img').prop("src",s + "?Action=thumbnail&Width=1200&Height=800&algorithm=fill_proportional");
+		
+		
+		$('.custom-gallery .gallery-item a').click(function(e){
+			e.preventDefault();
+			var newSource = $(this).attr('href');
+			$('.gallery-item.main img').prop("src", newSource);
+		});
 
 
 	if ($('.dropdown-toggle').length > 0) {
@@ -168,6 +265,29 @@ $(function () {
 		});	
 	}
 	
+	// Dynamic Form Action
+  //  contentForm.find('form').attr('action', function(i, value) {
+//		//facility = facility.replace('/', '%2f');
+//        return value + "&CID=0&SendInvoice=true";
+//    });
+	
+	
+	// Replace all '.worldsecuresystems.com' links across the site
+	
+	if (window.location.href.indexOf('.worldsecuresystems.com') > -1) {
+		$("a").each(function() {
+			var linkURL = $(this).attr('href');
+			if (linkURL === undefined) {
+				return true;
+			} else if (linkURL === '#login'){
+				var newURL = linkURL;
+				$(this).attr('href', newURL);
+			} else {
+				var newURL = "http://lakeshorestudiosllc.com" + linkURL;
+				$(this).attr('href', newURL);
+			}
+		});
+	}
 	
 	
 });

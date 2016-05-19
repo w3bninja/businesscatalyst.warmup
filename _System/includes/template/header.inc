@@ -40,8 +40,13 @@
         </div>
     </div>
     <div class="container">
-        {% assign menu-type-value ="stripped" -%}
-        {% include "/_System/includes/template/menu.inc" -%}
+        {% assign menu-sub-only = "false" -%}
+		{% assign showMenuParentTitle = "false" -%}
+		{% assign menu-type-value ="stripped" -%}
+		{% assign menuCustom = "false" -%}
+		{% assign menu_id = "1931027" -%}
+		{% assign menuClasses = "nav navbar-default nav-justified" -%}
+		{% include "/_System/includes/template/menu.inc" -%}
     </div>
         
 </div>

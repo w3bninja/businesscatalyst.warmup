@@ -12,6 +12,7 @@
 
 <link href="/assets/css/template.css" rel="stylesheet">
 
+
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 <!-- ADD JPUSHMENU -->
@@ -43,5 +44,29 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="/assets/js/dropdown.js"></script>
 
+<!-- ANIMATIONS -->
+<script src="/assets/js/jquery.inview.js"></script>
+
+<!-- GRID -->
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.1.5/masonry.pkgd.min.js"></script>
+<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+
 
 <script type="text/javascript" src="/assets/js/javascript.js"></script>
+
+{% if page_url contains "ZoneProcess.aspx" -%}
+	{module_referreraddress collection="refer" template=""}
+	{% capture referrer -%}{% for item in refer.referrer -%}{{item}}{% endfor -%}{% endcapture -%}
+	<script>
+		var referrer = "{{referrer}}";
+		window.location = referrer + "?loginFailed=true";
+	</script>
+{% endif -%}
+
+{% if page_url contains "loginFailed" -%}
+	<script>	
+		$(document).ready(function() {	
+			$('.btn-login').trigger('click');
+		});
+	</script>
+{% endif -%}

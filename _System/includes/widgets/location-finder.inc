@@ -6,7 +6,6 @@
     {module_webappsmap id="{{location_id}}" filter="all"}
 {% endif -%}
 
-
 <form name="catcustomcontentform62354" method="post" onsubmit="return checkWholeForm62354(this)" action="/Default.aspx?CCID={{location_id}}&amp;FID=533576&amp;ExcludeBoolFalse=True&amp;PageID={module_oid}">
 <div class="row">
 	<div class="col-sm-3">

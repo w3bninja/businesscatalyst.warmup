@@ -8,12 +8,11 @@
   <div class="body clear">
   	<div class="row">
     	<div class="col-md-12">
-        <h2>{module_pagename}</h2>
+
         
         {% if catalog.items == null %}
         {% else -%}
         	<div class="catalog-levels">
-                <div class="row">
                 {% for item in catalog.items -%}
                     <div class="col-xs-3 catalog-list">
                         <a href="{{item.url}}">
@@ -26,15 +25,62 @@
                         </a>
                     </div>
                 {% endfor -%}
-                </div>
             </div>
        {% endif -%}
-       </div>
        
     </div>
     <div class="col-md-12">
         <div class="row">
-            {tag_productlist,4,,10,,true,true}
+            {tag_productlist,4,,20,,true,true}
+            {% comment -%} 
+            {tag_productlist template="" collection="products"}
+            <pre>{{products | json}}</pre>
+            {% if products.items -%}
+                <div class="jumbotron">
+                    <h2>{module_pagename}</h2>
+                    {{description}}
+                </div>
+            {% else -%}
+                <h2>{module_pagename}</h2>
+            {% endif -%}
+            {% for product in products.items -%}
+            
+            
+            	<div class="col-sm-4">
+                    <div class="shop-product-small">
+                    <a href="{{product.url}}">
+                          {% if product.smallImage != '' -%}
+                            <div class="image"><img src="{{product.smallImage}}?Action=thumbnail&Width=200&Height=200&algorithm=fill_proportional" width="100%" class="img-responsive"></div>
+                          {% elseif product.largeImage != '' -%}
+                            <div class="image"><img src="{{product.smallImage}}?Action=thumbnail&Width=200&Height=200&algorithm=fill_proportional" width="100%" class="img-responsive"></div>
+                          {% else -%}
+                          <div class="image"><img src="/assets/img/x.png?Action=thumbnail&Width=200&Height=200&algorithm=fill_proportional" width="100%" class="img-responsive"></div>
+                          {% endif -%}
+                          </a>
+                          <h4>
+                            <a href="{{product.url}}">{{product.name}}</a>
+                            {% capture isloggedin -%}{module_isloggedin}{% endcapture -%}
+                            
+                                {tag_addtofavorites,, collection="fav" template=""}
+                               {% if isloggedin == 1 -%} 
+                                  {% if fav.isFavorite == "false" -%}
+                                      <a href="{{fav.addUrl}}" class="favoritelink fav fav-add fav{{product.id}}"><i class="fa fa-heart-o"></i></a>
+                                  {% else -%}
+                                    <a href="{{fav.removeUrl}}" class="favoritelink fav fav-remove fav{{product.id}}"><i class="fa fa-heart"></i></a>
+                                  {% endif -%}
+                              {% else -%}
+                                <a href="{{fav.addUrl}}" class="fav fav{{product.id}}"><i class="fa fa-heart-o"></i></a>
+                              {% endif -%}
+                          </h4>
+                          <strong class="price">{{salePrice | default: "Price Unavailable" }}</strong>
+                      
+                      <button class="btn btn-primary" onclick="AddToCart({{product.catalogId}},{{product.id}},'',4,'','',false);return false;">Add to Cart</button>
+                    </div>
+                </div>
+            
+            
+            {% endfor -%}
+            {% endcomment -%}
         </div>
     </div>
   </div>

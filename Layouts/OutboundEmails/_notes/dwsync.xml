@@ -19,4 +19,5 @@
 <file name="WorkflowReminder.html" server="envoc.businesscatalyst.com" local="130911498510000000" remote="130911498510000000" Dst="1" />
 <file name="WorkflowEscalation.html" server="envoc.businesscatalyst.com" local="130911498500000000" remote="130911498500000000" Dst="1" />
 <file name="WorkflowRejection.html" server="envoc.businesscatalyst.com" local="130911498510000000" remote="130911498510000000" Dst="1" />
+<file name="test-autoresponder.tpl" server="envoc.businesscatalyst.com" local="131032198200000000" remote="131032198200000000" Dst="2" />
 </dwsync>

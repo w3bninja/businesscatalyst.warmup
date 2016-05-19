@@ -1,15 +1,24 @@
 {% if type == "Blog" -%}
-    {module_data resource="blogposts" version="v3" fields="id,blogId,postUrl" skip="0" limit="10" order="id" collection="Blogs"}
+    {module_data resource="blogposts" version="v3" fields="id,blogId,postUrl" skip="0" limit="100" order="id" collection="Blogs"}
     {% for item in Blogs.items -%}
     	{% if item.id == id -%}
+        	{% assign visibility = "" -%}
     		{% assign url = item.postUrl -%}
         {% endif -%}
     {% endfor -%}
 {% elseif type == "Pages" -%}
-    {module_data resource="pages" version="v3" fields="id,roleId,livePageId,pageUrl,name,displayFileName" skip="0" limit="10" order="id" collection="Pages"}
-    {% for item in Pages.items -%}
+    {module_data resource="pages" version="v3" fields="id,roleId,livePageId,pageUrl,name,displayFileName" skip="0" limit="100" order="id" collection="Pages"}
+       {% for item in Pages.items -%}
     	{% if item.id == id -%}
+        	{% assign visibility = "" -%}
     		{% assign url = item.pageUrl -%}
+        {% endif -%}
+    {% endfor -%}
+{% elseif type == "FAQ" -%}
+    {module_data resource="faqs" version="v3" fields="id,roleId,faqIdShadow" skip="0" limit="100" order="id" collection="FAQ"}
+       {% for item in FAQ.items -%}
+    	{% if item.id == id -%}
+    		{% assign url = "item.pageUrl" -%}
         {% endif -%}
     {% endfor -%}
 {% endif -%}

@@ -14,4 +14,5 @@
 <file name="sp_list.tpl" server="envoc.businesscatalyst.com" local="130969975790000000" remote="130969975790000000" Dst="1" />
 <file name="sp_list_home.tpl" server="envoc.businesscatalyst.com" local="130967626410000000" remote="130967626410000000" Dst="1" />
 <file name="user-list.tpl" server="envoc.businesscatalyst.com" local="130965079020000000" remote="130965079020000000" Dst="1" />
+<file name="cart-summary.tpl" server="envoc.businesscatalyst.com" local="131061255130000000" remote="131061255130000000" Dst="2" />
 </dwsync>

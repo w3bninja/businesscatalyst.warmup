@@ -13,14 +13,17 @@
 </div>
 <div class="meta">
 	{module_data resource="blogposts" version="v3" fields="tag" subresource="tags" resourceId="{tag_blogpostid}" skip="0" limit="10" order="objectType" collection="postTags"}
-    <div class="tags">
-        Tags: 
-        <ul> 
-            {% for item in postTags.items -%}
-                <li><a href="/blog/retreivepostsbytag.html?tagid={{item.tag.id}}">{{item.tag.tagName}}</a></li>
-            {% endfor -%}
-        </ul>
-    </div>
+        <div class="tags">
+            Tags: 
+            
+            {module_data resource="blogposts" version="v3" fields="blog" resourceId="{tag_blogpostid}" skip="0" limit="10" order="id" collection="blogInfo"}
+            <ul> 
+                {% for item in postTags.items -%}
+                    {% assign urlValue = url | split:'/' | join:',' -%}
+                    <li><a href="{{blogInfo.blog.blogUrl}}/tag/{{item.tag.tagName | split: ' ' | join: '_'}}/">{{item.tag.tagName}}</a></li>
+                {% endfor -%}
+            </ul>
+        </div>
 </div>
 
 <div class="blog-post">

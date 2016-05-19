@@ -1,3 +1,11 @@
+{% comment -%}
+{% assign menu-sub-only = "true" -%}
+{% assign showMenuParentTitle = "true" -%}
+{% assign menu-type-value ="accordion" -%}
+{% assign menuCustom = "true" -%}
+{% include "/_System/includes/template/menu.inc" -%}
+{% endcomment -%}
+
 {% comment -%}MENU{% endcomment -%}
 {% assign menu-type = menu-type | default: "stripped" -%}
 {% assign menu-type-value = menu-type-value | default: "stripped" -%}

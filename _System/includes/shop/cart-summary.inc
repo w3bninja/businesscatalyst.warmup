@@ -1,3 +1,5 @@
+{module_shoppingcartsummary template="/_System/includes/template-content/cart-summary.tpl"}
+{% comment -%}
 {module_shoppingcartsummary,horizontal collection="cartSummary" template=""}
 {% if cartSummary.itemCount > 0 -%}
 <div class="dropdown">
@@ -26,3 +28,4 @@
 {% else -%}
 <a href="{{cartSummary.cartUrl}}" class="btn btn-default"><i class="fa fa-shopping-cart"></i></a>
 {% endif -%}
+{% endcomment -%}
