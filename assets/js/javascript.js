@@ -57,7 +57,7 @@ $(function () {
 	var $grid = $('.grid').imagesLoaded( function() {
 	  // init Masonry after all images have loaded
 	  $grid.masonry({
-		itemSelector: ".item"
+		itemSelector: '.item'
 	  });
 	});
 	//Auto Adust Height Grid
@@ -113,24 +113,7 @@ $(function () {
 	$('#searchnext, #searchprev').parent().wrapAll('<ul class="pager"/>');
 	$('#searchprev').parent().addClass('previous');
 	$('#searchnext').parent().addClass('next');
-	
-	
-	// GRID
-	if ($('.cards').length < 0) { 
-		function grid() {
-			minigrid({
-			  container: '.cards',
-			  item: '.card',
-			  gutter: 6
-			});
-		  }
-		
-		  window.addEventListener('resize', function(){
-			grid();
-		  });
-		
-		  grid();
-	}
+
 
 	
 	
@@ -210,7 +193,15 @@ $(function () {
 
 	
 
+	//BLOGS
+	$('.blogs .sidebar-section .blog-controls ul').addClass('list-group');
+	$('.blogs .sidebar-section .blog-controls ul li').addClass('list-group-item');
+
+
 	// BOOTSTRAP FORMS
+	//General Form style overrides
+	$('input:not([type=submit]), textarea, select').addClass('form-control');
+	$('input[type=submit]').addClass('btn btn-primary');
 	// Reset Layout
 	$('.content form[name*=catwebform]:not(".skip-form-reset")').each(function() {
 		$(this).wrapAll($('<div class="content-form"/>'));

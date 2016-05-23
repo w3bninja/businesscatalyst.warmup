@@ -1,19 +1,27 @@
 <div class="desciption">{tag_blogdescription}</div>
 <div class="posts">{tag_postlist}
-      
-      <p class="page-nav">{tag_previouspage} {tag_pagination} {tag_nextpage}</p>
-    </div>
-
-
+  <p class="page-nav">{tag_previouspage} {tag_pagination} {tag_nextpage}</p>
+</div>
 <div class="sidebar-section">
-<h4>Recent Posts</h4>
+  <div class="panel blog-controls">
+    <div class="panel-body">
+      <h4>Recent Posts</h4>
       {tag_blogrecentpost}
+    </div>
+  </div>
+</div>
+
+<div class="sidebar-section">
+  <div class="panel blog-controls">
+    <div class="panel-body">
+      <h4>Tags</h4>
+      {tag_blogtaglist} </div>
+  </div>
 </div>
 <div class="sidebar-section">
-<h4>Tags</h4>
-      {tag_blogtagcloud}     {tag_blogtaglist}
-</div>
-<div class="sidebar-section">
-<h4>Archive</h4>
-      {tag_blogpostarchive}
+  <div class="panel blog-controls">
+    <div class="panel-body">
+      <h4>Archive</h4>
+      {tag_blogpostarchive} </div>
+  </div>
 </div>
