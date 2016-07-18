@@ -200,7 +200,9 @@ $(function () {
 
 	// BOOTSTRAP FORMS
 	//General Form style overrides
-	$('input:not([type=submit]), textarea, select').addClass('form-control');
+	$('input, textarea, select').addClass('form-control');
+	$('input[type=submit], input[type=radio], input[type=checkbox]').removeClass('form-control');
+	
 	$('input[type=submit]').addClass('btn btn-primary');
 	// Reset Layout
 	$('.content form[name*=catwebform]:not(".skip-form-reset")').each(function() {
@@ -274,7 +276,7 @@ $(function () {
 				var newURL = linkURL;
 				$(this).attr('href', newURL);
 			} else {
-				var newURL = "http://lakeshorestudiosllc.com" + linkURL;
+				var newURL = page + linkURL;
 				$(this).attr('href', newURL);
 			}
 		});
@@ -285,6 +287,16 @@ $(function () {
 
 
 $(document).ready(function() {
+	
+	if ($('.nav-accordion').length > 0) {
+		$(".nav-accordion li:has(ul li)").find("a:first").addClass("subs");
+		$( "<i class='fa fa-angle-down'></i>" ).appendTo( ".nav-accordion .subs" );
+		$('.nav-accordion .subs i').click(function(e){
+			e.preventDefault();
+			$(this).parent().parent().find('ul:first').toggle();
+		});
+	}
+	
     $("img").error(function(){
         $(this).remove();
     });

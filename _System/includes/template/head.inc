@@ -13,7 +13,7 @@
 <link href="/assets/css/template.css" rel="stylesheet">
 
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 <!-- ADD JPUSHMENU -->
 <link href="/assets/css/jPushMenu.css" rel="stylesheet">
@@ -53,13 +53,16 @@
 
 
 <script type="text/javascript" src="/assets/js/javascript.js"></script>
-
+<script>
+	var page = "http://{module_sitehost}/"
+</script>
 {% if page_url contains "ZoneProcess.aspx" -%}
 	{module_referreraddress collection="refer" template=""}
 	{% capture referrer -%}{% for item in refer.referrer -%}{{item}}{% endfor -%}{% endcapture -%}
 	<script>
 		var referrer = "{{referrer}}";
 		window.location = referrer + "?loginFailed=true";
+		var page = "http://{module_sitehost}"
 	</script>
 {% endif -%}
 

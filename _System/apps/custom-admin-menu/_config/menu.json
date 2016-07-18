@@ -1,0 +1,11 @@
+{
+	"menu-site-manager": {
+        "title": "My Website"
+    },
+	"menu-webapps": {
+        "title": "Widgets"
+    },
+    "menu-customers": {
+        "title": "My Customers"
+    }
+}

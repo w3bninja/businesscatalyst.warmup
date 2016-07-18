@@ -1,8 +1,25 @@
-<table>
-  <tr>
-    <td>{tag_name}</td>
-  </tr>
-  <tr>
-    <td>{tag_description}</td>
-  </tr>
-</table>
+<div class="row">
+	<div class="col-sm-6">
+        <span>
+        <div id="google-static-map">
+            <div><img src="http://maps.google.com/maps/api/staticmap?size=400x400&amp;maptype=roadmap\&amp;markers=size:mid|color:red&lt;/a&gt;&lt;span&gt;|{tag_address1} {tag_addresscity} {tag_addressstate} {tag_addresscountry}&amp;sensor=false" alt="gmap" id="gmap" /></div>
+            <span onclick="javascript:document.getElementById('gmap').src='http://maps.google.com/maps/api/staticmap?size=400x400&amp;maptype=roadmap\&amp;markers=size:mid|color:red&lt;/a&gt;&lt;span&gt;|{tag_address1}+{tag_addresscity}+{tag_addressstate}+{tag_addresscountry}&amp;sensor=false';">Map</span> |
+            <span onclick="javascript:document.getElementById('gmap').src='http://maps.google.com/maps/api/staticmap?size=400x400&amp;maptype=hybrid\&amp;markers=size:mid|color:red&lt;/a&gt;&lt;span&gt;|{tag_address1}+{tag_addresscity}+{tag_addressstate}+{tag_addresscountry}&amp;sensor=false';">Satellite</span>
+        </div>
+        </span>
+    </div>
+    <div class="col-sm-6">
+    <h2>{{this.name}}</h2>
+    <address>
+        {{this.address1}}<br>
+        {{this.address2}}
+        {{this.city}}, {{this.state}} {{this.zipcode}}
+    </address>
+        {% if this.phone != '' %}
+            <div class="phone"><i class="fa fa-phone"></i> {{this.phone}}</div>
+        {% endif %}
+        {% if this.fax != '' %}
+            <div class="fax"><i class="fa fa-fax"></i> {{this.fax}}</div>
+        {% endif %}
+    </div>
+</div>

@@ -6,8 +6,8 @@
 <file name="small_product_backup.html" server="envoc.businesscatalyst.com" local="130911498450000000" remote="130911498450000000" Dst="1" />
 <file name="large_product.html" server="envoc.businesscatalyst.com" local="131012279370000000" remote="131012279370000000" Dst="2" />
 <file name="shopping_cart-US.html" server="envoc.businesscatalyst.com" local="130912139600000000" remote="130912139600000000" Dst="1" />
-<file name="order_registration-US.html" server="envoc.businesscatalyst.com" local="130911498430000000" remote="130911498430000000" Dst="1" />
-<file name="order_receipt-US.html" server="envoc.businesscatalyst.com" local="130865559910000000" remote="130865559910000000" Dst="1" />
+<file name="order_registration-US.html" server="envoc.businesscatalyst.com" local="131104182400304880" remote="131104181260000000" Dst="2" />
+<file name="order_receipt-US.html" server="envoc.businesscatalyst.com" local="130865559910000000" remote="130865523910000000" Dst="2" />
 <file name="quote_receipt-US.html" server="envoc.businesscatalyst.com" local="129698136000000000" remote="129698136000000000" Dst="1" />
 <file name="quote_registration-US.html" server="envoc.businesscatalyst.com" local="129698136000000000" remote="129698136000000000" Dst="1" />
 <file name="gift_voucher-US.html" server="envoc.businesscatalyst.com" local="129698136000000000" remote="129698136000000000" Dst="1" />
