@@ -940,7 +940,7 @@ table.border td {
 	border-left: 1px solid #eee;
 }
 
-table.border span { color: #888; }
+table.border span {}
 
 table.order-list {
 	border-collapse:collapse;

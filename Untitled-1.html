@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+<script>
+var el = $('.foo');
+var len = el.children().length;
+if(len > 0){
+    len = 100/len;
+    el.css("width",  len + "px"); 
+} 
+</script>
+<div class="foo">
+	<div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>

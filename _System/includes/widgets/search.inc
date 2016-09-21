@@ -6,9 +6,18 @@
     <div class="site-search">
         <form name="catsearchform11819" method="post" action="/Default.aspx?SiteSearchID={{searchID}}&amp;PageID={{resultsPageID}}">
             <div class="input-group">
-                <input class="form-control" type="text" name="CAT_Search" id="CAT_Search" placeholder="Search">
-                <span class="input-group-addon"><input type="submit" value="Search"></span>
+                <input class="form-control site-search" type="text" name="CAT_Search" id="CAT_Search" placeholder="Search">
+                <span class="input-group-addon">
+                <input type="submit" value="">
+                <i class="fa fa-search"></i></span>
             </div>
         </form>
     </div>
 </div>
+
+
+
+
+
+
+

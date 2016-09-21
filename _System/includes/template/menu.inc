@@ -1,11 +1,3 @@
-{% comment -%}
-{% assign menu-sub-only = "true" -%}
-{% assign showMenuParentTitle = "true" -%}
-{% assign menu-type-value ="accordion" -%}
-{% assign menuCustom = "true" -%}
-{% include "/_System/includes/template/menu.inc" -%}
-{% endcomment -%}
-
 {% comment -%}MENU{% endcomment -%}
 {% assign menu-type = menu-type | default: "stripped" -%}
 {% assign menu-type-value = menu-type-value | default: "stripped" -%}
@@ -21,7 +13,7 @@
 	{% capture is_home -%}http://{module_sitehost}/{% endcapture -%}
 	{module_menu, version="2", menuId="{{menu_id | default: "1931027"}}", moduleTemplateGroup="{{menu-type}}" collection="menu" template=""}
     
-    
+
     
     {% if menu-type-value == "stripped" -%}
     	{% assign menuClasses = menuClasses | default: "nav navbar-default nav-justified" -%}
@@ -53,20 +45,20 @@
     	{% assign index = forloop.index0 -%}
 		{% if menu-sub-only != "true" -%}
 			{% if forloop.first -%}<ul class="{{menuClasses}}">{% endif -%}
-			<li{% if currentURL == item.url -%} class="active" {% endif -%}><a href="{{item.url}}">{{item.label}}</a>
+			<li{% if currentURL == item.url -%} class="active" {% endif -%}><a href="{{item.url}}" {% if item.targetFrame != -%}target="{{item.targetFrame}}"{% endif -%}>{{item.label}}</a>
 		{% endif -%}
         
         
         {% if menu-type-value == "stripped" -%}
-        	{% for subitem in menu.items[forloop.index0].items -%}
+        		{% for subitem in menu.items[forloop.index0].items -%}
                 {% if forloop.first -%}<ul{% if menu-sub-only == "true" or menu-type-value == "stripped" -%} class="{{menuClasses}}"{% endif -%}>{% endif -%}
                 {% if subitem.parentId == item.id -%}
                     {% assign subindex = forloop.index0 -%}
-                    <li{% if currentURL == subitem.url -%} class="active" {% endif -%}><a href="{{subitem.url}}"{% if subitem.items.size > 0 -%} class="subs"{% endif -%}>{{subitem.label}}{% if subitem.items.size > 0 -%}<i class="fa fa-chevron-right"></i>{% endif -%}</a>
+                    <li{% if currentURL == subitem.url -%} class="active" {% endif -%}><a href="{{subitem.url}}"{% if subitem.items.size > 0 -%} class="subs"{% endif -%} {% if subsubitem.targetFrame != -%}target="{{subsubitem.targetFrame}}"{% endif -%}>{{subitem.label}}{% if subitem.items.size > 0 -%}<i class="fa fa-chevron-right"></i>{% endif -%}</a>
                         {% for subsubitem in menu.items[index].items[forloop.index0].items -%}
                             {% assign subsubindex = forloop.index0 -%}
                             {% if forloop.first -%}<ul{% if menu-type-value == "stripped" -%} class="{{menuClasses}}"{% endif -%}>{% endif -%}
-                            <li{% if currentURL == subsubitem.url -%} class="active" {% endif -%}><a href="{{subsubitem.url}}">{{subsubitem.label}}</a></li>
+                            <li{% if currentURL == subsubitem.url -%} class="active" {% endif -%}><a href="{{subsubitem.url}}" {% if subsubitem.targetFrame != -%}target="{{subsubitem.targetFrame}}"{% endif -%}>{{subsubitem.label}}</a></li>
                             {% if forloop.last -%}</ul>{% endif -%}
                         {% endfor -%}
                     </li>

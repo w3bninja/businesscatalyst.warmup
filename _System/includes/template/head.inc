@@ -3,10 +3,10 @@
 <title>{module_pagetitle}</title>
 
 
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="/assets/css/font-awesome.min.css" rel="stylesheet">
 <link href="/assets/css/styles.css" rel="stylesheet">
 <link href="/assets/css/nav.css" rel="stylesheet">
 

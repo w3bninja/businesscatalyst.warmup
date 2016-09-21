@@ -13,41 +13,61 @@
 
 </div>
 <div class="bg">
-<div class="header-line"></div>
-
-
-<div class="header clearfix">
-	<div class="container">
-        <div class="col-md-3"><div class="logo"><a href="{{site_domain}}" title="{{site_name}}">{{site_name}}</a></div></div>
-        <div class="col-md-9">
-        	<div class="row">
-            	<div class="col-sm-4 hidden-xs">
-                	{module_contentholder name="Phone Number"}
-                    {module_contentholder name="Social Links"}
-                </div>
-                <div class="col-sm-4">
+    
+    
+    
+    <div class="header">
+    	<div class="header-top">
+            <div class="clearfix">
+                <div class="pull-right hidden-xs text-right">
+	                <div class="pull-left">
+                    	<div class="phone pull-left">Toll Free: {module_contentholder name="Phone Number"}</div>
+                        <div class="pull-left">{module_contentholder name="Social Links"}</div>
+                        <div class="pull-left">{% include "/_System/includes/template/login.inc" -%}</div>
+                    </div>
+                    <div class="pull-right">              	
                     {% assign searchID = "4425" -%}
                     {% assign resultsPageID = "18679764" -%}
                     {% include "/_System/includes/widgets/search.inc" -%}
+                    </div>
                 </div>
-                <div class="col-sm-4">
-                	{% include "/_System/includes/template/login.inc" -%}
-					{% include "/_System/includes/shop/cart-summary.inc" -%}
-                    <a href="tel:1-800-401-4277" class="pull-right btn btn-primary hidden-sm hidden-md hidden-lg toggle-menu menu-right push-body"><i class="fa fa-phone"></i></a>
-                    <a class="nav-mobile-control btn btn-primary pull-right hidden-sm hidden-md hidden-lg toggle-menu menu-right push-body"><i class="fa fa-bars"></i></a>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-5 col-sm-2">
+                    	<div class="logo">
+                        	<h1 title="{{site_name}}">
+                                <a href="{{site_domain}}" title="{{site_name}}">
+                                    <img src="/assets/img/logo.png" class="img-responsive">
+                                </a>
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="col-xs-7 col-sm-10">
+                        <div class="row">
+                            <div class="col-sm-11">
+                                {% assign menu-sub-only = "false" -%}
+                                {% assign showMenuParentTitle = "false" -%}
+                                {% assign menu-type-value ="stripped" -%}
+                                {% assign menuCustom = "false" -%}
+                                {% assign menu_id = "1931027" -%}
+                                {% assign menuClasses = "nav navbar-default nav-justified" -%}
+                                {% include "/_System/includes/template/menu.inc" -%}
+                                <div class="mobile-navigation pull-right hidden-sm hidden-md hidden-lg">
+                                    <a href="tel:{module_contentholder name="Phone Number"}" class="btn btn-primary toggle-menu menu-right push-body"><i class="fa fa-phone"></i></a>
+                                    <a class="nav-mobile-control btn btn-primary toggle-menu menu-right push-body"><i class="fa fa-bars"></i></a>
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-1 pull-right">
+                                {% include "/_System/includes/shop/cart-summary.inc" -%}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container">
-        {% assign menu-sub-only = "false" -%}
-		{% assign showMenuParentTitle = "false" -%}
-		{% assign menu-type-value ="stripped" -%}
-		{% assign menuCustom = "false" -%}
-		{% assign menu_id = "1931027" -%}
-		{% assign menuClasses = "nav navbar-default nav-justified" -%}
-		{% include "/_System/includes/template/menu.inc" -%}
-    </div>
-        
-</div>
-{% if page_url == is_home %}{% else -%}<div class="page-header"></div>{% endif -%}
+    {% if page_url == is_home %}{% else -%}<div class="page-header"></div>{% endif -%}

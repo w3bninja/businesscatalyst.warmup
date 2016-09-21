@@ -1,0 +1,110 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+
+<style>
+pre{height:300px; overflow:auto; display:none;}
+</style>
+{module_data resource="catalogs" version="v3" fields="id,name" skip="0" limit="10" order="id" collection="catalogs"}
+{module_data resource="catalogproducts" version="v3" fields="productId,catalogueId,product,catalogue" skip="0" limit="10" order="catalogueId" collection="catalogsProduct"}
+<div class="container">
+<pre>{{catalogs.items|json}}</pre>
+{% for c in catalogs.items -%}
+	<h2>{{c.name}}-{{c.id}}</h2>
+    {% for p in catalogsProduct.items -%}
+    	{% if c.id == p.catalogue.id -%}
+        	<h4>{{p.product.name}}-{{p.product.id}}</h4>
+            {% assign counter = 1 -%}
+            {module_product catalogId="{{c.id}}" productid="{{p.product.id}}" collection="productB" template=""}
+            
+            
+				<pre>{{productB|json}}</pre>
+            
+            	
+            	
+            
+            	{%comment-%} GROUP BY {%endcomment-%}
+
+                {%comment-%}Create Grouping Array{%endcomment-%}
+                {% capture groupList -%}
+                {% for b in productB.inventoryByAttributes -%}
+                	{% assign classMonth = b.attributes.["Dates"] | date:"MMMM" -%}{% if b.inStock != 0 -%}{% if c.name == classMonth -%}{{b.attributes.["Location"]}}{% if forloop.last == false -%},{% endif -%}{% endif -%}{% endif -%}
+                {% endfor -%}
+                {% endcapture -%}
+                
+                {% assign attrCount = groupList | strip | split: ','|size -%}
+                
+                {%comment-%}Remove Duplicates{%endcomment-%}
+                {% assign array = groupList | strip | split: ',' -%}
+                {% assign tags = array[1] -%}
+                {% for item in array -%}{% unless tags contains item -%}{% capture tags %}{{ tags }},{{ item }}{% endcapture -%}{% endunless -%}{% endfor -%}
+                {% assign groupItems = tags | convert: "string" | split: "," | sort -%}
+                
+                {%comment-%} END GROUP BY {%endcomment-%}
+                
+                
+                {% assign month = c.name -%}
+                
+                
+                {% capture list -%}
+				
+                	
+                    	
+                    
+                {% for group in groupItems -%}{%comment-%} Groups {%endcomment-%}
+                		<table class="table table-bordered">
+                        {% if attrCount != 0 -%}
+                        <tr><th colspan="10">{{group}}</th></tr>
+                        {% endif -%}
+                        {% assign groupName = group | convert: "string" | strip -%}
+                        {% for b in productB.inventoryByAttributes -%}
+                            {% assign classMonth = b.attributes.["Dates"] | date:"MMMM" -%}
+                            
+                            {% if b.instock != 0 -%}
+                                
+                                {% if b.attributes.["Location"] contains groupName -%}
+                                    
+                                    {% if classMonth == month -%}
+                                    	<tr>
+                                            <td>{{productB.name}}</td>
+                                            <td>{{b.attributes.["Dates"]}}</td>
+                                        </tr>
+                                    {% endif -%}
+                                    
+                                {% endif -%}
+                                
+                            {% endif -%}
+                        {% endfor -%}
+                        </table>
+                    {% endfor -%}
+                    
+                    
+                    
+                
+                {% endcapture -%}
+
+
+    {{list}}
+                
+                
+                
+                
+                
+    	{% endif -%}
+    {% endfor -%}
+{% endfor -%}
+
+<h5>Catalog Product</h5>
+<pre>{{catalogsProduct.items|json}}</pre>
+
+
+
+{module_catalogue catalogId="{{productB.catalogId}}" collection="catalogName" template=""}
+<pre>{{catalogName|json}}</pre>
+
+
+
+    
+    
+    
+    
+    </div>

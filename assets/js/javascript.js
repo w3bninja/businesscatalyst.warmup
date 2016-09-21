@@ -18,14 +18,11 @@ $(function () {
         $('ul:first',this).css('visibility', 'hidden');
     });
 	
-	//Push Navigation Menu
-	$('.toggle-menu').jPushMenu({
-		closeOnClickLink   : false,
-		closeOnClickOutside: false
-	});
 	
-	$("#webticker ul").webTicker();
 	
+	
+	
+	// LAYOUT
 	
 	// Headers
 	$('.page-header-inner').appendTo( $('.page-header') );
@@ -38,20 +35,13 @@ $(function () {
 		$('.content-col').wrapAll('<div class="col-md-9"/>');
 	}
 	
+	// FAQ Control
+	$('.faq-nav').appendTo($('.faq-control'));
+	
+	// Cycle Carousel Control Hide
 	if ($('.cycle-carousel-wrap .box').length <= 5) { 
 		$('.areas .controls').hide();
 	}
-	
-	//responsive Tabs
-	$('.responsiveTabs').responsiveTabs({
-		rotate: false,
-		startCollapsed:	'accordion',
-		collapsible: 	'accordion',
-		setHash: 		true,
-		active:			0,
-		scrollToAccordion: true
-	});
-	
 	
 	//Masonry Grid
 	var $grid = $('.grid').imagesLoaded( function() {
@@ -60,6 +50,7 @@ $(function () {
 		itemSelector: '.item'
 	  });
 	});
+	
 	//Auto Adust Height Grid
 	var $gridbox = $('.grid-box').imagesLoaded( function() {
 	  $gridbox.each(function(){  
@@ -70,10 +61,34 @@ $(function () {
 			 $columns.height(maxHeight);
 		});
 	});
+
+	//Push Navigation Menu
+	$('.toggle-menu').jPushMenu({
+		closeOnClickLink   : false,
+		closeOnClickOutside: false
+	});
+	
+	// News Ticker
+	if ($('#webticker').length > 0) {
+		$("#webticker ul").webTicker();
+	}
+	
+	// responsive Tabs
+	$('.responsiveTabs').responsiveTabs({
+		rotate: false,
+		startCollapsed:	'accordion',
+		collapsible: 	'accordion',
+		setHash: 		true,
+		active:			0,
+		scrollToAccordion: true
+	});
+	
+	if ($('.dropdown-toggle').length > 0) {
+		$('.dropdown-toggle').dropdown();
+	}
 	
 	
-	// FAQ Control
-	$('.faq-nav').appendTo($('.faq-control'));
+	/////////// BC FIXES ///////////
 	
 	
 	// Pagination
@@ -86,7 +101,7 @@ $(function () {
 		
 	$('.pagination').cleanWhitespace();
 	
-	//WEBAPPS
+	// WebApps
 	$(function() {
 		$('.pag-current').contents().filter(
 			function() {
@@ -96,7 +111,7 @@ $(function () {
 	});
 	$('.pag-current').addClass('active');
 	
-	//STORE
+	// Store
 	$(function() {
 		$('.pagination').contents().filter(
 			function() {
@@ -108,7 +123,7 @@ $(function () {
 	$(".paginate li a:contains('Prev')").parent().prependTo('.pagination');
 	$(".paginate li a:contains('Next')").parent().appendTo('.pagination');
 	
-	//SEARCH RESULTS
+	// SEarch Results
 	$('#searchnext, #searchprev').wrap('<li></li>');
 	$('#searchnext, #searchprev').parent().wrapAll('<ul class="pager"/>');
 	$('#searchprev').parent().addClass('previous');
@@ -119,62 +134,60 @@ $(function () {
 	
 	//responsive photogallery
 	
-		jQuery(".photogalleryTable").each(function(index,elem){
-			var gallery = jQuery(elem),
-			bootstrapGallery = jQuery('<div class="custom-gallery row"></div>');
+	jQuery(".photogalleryTable").each(function(index,elem){
+		var gallery = jQuery(elem),
+		bootstrapGallery = jQuery('<div class="custom-gallery row"></div>');
+		
+		gallery.find(".photogalleryItem > a").each(function(index,elem){
+			var galleryItem = jQuery(elem),
+			image = galleryItem.find("img"),
+			imageSrc = image.attr("src").split("?"),
+			bootstrapGalleryItem = jQuery('<div class="col-sm-3 gallery-item" />');
 			
-			gallery.find(".photogalleryItem > a").each(function(index,elem){
-				var galleryItem = jQuery(elem),
-				image = galleryItem.find("img"),
-				imageSrc = image.attr("src").split("?"),
-				bootstrapGalleryItem = jQuery('<div class="col-sm-3 gallery-item" />');
-				
-				galleryItem.prop("href",imageSrc[0] + "?Action=thumbnail&Width=1200&Height=800&algorithm=fill_proportional");
-				image.prop("src",imageSrc[0] + "?Action=thumbnail&Width=400&Height=300&algorithm=fill_proportional");
-				image.addClass("thumbnail img-responsive");
-		 
-				bootstrapGalleryItem.append(galleryItem);
-				bootstrapGallery.append(bootstrapGalleryItem);
-			});
+			galleryItem.prop("href",imageSrc[0] + "?Action=thumbnail&Width=1200&Height=800&algorithm=fill_proportional");
+			image.prop("src",imageSrc[0] + "?Action=thumbnail&Width=400&Height=300&algorithm=fill_proportional");
+			image.addClass("thumbnail img-responsive");
+	 
+			bootstrapGalleryItem.append(galleryItem);
+			bootstrapGallery.append(bootstrapGalleryItem);
+		});
+		
+		gallery.after(bootstrapGallery);
+		// Add Pager
+		$('.photogalleryNavigation a').wrap('<li></li>');
+		$('.photogalleryNavigation li').wrapAll('<ul class="pager"/>');
+		$('.photogalleryNavigation ul').appendTo('.custom-gallery');
+		$('.custom-gallery .pager li').first().addClass('previous');
+		$('.custom-gallery .pager li').last().addClass('next');
 			
-			gallery.after(bootstrapGallery);
-			// Add Pager
-			$('.photogalleryNavigation a').wrap('<li></li>');
-			$('.photogalleryNavigation li').wrapAll('<ul class="pager"/>');
-			$('.photogalleryNavigation ul').appendTo('.custom-gallery');
-			$('.custom-gallery .pager li').first().addClass('previous');
-			$('.custom-gallery .pager li').last().addClass('next');
-				
-			gallery.remove();
-		});
-		//Standard Gallery
-		$('.gallery-item a').prop( "onclick", null ).removeAttr('onclick').removeAttr('rel').addClass('thumb fancy').attr('rel', 'group');
-		
-		//Advanced Gallery
-		$('.gallery-item').first().clone().insertBefore('.custom-gallery').addClass('main');
-		$('.custom-gallery .gallery-item').removeClass('col-sm-3').addClass('col-md-6').wrapAll('<div class="col-sm-3"/>');
-		$('.gallery-item.main').removeClass('col-sm-3').wrapAll('<div class="col-sm-9"/>');
-		$('.custom-gallery .gallery-item a').removeClass('fancy');
-		
-		var s = $('.gallery-item.main img').attr("src");
-		if(typeof s !== 'undefined'){
-			s = s.substring(0, s.indexOf('?'));
-		}
-		$('.gallery-item.main img').prop("src",s + "?Action=thumbnail&Width=1200&Height=800&algorithm=fill_proportional");
-		
-		
-		$('.custom-gallery .gallery-item a').click(function(e){
-			e.preventDefault();
-			var newSource = $(this).attr('href');
-			$('.gallery-item.main img').prop("src", newSource);
-		});
-
-
-	if ($('.dropdown-toggle').length > 0) {
-		$('.dropdown-toggle').dropdown();   
+		gallery.remove();
+	});
+	//Standard Gallery
+	$('.gallery-item a').prop( "onclick", null ).removeAttr('onclick').removeAttr('rel').addClass('thumb fancy').attr('rel', 'group');
+	
+	//Advanced Gallery
+	$('.gallery-item').first().clone().insertBefore('.custom-gallery').addClass('main');
+	$('.custom-gallery .gallery-item').removeClass('col-sm-3').addClass('col-md-6').wrapAll('<div class="col-sm-3"/>');
+	$('.gallery-item.main').removeClass('col-sm-3').wrapAll('<div class="col-sm-9"/>');
+	$('.custom-gallery .gallery-item a').removeClass('fancy');
+	
+	var s = $('.gallery-item.main img').attr("src");
+	if(typeof s !== 'undefined'){
+		s = s.substring(0, s.indexOf('?'));
 	}
+	$('.gallery-item.main img').prop("src",s + "?Action=thumbnail&Width=1200&Height=800&algorithm=fill_proportional");
+	
+	
+	$('.custom-gallery .gallery-item a').click(function(e){
+		e.preventDefault();
+		var newSource = $(this).attr('href');
+		$('.gallery-item.main img').prop("src", newSource);
+	});
 
-	// FAVORITE INTERACTION //
+
+	
+
+	// Favorites
 	jQuery(document).unbind().on('click', '.favoritelink', function(e) {
 		e.preventDefault();
 		var $el = jQuery(this);
@@ -193,7 +206,7 @@ $(function () {
 
 	
 
-	//BLOGS
+	// Blog Controls
 	$('.blogs .sidebar-section .blog-controls ul').addClass('list-group');
 	$('.blogs .sidebar-section .blog-controls ul li').addClass('list-group-item');
 
@@ -258,35 +271,43 @@ $(function () {
 		});	
 	}
 	
-	// Dynamic Form Action
-  //  contentForm.find('form').attr('action', function(i, value) {
-//		//facility = facility.replace('/', '%2f');
-//        return value + "&CID=0&SendInvoice=true";
-//    });
+	 // Dynamic Form Action
+	 //contentForm.find('form').attr('action', function(i, value) {
+	 //	facility = facility.replace('/', '%2f');
+	 //	return value + "&CID=0&SendInvoice=true";
+	 //});	
 	
-	
-	// Replace all '.worldsecuresystems.com' links across the site
-	
+	// When on 'worldsecuresystems.com', replace all internal links so user stays on that domain
 	if (window.location.href.indexOf('.worldsecuresystems.com') > -1) {
-		$("a").each(function() {
+		$("a[href^='/']").each(function() {
 			var linkURL = $(this).attr('href');
 			if (linkURL === undefined) {
 				return true;
 			} else if (linkURL === '#login'){
-				var newURL = linkURL;
+				var newURL = linkURL.replace(/\//g, '');
 				$(this).attr('href', newURL);
 			} else {
-				var newURL = page + linkURL;
+				var newURL = page + linkURL.replace(/\//g, '');
 				$(this).attr('href', newURL);
 			}
 		});
 	}
 	
-	
+	/////////// BC FIXES ///////////
 });
 
 
 $(document).ready(function() {
+	
+	$('.pager .slide1').addClass('active');
+	$('.cycle-slideshow').on('cycle-after', function(e, opts) {
+		console.log(opts.slideNum);
+		var current = opts.slideNum;
+		var previous = current - 1;
+		console.log(previous + '|' + current);
+		$('.pager a').removeClass('active');
+		$('.pager .slide' + current).addClass('active');
+	});
 	
 	if ($('.nav-accordion').length > 0) {
 		$(".nav-accordion li:has(ul li)").find("a:first").addClass("subs");

@@ -1,4 +1,4 @@
-<div class="slide" style="background:url({{this.image}}) no-repeat top center; background-size:cover;">
+<div class="slide" id="slide{{this.counter}}" style="background:url({{this.image}}) no-repeat top center; background-size:cover;">
     <div class="slide-inner">
     	<div class="container">
         	<div class="col-md-7">

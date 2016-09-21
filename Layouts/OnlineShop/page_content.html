@@ -44,7 +44,7 @@
                 <h2>{module_pagename}</h2>
             {% endif -%}
             {% for product in products.items -%}
-            
+            	
             
             	<div class="col-sm-4">
                     <div class="shop-product-small">
@@ -58,7 +58,7 @@
                           {% endif -%}
                           </a>
                           <h4>
-                            <a href="{{product.url}}">{{product.name}}</a>
+                            <a href="{{product.url}}">{{product.name}} - {{product.productid}}</a>
                             {% capture isloggedin -%}{module_isloggedin}{% endcapture -%}
                             
                                 {tag_addtofavorites,, collection="fav" template=""}
@@ -93,5 +93,11 @@
 {% if panelShow == true -%}
 <div class="sidebar-section">
 {tag_browsepanel,true,false,true}
+
+
+
 </div>
 {% endif -%}
+
+
+

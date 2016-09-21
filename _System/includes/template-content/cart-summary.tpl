@@ -6,21 +6,20 @@
 
 <div id="cart-summary"> 
     {% if itemCount == 0 -%}
-    <span><a title="Go to Cart" href="{{cartUrl}}" class="btn btn-default"><i class="fa fa-shopping-cart"></i></a></span>
+    <span><a title="Go to Cart" href="{{cartUrl}}" class="btn btn-default btn-cart"><i class="fa fa-shopping-basket"></i></a></span>
     {% else -%}
      
     {% endif -%}
     {% if itemCount > 0 -%}
     <div id="cart-items">
     	<div class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            {{itemCount}} {% comment -%}item{% if itemCount != 1 -%}s{% endif -%}{% endcomment -%}
-            <i class="fa fa-shopping-cart"></i>
-            <span class="caret"></span>
+          <button class="btn btn-default btn-cart dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-shopping-basket"></i>
+            <span class="badge">{{itemCount}}</span> {% comment -%}item{% if itemCount != 1 -%}s{% endif -%}{% endcomment -%}
           </button>
         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
-        {% for item in items -%}
-          <li>
+          <li class="cart-summary-padding">
+          	{% for item in items -%}
           	<div class="row">
                 <div class="col-xs-4"><a href="{{item.url}}"><img src="{{imgValue}}" alt="{{item.name}}" width="100%" class="thumbnail img-repsonsive"></a></div>
                 <div class="col-xs-8">
@@ -28,10 +27,11 @@
                     <em>{{currencyFormat}} {{item.price}}</em>
                 </div>
             </div>
+            <hr>
+            {% endfor -%}
+            <div class="subtotal"><strong>Subtotal:</strong> {{currencyFormat}} {tag_totalAmount}</div>
+            <a title="Go to Cart" href="{{cartUrl}}" class="btn btn-primary">View Cart</a>
             </li>
-        {% endfor -%}
-        <li role="separator" class="divider"></li>
-        <li><a title="Go to Cart" href="{{cartUrl}}">View Cart - {{currencyFormat}} {tag_totalAmount}</a></li>
         </ul>
         </div>
     </div>

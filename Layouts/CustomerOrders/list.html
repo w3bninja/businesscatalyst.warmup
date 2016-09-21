@@ -1,8 +1,24 @@
-
-<table class="order-list table" width="100%" cellspacing="0" cellpadding="0">
-  <tr>
-    <td>{tag_ordername} <span class="number">(invoice #{tag_invoicenumber})</span></td>
-    <td><span class="date">{tag_invoicedate}</span></td>
-    <td><span class="total">{tag_invoicetotal}</span></td>
-  </tr>
-</table>
+<div class="order-list panel">
+	<div class="panel-body">
+    	<div class="row">
+    		<div class="col-sm-4">
+            	<div class="form-group">
+                    <label>Order Placed</label>
+                    <p class="form-control-static">{{invoiceDate | date:"MMMM dd, yyyy"}}</p>
+                </div>
+            </div>
+    		<div class="col-sm-4">
+            	<div class="form-group">
+                    <label>Total</label>
+                    <p class="form-control-static"><strong>${{invoiceTotal}}</strong></p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+            	<div class="order-details form-group text-right">
+                    <label>Order # {{invoiceNumber}}</label>
+                    <p class="form-control-static"><a href="{{orderurl}}">Order Details</a></p>
+                </div>
+            </div>
+    	</div>
+    </div>
+</div>

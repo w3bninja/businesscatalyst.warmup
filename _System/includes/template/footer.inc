@@ -2,7 +2,7 @@
         <div class="footer-top">
             <div class="container clearfix">
                 <div class="copyright pull-left">
-                © {{globals.site.dateNow | date: "yyyy"}}, <a href="/">{module_sitename}</a> </div>
+                © {{globals.site.dateNow | date: "yyyy"}}, <a href="/">{module_sitename}</a> | <a href="http://envoc.com" target="_blank" title="Envoc is an award-winning, full-service digital agency with services ranging from custom software and mobile app development to web design and branding.">Website Design</a> by Envoc. </div>
                 <div class="nav-footer pull-right clearfix hidden-xs hidden-sm">
                     {% assign menu-type-value ="stripped" -%}
         			{% include "/_System/includes/template/menu.inc" -%}

@@ -1,0 +1,48 @@
+<title>Stress Testing</title>
+
+datetime: {{ globals.site.dateNow | date: "yyyy\\MM\\dd @ hh:mm:ss tt" }}<br><br>
+
+{module_json,json="/test.json" collection="food" template=""}
+single item: {{ food.doughnuts[2456].email }} <!-- Plain -->
+
+
+
+<hr>
+
+{module_json json="/test.json" collection="food" template=""}
+<ul>
+	{% for item in food.doughnuts %}
+    <li>
+		<strong>{{forloop.index}}).</strong>
+		Email: {{item.email}} | 
+		First Name: {{item.first_name}} | 
+		Last Name: {{item.last_name}} | 
+		job_title: {{item.job_title}} | 
+		username: {{item.username}} | 
+		gender: {{item.gender}} | 
+		timezone: {{item.timezone}} | 
+		drug_company: {{item.drug_company}} | 
+		bitcoin_address: {{item.bitcoin_address}} | 
+		sentences1: {{item.sentences1}} | 
+		sentences2: {{item.sentences2}} | 
+		sentences3: {{item.sentences3}} | 
+		sentences4: {{item.sentences4}} | 
+		sentences5: {{item.sentences5}}
+    </li>
+    {% endfor %}
+</ul>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
