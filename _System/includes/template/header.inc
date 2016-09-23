@@ -33,7 +33,7 @@
                 </div>
             </div>
         </div>
-        <div class="header-bottom">
+        <div class="header-bottom sticky">
             <div class="container">
                 <div class="row">
                     <div class="col-xs-5 col-sm-2">

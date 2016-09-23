@@ -35,7 +35,6 @@
 <link href="/assets/css/bootstrap-datepicker.min.css" rel="stylesheet" />
 <script type="text/javascript" src="/assets/js/bootstrap-datepicker.js"></script>
 
-
 <!-- ADD FANCYBOX -->
 <link rel="stylesheet" href="/assets/js/fancy/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
 <script type="text/javascript" src="/assets/js/fancy/jquery.fancybox.pack.js?v=2.1.5"></script>
@@ -46,6 +45,10 @@
 
 <!-- ANIMATIONS -->
 <script src="/assets/js/jquery.inview.js"></script>
+
+<!-- PARALLAX -->
+<script src="/assets/js/parallax.min.js"></script>
+
 
 <!-- GRID -->
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.1.5/masonry.pkgd.min.js"></script>

@@ -18,8 +18,24 @@ $(function () {
         $('ul:first',this).css('visibility', 'hidden');
     });
 	
+	// Sticky Element - Sticks the element to the top of the site
+	$(".sticky").wrap("<div class='sticky-container'></div>");
+	$(".sticky").wrap("<div class='sticky-container-inner'></div>");
+	$(window).on('scroll', function () {
+		var scrollTop	= $(window).scrollTop(),
+		elementOffset	= $('.sticky-container').offset().top,
+		distance		= (elementOffset - scrollTop);
+		$(".sticky-container").height($(".sticky-container-inner").height());
+		if(distance < 0){
+			$('.sticky-container-inner').addClass('container-fixed');
+		} else {
+			$('.sticky-container-inner').removeClass('container-fixed');
+		}
+	});
 	
-	
+	if ($('.parallax').length > 0) {
+		$('.parallax').parallax();
+	}
 	
 	
 	// LAYOUT

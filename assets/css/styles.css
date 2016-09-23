@@ -17,6 +17,7 @@ label, .form label{font-size:14px!important; font-weight:normal;}
 input, select, textarea{width:100%!important;}
 input[type="submit"], input[type="checkbox"], input[type="radio"]{width:auto!important;}
 hr{border:0; height:1px; background:#EEE; margin:30px 0 ;}
+xmp{background:#EEE; border-radius:5px;}
 
 div.form div.item, div.webform div.item{padding:0;}
 table.webform td{padding:5px 2px;}
@@ -90,6 +91,8 @@ table.webform td{padding:5px 2px;}
 .nav-footer .navigation ul{letter-spacing:1px!important;}
 .nav-footer .nav-justified li{display:block!important; float:left; width:auto;}
 
+.container-fixed{position:fixed!important; top:0; left:0; right:0; width:100%; position:relative; z-index:9999; box-shadow:0 0 10px rgba(0, 0, 0, .3); background:#FFF;}
+
 /* NAVIGATION */
 
 /* BANNER */
@@ -111,6 +114,8 @@ table.webform td{padding:5px 2px;}
 /* BANNER */
 
 /* CONTENT */
+
+div[id*=webapp_map]{width:100%!important}
 /* ul */
 .content .content-col ul.list{background:#EEE;padding:20px;margin:20px 0}
 .content .content-col ul.list li{border-top:1px solid rgba(0,0,0,.1);display:block;padding:5px 5px 5px 30px;position:relative;}
@@ -141,13 +146,13 @@ ul.tab-nav .r-tabs-state-active{background:#EEE;}
 .responsiveTabs ul.ui-tabs-nav{overflow:hidden; border-bottom:1px solid #0068ab; margin-bottom:30px!important;}
 .responsiveTabs ul.ui-tabs-nav, .responsiveTabs ul.ui-tabs-nav li{list-style-type:none; margin:0; padding:0;}
 .responsiveTabs ul.ui-tabs-nav li{float:left; overvlow:hidden;}
-.responsiveTabs ul.ui-tabs-nav li a{background:#004d82; color:#FFF; padding:5px 15px; margin-right:2px; display:block; border-radius:3px 3px 0px 0px; font-size:14px; font-family: 'Garamond';}
+.responsiveTabs ul.ui-tabs-nav li a{background:#004d82; color:#FFF; padding:5px 15px; margin-right:2px; display:block; border-radius:3px 3px 0px 0px; font-size:14px;}
 .responsiveTabs ul li.ui-tabs-active a, .responsiveTabs ul li.ui-state-active a{background:#0068ab!important;}
 .r-tabs .r-tabs-nav {margin: 0; padding:0;}
 .r-tabs .r-tabs-tab {display: inline-block; margin: 0; list-style: none;}
 .r-tabs .r-tabs-panel {padding: 15px; display: none; overflow:hidden; border:1px solid #EEE;}
 .r-tabs .r-tabs-accordion-title {display: none;}
-.r-tabs .r-tabs-accordion-title a{display:block; padding: 10px; background:#004D82; color:#FFF; font-family: 'Garamond'; font-size:14px; border-bottom:1px solid rgba(0, 0, 0, .2);}
+.r-tabs .r-tabs-accordion-title a{display:block; padding: 10px; background:#004D82; color:#FFF; font-size:14px; border-bottom:1px solid rgba(0, 0, 0, .2);}
 .r-tabs .r-tabs-accordion-title a:before{
 	float:right;
 	position:relative; top:2px;
@@ -177,7 +182,7 @@ ul.tab-nav .r-tabs-state-active{background:#EEE;}
     .r-tabs .r-tabs-accordion-title {display: block;}
 }
 
-
+.parallax {background: transparent!important;}
 
 
 
@@ -296,28 +301,9 @@ q q:after { content: '\2019'; }
 .faq-control a:hover{background:rgba(0, 0, 0, .1); text-decoration:none;}
 .faq-control:first-child a{border:0;}
 
+.box{padding:80px; background:#EEE;}
 
-@media (max-width: 768px) {
-.logo a{background-size:100%; width:135px; height:32px;}
-
-.sm-phone{margin:27px 0 0 0;}
-.phone{font-size:12px; border:0; margin:0 5px; padding:0;}
-
-.navigation{display:none;}
-.navigation-bg{display:none;}
-h2{font-size:24px;}
-
-.banner{background-size:auto; width:100%; height:auto;}
-.banner-inner{}
-.banner-inner h1{font-size:24px;}
-.banner-inner h3{font-size:16px;}
-.slide{height:auto; min-height:100%;}
-.slide-inner{width:auto;}
-.slide-inner .text{width:auto;}
-
-.content-bg .content{margin-top:40px;}
-
-.total-title{text-align:left;}
+.content-header{background:rgba(0, 0, 0, .1); padding:40px 0; margin:0 0 40px 0;}
 
 
 /* ANIMATIONS */
@@ -347,6 +333,33 @@ h2{font-size:24px;}
   -ms-transform: translate(0px, 0px);
   transform: translate3d(0px, 0px, 0px);
 }
+
+
+
+@media (max-width: 768px) {
+.logo a{background-size:100%; width:135px; height:32px;}
+
+.sm-phone{margin:27px 0 0 0;}
+.phone{font-size:12px; border:0; margin:0 5px; padding:0;}
+
+.navigation{display:none;}
+.navigation-bg{display:none;}
+h2{font-size:24px;}
+
+.banner{background-size:auto; width:100%; height:auto;}
+.banner-inner{}
+.banner-inner h1{font-size:24px;}
+.banner-inner h3{font-size:16px;}
+.slide{height:auto; min-height:100%;}
+.slide-inner{width:auto;}
+.slide-inner .text{width:auto;}
+
+.content-bg .content{margin-top:40px;}
+
+.total-title{text-align:left;}
+
+
+
 
 
 

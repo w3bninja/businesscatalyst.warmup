@@ -5,15 +5,26 @@
 {% assign url = "" -%}
 {% include "/_System/includes/widgets/share.inc" -%}
 {% endcomment -%}
+{% capture titleDefault -%}{module_pagename}{% endcapture -%}
+{% capture textDefault -%}{module_pagetitle}{% endcapture -%}
+{% capture textLink -%}{module_pageaddress}{% endcapture -%}
+{% assign title = titleDefault -%}
+{% assign text = textDefault -%}
+{% assign image = "" -%}
+{% assign url = textLink -%}
 
-<script type="text/javascript" src="/js/SocialShare.min.js"></script>
+<script type="text/javascript" src="/assets/js/SocialShare.min.js"></script>
 <script>
+var shareTitle = "{{title}}";
+var shareText = "{{text}}";
+var shareImage = "{{image}}";
+var shareLink = "{{url}}";
 $(document).ready(function(){
 	$('.share').ShareLink({
-		title: 'My great post', // title for share message
-		text: 'text of my great post', // text for share message
+		title: shareTitle, // title for share message
+		text: shareText, // text for share message
 		image: 'http://my-site-url.com/images/funny-cats.png', // optional image for share message (not for all networks)
-		url: 'http://my-site-url.com/my-article.html', // link on shared page
+		url: shareLink, // link on shared page
 		class_prefix: 's_', // optional class prefix for share elements (buttons or links or everything), default: 's_'
 		width: 640, // optional popup initial width
 		height: 480 // optional popup initial height

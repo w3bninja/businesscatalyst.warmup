@@ -12,6 +12,7 @@
 {% comment -%}HOME PAGE LAYOUT{% endcomment -%}
 {% if page_url == site_domain %}
 {% include "/_System/includes/template/home-header.inc" -%}
+
 <div class="content">
     <div class="content-inner container">
         <div class="row">
@@ -29,11 +30,17 @@
         </div>
     </div>
 </div>
+<hr>
+<div class="box parallax" data-parallax="scroll" data-image-src="/stock-photos/1.jpg">
+	<div class="container">
+    	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, quis, libero ab ad necessitatibus aspernatur rem repellat voluptas nesciunt perferendis veniam architecto iusto tenetur odit deserunt quod fuga animi aliquid!
+    </div>
+</div>
 {% comment -%}INTERNAL PAGE LAYOUT{% endcomment -%}
 {% else -%}
 <div class="content">
+	<div class="content-header text-center"><h2>{module_pagename}</h2></div>
     <div class="container">
-        <div class="content-header"><h3>{module_pagename}</h3></div>
         <div class="content-inner">
             <div class="content-col"> {{content}} </div>
         </div>
