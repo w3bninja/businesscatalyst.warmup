@@ -1,9 +1,13 @@
+{% comment -%}
+{% assign btnClass = "btn-default" -%}
+{% endcomment -%}
+
 {module_shoppingcartsummary template="/_System/includes/template-content/cart-summary.tpl"}
 {% comment -%}
 {module_shoppingcartsummary,horizontal collection="cartSummary" template=""}
 {% if cartSummary.itemCount > 0 -%}
 <div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+  <button class="btn {{btnClass | default: "btn-default" }} dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 	{% for item in cartSummary -%}
 		{{item.itemCount}}
 	{% endfor -%}

@@ -303,7 +303,9 @@ q q:after { content: '\2019'; }
 
 .box{padding:80px; background:#EEE;}
 
-.content-header{background:rgba(0, 0, 0, .1); padding:40px 0; margin:0 0 40px 0;}
+.page-header{background:rgba(0, 0, 0, .1); padding:40px 0; margin:0 0 40px 0;}
+.content-header{background:rgba(0, 0, 0, .2); padding:10px 0; margin:0 0 40px 0;}
+
 
 
 /* ANIMATIONS */
@@ -333,6 +335,21 @@ q q:after { content: '\2019'; }
   -ms-transform: translate(0px, 0px);
   transform: translate3d(0px, 0px, 0px);
 }
+
+
+
+.header-top{background:rgba(0, 0, 0, .1);}
+.header-bottom{padding:20px 0;}
+.header .btn{margin:0;}
+
+.header .search{width:250px; position:relative;}
+.search input, .search .input-group-addon{background:rgba(0, 0, 0, .1); border:0; border-radius:0; padding:12px 0 12px 15px; color:#FFF; height:auto;}
+.search input:focus{box-shadow:none;}
+.input-group-addon .fa{color:#6b9ddf; padding:0 10px 0 0;}
+.search input[type="submit"]{background:transparent; padding:0; position:absolute; right:0; top:0; bottom:0; width:35px!important; cursor:pointer; z-index:3;}
+.search input::-webkit-input-placeholder{color:#6b9ddf; text-transform:uppercase; font-size:12px; position:relative; top:2px;}
+
+.footer{background:#EEE; padding:20px; margin-top:40px;}
 
 
 

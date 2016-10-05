@@ -70,4 +70,4 @@
             </div>
         </div>
     </div>
-    {% if page_url == is_home %}{% else -%}<div class="page-header"></div>{% endif -%}
+    {% if page_url == is_home %}{% else -%}<div class="page-header text-center"><h2>{module_pagename}</h2></div>{% endif -%}
