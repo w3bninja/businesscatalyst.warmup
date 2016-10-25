@@ -1,31 +1,30 @@
 <div class="col-sm-4">
     <div class="shop-product-small">
-    <a href="{{url}}">
-          {% if smallImage != '' -%}
-            <div class="image"><img src="{{smallImage}}?Action=thumbnail&Width=200&Height=200&algorithm=fill_proportional" width="100%" class="img-responsive"></div>
+    <a href="{{this.url}}">
+          {% if this.smallImage != '' -%}
+            <div class="image"><img src="{{this.smallImage}}?Action=thumbnail&Width=200&Height=200&algorithm=fill_proportional" width="100%" class="img-responsive"></div>
           {% elseif largeImage != '' -%}
-            <div class="image"><img src="{{smallImage}}?Action=thumbnail&Width=200&Height=200&algorithm=fill_proportional" width="100%" class="img-responsive"></div>
+            <div class="image"><img src="{{this.smallImage}}?Action=thumbnail&Width=200&Height=200&algorithm=fill_proportional" width="100%" class="img-responsive"></div>
           {% else -%}
           <div class="image"><img src="/assets/img/x.png?Action=thumbnail&Width=200&Height=200&algorithm=fill_proportional" width="100%" class="img-responsive"></div>
           {% endif -%}
           </a>
           <h4>
-          	<a href="{{url}}">{{name}}</a>
+          	<a href="{{url}}">{{this.name}}</a>
             {% capture isloggedin -%}{module_isloggedin}{% endcapture -%}
             
             	{tag_addtofavorites,, collection="fav" template=""}
                {% if isloggedin == 1 -%} 
-                  {% if fav.isFavorite == "false" -%}
-                      <a href="{{fav.addUrl}}" class="favoritelink fav fav-add fav{{id}}"><i class="fa fa-heart-o"></i></a>
+                  {% if this.fav.isFavorite == "false" -%}
+                      <a href="{{this.fav.addUrl}}" class="favoritelink fav fav-add fav{{this.id}}"><i class="fa fa-heart-o"></i></a>
                   {% else -%}
-                    <a href="{{fav.removeUrl}}" class="favoritelink fav fav-remove fav{{id}}"><i class="fa fa-heart"></i></a>
+                    <a href="{{this.fav.removeUrl}}" class="favoritelink fav fav-remove fav{{this.id}}"><i class="fa fa-heart"></i></a>
                   {% endif -%}
               {% else -%}
-                <a href="{{fav.addUrl}}" class="fav fav{{id}}"><i class="fa fa-heart-o"></i></a>
+                <a href="{{this.fav.addUrl}}" class="fav fav{{this.id}}"><i class="fa fa-heart-o"></i></a>
               {% endif -%}
           </h4>
           <strong class="price">{{salePrice | default: "Price Unavailable" }}</strong>
-      
-      <button class="btn btn-primary" onclick="AddToCart({{catalogId}},{{id}},'',4,'','',false);return false;">Add to Cart</button>
+       <button class="btn btn-primary add-to-cart" onclick="addToCartButtonClick({{catalogId}},{{id}},3)">Add to Cart</button>
     </div>
 </div>

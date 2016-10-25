@@ -1,4 +1,4 @@
-<div class="nav-mobile cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right">
+<div class="nav-mobile cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left">
     <div class="search">
         <form name="catsearchform11819" method="post" action="/Default.aspx?SiteSearchID=3896&amp;PageID=16462607">
             <div class="input-group">
@@ -13,9 +13,6 @@
 
 </div>
 <div class="bg">
-    
-    
-    
     <div class="header">
     	<div class="header-top">
             <div class="clearfix">
@@ -28,6 +25,7 @@
                     <div class="pull-right">              	
                     {% assign searchID = "4425" -%}
                     {% assign resultsPageID = "18679764" -%}
+					{% assign searchUsage = "template" -%}
                     {% include "/_System/includes/widgets/search.inc" -%}
                     </div>
                 </div>
@@ -48,6 +46,9 @@
                     <div class="col-xs-7 col-sm-10">
                         <div class="row">
                             <div class="col-sm-11">
+                            	<div class="mobile-navigation pull-left hidden-sm hidden-md hidden-lg">
+                                    <a class="nav-mobile-control btn btn-primary toggle-menu menu-left push-body"><i class="fa fa-bars"></i></a>
+                                </div>
                                 {% assign menu-sub-only = "false" -%}
                                 {% assign showMenuParentTitle = "false" -%}
                                 {% assign menu-type-value ="stripped" -%}
@@ -55,13 +56,11 @@
                                 {% assign menu_id = "1931027" -%}
                                 {% assign menuClasses = "nav navbar-default nav-justified" -%}
                                 {% include "/_System/includes/template/menu.inc" -%}
-                                <div class="mobile-navigation pull-right hidden-sm hidden-md hidden-lg">
-                                    <a href="tel:{module_contentholder name="Phone Number"}" class="btn btn-primary toggle-menu menu-right push-body"><i class="fa fa-phone"></i></a>
-                                    <a class="nav-mobile-control btn btn-primary toggle-menu menu-right push-body"><i class="fa fa-bars"></i></a>
-                                </div>
+                                
                             </div>
                             
                             <div class="col-sm-1 pull-right">
+                            	<a href="tel:{module_contentholder name="Phone Number"}" class="btn btn-primary pull-left hidden-sm hidden-md hidden-lg"><i class="fa fa-phone"></i></a>
                                 {% include "/_System/includes/shop/cart-summary.inc" -%}
                             </div>
                         </div>

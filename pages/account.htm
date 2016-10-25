@@ -1,0 +1,236 @@
+<body>
+{% if isloggedin == 1 -%}
+
+	{% capture firstname %}{module_firstname}{% endcapture %}
+	{% capture lastname %}{module_lastname}{% endcapture %}
+	{% capture emailaddress %}{module_emailaddress}{% endcapture %}
+	{% capture cellphone %}{module_cellphone}{% endcapture %}
+	{% capture dob %}{module_dob}{% endcapture %}
+	{% capture company %}{module_company}{% endcapture %}
+	{% capture homephone %}{module_homephone}{% endcapture %}
+	{% capture homefax %}{module_homefax}{% endcapture %}
+	{% capture homeaddress %}{module_homeaddress}{% endcapture %}
+	{% capture homecity %}{module_homecity}{% endcapture %}
+	{% capture homestate %}{module_homestate}{% endcapture %}
+	{% capture homezip %}{module_homezip}{% endcapture %}
+	{% capture homecountry %}{module_homecountry}{% endcapture %}
+	{% capture workphone %}{module_workphone}{% endcapture %}
+	{% capture workfax %}{module_workfax}{% endcapture %}
+	{% capture webaddress %}{module_webaddress}{% endcapture %}
+	{% capture workaddress %}{module_workaddress}{% endcapture %}
+	{% capture workcity %}{module_workcity}{% endcapture %}
+	{% capture workstate %}{module_workstate}{% endcapture %}
+	{% capture workzip %}{module_workzip}{% endcapture %}
+	{% capture workcountry %}{module_workcountry}{% endcapture %}
+
+	{% assign firstname = firstname | strip | strip_html | escape %}
+	{% assign lastname = lastname | strip | strip_html | escape %}
+	{% assign emailaddress = emailaddress | strip | strip_html | escape %}
+	{% assign cellphone = cellphone | strip | strip_html | escape %}
+	{% assign dob = dob | strip | strip_html | escape %}
+	{% assign company = company | strip | strip_html | escape %}
+	{% assign homephone = homephone | strip | strip_html | escape %}
+	{% assign homefax = homefax | strip | strip_html | escape %}
+	{% assign homeaddress = homeaddress | strip | strip_html | escape %}
+	{% assign homecity = homecity | strip | strip_html | escape %}
+	{% assign homestate = homestate | strip | strip_html | escape %}
+	{% assign homezip = homezip | strip | strip_html | escape %}
+	{% assign homecountry = homecountry | strip | strip_html | escape %}
+	{% assign workphone = workphone | strip | strip_html | escape %}
+	{% assign workfax = workfax | strip | strip_html | escape %}
+	{% assign webaddress = webaddress | strip | strip_html | escape %}
+	{% assign workaddress = workaddress | strip | strip_html | escape %}
+	{% assign workcity = workcity | strip | strip_html | escape %}
+	{% assign workstate = workstate | strip | strip_html | escape %}
+	{% assign workzip = workzip | strip | strip_html | escape %}
+	{% assign workcountry = workcountry | strip | strip_html | escape %}
+
+	<form name="catupdatedetailsformform43679" method="post" enctype="multipart/form-data" onsubmit="return checkWholeForm43679(this)" action="/MemberProcess.aspx">
+		<p>• Required</p>
+		<div class="row">
+			<div class="col-md-6">
+				<h3>Personal Information</h3>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="FirstName">First Name•</label>
+							<input type="text" name="FirstName" id="FirstName" value="{{firstname}}" class="form-control" maxlength="255">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="LastName">Last Name•</label>
+							<input type="text" name="LastName" id="LastName" value="{{lastname}}" class="form-control" maxlength="255">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="EmailAddress">Email Address•</label>
+					<input type="text" name="EmailAddress" id="EmailAddress" value="{{emailaddress}}" class="form-control" maxlength="255">
+				</div>
+				<div class="form-group">
+					<label for="CellPhone">Cell Phone Number</label>
+					<input type="text" name="CellPhone" id="CellPhone" value="{{cellphone}}" class="form-control" maxlength="255">
+				</div>
+				<div class="form-group date" id="DOB-picker">
+					<label for="DOB">Date of Birth</label>
+					<input type="text" id="DOB" name="DOB" value="{{dob}}" class="form-control">
+				</div>
+		
+				<hr>
+		
+				<div class="form-group">
+					<label for="HomeAddress">Home Address</label>
+					<input type="text" name="HomeAddress" id="HomeAddress" value="{{homeaddress}}" class="form-control" maxlength="500">
+				</div>
+				<div class="form-group">
+					<label for="HomeCity">City</label>
+					<input type="text" name="HomeCity" id="HomeCity" value="{{homecity}}" class="form-control" maxlength="255">
+				</div>
+				<div class="row">
+					<div class="form-group col-md-5">
+						<label for="HomeState">State</label>
+						<input type="text" name="HomeState" id="HomeState" value="{{homestate}}" class="form-control" maxlength="255">
+					</div>
+					<div class="form-group col-md-3">
+						<label for="HomeZip">Zipcode</label>
+						<input type="text" name="HomeZip" id="HomeZip" value="{{homezip}}" class="form-control" maxlength="5">
+					</div>
+					<div class="form-group col-md-4">
+						<label for="HomeCountry">Country</label>
+						<select name="HomeCountry" id="HomeCountry" class="cat_dropdown">
+							{% include "/_System/includes/lib/forms/form-country-select.inc" %}
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<h3>Company Information</h3>
+				<div class="form-group">
+					<label for="Company">Company</label>
+					<input type="text" name="Company" id="Company" value="{{company}}" class="form-control" maxlength="255">
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="WorkPhone">Work Phone Number</label>
+							<input type="text" name="WorkPhone" id="WorkPhone" value="{{workphone}}" class="form-control" maxlength="255">
+						</div>
+						<div class="form-group">
+							<label for="WorkFax">Work Fax Number</label>
+							<input type="text" name="WorkFax" id="WorkFax" value="{{workfax}}" class="form-control" maxlength="255">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="HomePhone">Home Phone Number</label>
+							<input type="text" name="HomePhone" id="HomePhone" value="{{homephone}}" class="form-control" maxlength="255">
+						</div>
+						<div class="form-group">
+							<label for="HomeFax">Home Fax Number</label>
+							<input type="text" name="HomeFax" id="HomeFax" value="{{homefax}}" class="form-control" maxlength="255">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="WebAddress">Web Address</label>
+					<div class="input-group">
+						<div class="input-group-addon">http://</div>
+						<input type="text" name="WebAddress" id="WebAddress" value="{{webaddress}}" class="form-control" maxlength="255">
+					</div>
+				</div>
+		
+				<hr>
+		
+				<div class="form-group">
+					<label for="WorkAddress">Work Address</label>
+					<input type="text" name="WorkAddress" id="WorkAddress" value="{{workaddress}}" class="form-control" maxlength="500">
+				</div>
+				<div class="form-group">
+					<label for="WorkCity">City</label>
+					<input type="text" name="WorkCity" id="WorkCity" value="{{workcity}}" class="form-control" maxlength="255">
+				</div>
+				<div class="row">
+					<div class="form-group col-md-5">
+						<label for="WorkState">State</label>
+						<input type="text" name="WorkState" id="WorkState" value="{{workstate}}" class="form-control" maxlength="255">
+					</div>
+					<div class="form-group col-md-3">
+						<label for="WorkZip">Zipcode</label>
+						<input type="text" name="WorkZip" id="WorkZip" value="{{workzip}}" class="form-control" maxlength="5">
+					</div>
+					<div class="form-group col-md-4">
+						<label for="WorkCountry">Country</label>
+						<select name="WorkCountry" id="WorkCountry" class="cat_dropdown">
+							{% include "/_System/includes/lib/forms/form-country-select.inc" %}
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+	  
+		<hr>
+	  
+		<div class="well">
+			<h3>Login Information</h3>
+			<div class="form-group">
+				<label for="Username">Username</label>
+				<input type="text" name="Username" id="Username" value="{module_username}" class="form-control" maxlength="255">
+			</div>
+			<div class="form-group">
+				<label for="Password">Password</label>
+				<input type="password" name="Password" id="Password" value="{module_password}" class="form-control" maxlength="255" autocomplete="off">
+			</div>
+			<div class="form-group">
+				<label for="PasswordConfirm">Confirm Password</label>
+				<input type="password" name="PasswordConfirm" id="PasswordConfirm" value="{module_password}" class="form-control" maxlength="255" autocomplete="off">
+			</div>
+		</div>
+				
+		<input type="hidden" name="FormID" id="FormID" value="">
+		
+		<div class="form-group">
+			<input class="cat_button" type="submit" value="Submit" id="catupdatedetailsformbutton">
+		</div>
+	</form>
+	
+	<script type="text/javascript" src="/CatalystScripts/ValidationFunctions.js?vs=b1776.r468722-phase1"></script> 
+	<script type="text/javascript">
+		//<![CDATA[
+		if (document.getElementById('Title') != null) document.getElementById('Title').value = '{module_title}';
+		if (document.getElementById('HomeCountry') != null) document.getElementById('HomeCountry').value = '{module_homecountry}';
+		if (document.getElementById('WorkCountry') != null) document.getElementById('WorkCountry').value = '{module_workcountry}';
+		var submitcount43679 = 0;
+		
+		function checkWholeForm43679(theForm) {
+			var why = "";
+			if (theForm.FirstName) why += isEmpty(theForm.FirstName.value, "First Name");
+			if (theForm.LastName) why += isEmpty(theForm.LastName.value, "Last Name");
+			if (theForm.EmailAddress) why += checkEmail(theForm.EmailAddress.value);
+			if (theForm.Password && theForm.PasswordConfirm) {
+				if (theForm.Password.value.length > 0 || theForm.PasswordConfirm.value.length > 0) {
+					if (theForm.Password.value != theForm.PasswordConfirm.value) why += appendBreak(
+						"- Password and its confirmation do not match.");
+					if (theForm.Password.value.length < 6) why += appendBreak("- Password must be 6 characters or longer.");
+				}
+			}
+			if (why != "") {
+				alert(why);
+				return false;
+			}
+			if (submitcount43679 == 0) {
+				submitcount43679++;
+				theForm.submit();
+				return false;
+			} else {
+				alert("Form submission is in progress.");
+				return false;
+			}
+		}
+		//]]>
+	</script>
+{% else %}
+	<div class="alert alert-danger"><strong>Error:</strong> You must be logged in to view this form</div>
+{% endif -%}
+
+</body>

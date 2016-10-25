@@ -1,5 +1,7 @@
 {tag_cataloguelist,4,,,,,true collection="catalog" template=""}
 
+
+
 <div class="shop-main clear">
   <div class="header clear">
     <div class="breadcrumbs"><a href="/store">Store</a> > {tag_cataloguebreadcrumbs}</div>
@@ -27,12 +29,13 @@
                 {% endfor -%}
             </div>
        {% endif -%}
-       
     </div>
     <div class="col-md-12">
         <div class="row">
             {tag_productlist,4,,20,,true,true}
-            {% comment -%} 
+            
+            
+            {% comment -%}
             {tag_productlist template="" collection="products"}
             <pre>{{products | json}}</pre>
             {% if products.items -%}
@@ -60,16 +63,14 @@
                           <h4>
                             <a href="{{product.url}}">{{product.name}} - {{product.productid}}</a>
                             {% capture isloggedin -%}{module_isloggedin}{% endcapture -%}
-                            
-                                {tag_addtofavorites,, collection="fav" template=""}
                                {% if isloggedin == 1 -%} 
-                                  {% if fav.isFavorite == "false" -%}
-                                      <a href="{{fav.addUrl}}" class="favoritelink fav fav-add fav{{product.id}}"><i class="fa fa-heart-o"></i></a>
+                                  {% if product.fav.isFavorite == "false" -%}
+                                      <a href="{{product.fav.addUrl}}" class="favoritelink fav fav-add fav{{product.id}}"><i class="fa fa-heart-o"></i></a>
                                   {% else -%}
-                                    <a href="{{fav.removeUrl}}" class="favoritelink fav fav-remove fav{{product.id}}"><i class="fa fa-heart"></i></a>
+                                    <a href="{{product.fav.removeUrl}}" class="favoritelink fav fav-remove fav{{product.id}}"><i class="fa fa-heart"></i></a>
                                   {% endif -%}
                               {% else -%}
-                                <a href="{{fav.addUrl}}" class="fav fav{{product.id}}"><i class="fa fa-heart-o"></i></a>
+                                <a href="{{product.fav.addUrl}}" class="fav fav{{product.id}}"><i class="fa fa-heart-o"></i></a>
                               {% endif -%}
                           </h4>
                           <strong class="price">{{salePrice | default: "Price Unavailable" }}</strong>
@@ -77,17 +78,16 @@
                       <button class="btn btn-primary" onclick="AddToCart({{product.catalogId}},{{product.id}},'',4,'','',false);return false;">Add to Cart</button>
                     </div>
                 </div>
-            
-            
             {% endfor -%}
             {% endcomment -%}
         </div>
     </div>
   </div>
-  <div class="footer clear">{tag_previouspage,<img src="/CatalystImages/module_previous.png"/>} {tag_nextpage,<img src="/CatalystImages/module_next.png"/>} <br>
-    <br>
-    {tag_pagination}</div>
-	</div>
+  <div class="store-footer clear">{tag_previouspage,<img src="/CatalystImages/module_previous.png"/>} {tag_nextpage,<img src="/CatalystImages/module_next.png"/>} <br>
+	<br>
+    {tag_pagination}
+    </div>
+</div>
 {module_webapps id="31771" filter="classified" itemId="699573"} 
 {% include "/_System/includes/shop/browse-panel.inc" -%}
 {% if panelShow == true -%}
@@ -98,6 +98,4 @@
 
 </div>
 {% endif -%}
-
-
-
+</div>

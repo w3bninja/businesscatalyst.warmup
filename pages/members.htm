@@ -1,0 +1,8 @@
+{module_data resource="customers" version="v3" fields="id,siteId,customerTypeId,leadSourceTypeId,industryTypeId,ratingTypeId,titleTypeId,externalId,firstName,middleName,lastName,company,dateOfBirth,username,createDate,lastUpdateDate,wholesaler,homePhone,homeFax,workPhone,workFax,mobilePhone,pager,email1,email2,email3,webAddress,anniversary,industryType,leadSourceType,customerType,ratingType,titleType" skip="0" limit="300" order="id" collection="myData"}
+{% for item in myData.items -%}
+<div>{{item.firstName}}</div>
+
+{module_customerfield,{{item.id}}}
+
+{% endfor -%}
+<pre>{{myData|json}}</pre>

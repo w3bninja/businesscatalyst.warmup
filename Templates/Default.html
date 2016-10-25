@@ -7,6 +7,14 @@
 
 </head>
 <body class="{{page_slug}}">
+<style>
+.msg{padding:20px; background:#FFF; box-shadow:0 0 10px rgba(0, 0, 0, .3); position:fixed; top:0; left:0; right:0; z-index:99999;}
+</style>
+
+<div class="text-center" style="display:none">
+<span class="msg"></span>
+</div>
+
 {% include "/_System/includes/template/header.inc" -%}
 
 {% comment -%}HOME PAGE LAYOUT{% endcomment -%}
@@ -48,5 +56,6 @@
 </div>
 {% endif -%}
 {% include "/_System/includes/template/footer.inc" -%}
+<script type="text/javascript" src="/assets/js/bc-prototype-bug.js"></script>
 </body>
 </html>

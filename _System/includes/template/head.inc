@@ -14,6 +14,9 @@
 
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- ADD BOOTSTRAP JS -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="/assets/js/dropdown.js"></script>
 
 <!-- ADD JPUSHMENU -->
 <link href="/assets/css/jPushMenu.css" rel="stylesheet">
@@ -38,10 +41,6 @@
 <!-- ADD FANCYBOX -->
 <link rel="stylesheet" href="/assets/js/fancy/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
 <script type="text/javascript" src="/assets/js/fancy/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-<!-- ADD BOOTSTRAP JS -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="/assets/js/dropdown.js"></script>
 
 <!-- ANIMATIONS -->
 <script src="/assets/js/jquery.inview.js"></script>
@@ -76,3 +75,4 @@
 		});
 	</script>
 {% endif -%}
+

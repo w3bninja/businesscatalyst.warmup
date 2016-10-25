@@ -1,4 +1,16 @@
 {% assign product_large = "true" -%}
+
+{% capture isloggedin -%}{module_isloggedin}{% endcapture -%}
+{% capture options %}
+	{tag_attributes}
+{% endcapture %}
+{% assign options = options | remove: "  " | strip %}
+
+{% capture price %}
+	{{retailPrice}}
+{% endcapture %}
+{% assign price = price | remove: "  " | strip %}
+
 <div class="hidden">{tag_poplets collection="poplets" template=""}</div>
 <script type="text/javascript">
          function swap(image) {
@@ -9,7 +21,7 @@
 .catalog-levels{display:none;}
 </style>
 	<div class="col-md-6">
-    	<div class="poplet-images">
+    	<div class="poplet-images hidden">
         	{% if largeImage != '' -%}
                 <div class="image"><a href="{{smallImageUrl}}?Action=thumbnail&Width=1000&Height=400&algorithm=fill_proportional" rel="poplets" onclick="swap(this); return false;"><img src="{{largeImageUrl}}?Action=thumbnail&Width=100&Height=100&algorithm=fill_proportional" width="100%" class="img-responsive"></a></div>
               {% elseif smallImage != '' -%}
@@ -40,35 +52,47 @@
           
           <!--Options<br>
           <textarea id="catProdInstructions_{{id}}" class="productTextarea">{module_url param="desc"}</textarea>-->
-          	<label>Quantity</label>
-            {tag_addtocartinputfield}
-            <button class="btn btn-primary" onclick="AddToCart({{catalogId}},{{id}},'',4,'','',false);return false;">Add to Cart</button>
+          	
+            
+            
+            
+            
+            
           </li>
         </ul>
+        {% if retailPrice != '0.00' %}
+        <div class="form-group row">
+            <label class="col-xs-2 control-label">Price</label>
+            <div class="col-xs-10">
+                {% if price != '' %}
+                    ${{retailPrice}}
+                {% else %}
+                    $0.00
+                {% endif -%}
+            </div>
+        </div>
+        {% endif -%}
+        
+        
+        
+        {% if options != '' %}
+        <div class="form-group row">
+            <label class="col-xs-2 control-label">Options</label>
+            <div class="col-xs-10 productAttributes" id="catProdAttributes2_{{id}}">
+                {% include "/_System/includes/shop/options-layout.inc" -%}
+            </div>
+        </div>
+        {% endif %}
+        <div class="row">
+                <div class="col-xs-6">
+                    <div class="row">
+                        <label class="col-xs-4 control-label">Quantity</label>
+                        <div class="col-xs-6">
+                            {tag_addtocartinputfield}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary add-to-cart" onclick="addToCartButtonClick({{catalogId}},{{id}},4)">Add to Cart</button>
         <div class="description">{{description}}</div>
     </div>
-
-
-
-<!--<div class="row">
-	<div class="col-md-6">
-    	<div class="image">
-        	<a href="/img/nathan.png" class="fancy"><img src="{{largeImageUrl}}" class="img-responsive"></a>
-            <div class="poplets">{tag_poplets}</div>
-        </div>
-    </div>
-	<div class=" col-md-6">
-    	<h2>{tag_name}</h2>
-    	<ul>
-          <li class="price"><strong>{tag_saleprice}</strong></li>
-          <li class="instock">In stock: <strong>{tag_instock}</strong></li>
-          <li class="quantity">
-          	{tag_addtocartinputfield}
-            <button class="btn btn-primary" onclick="AddToCart({{catalogId}},{{id}},'',4,'','',false);return false;">Add to Cart</button>
-          </li>
-        </ul>
-        <div class="description">{tag_description}</div>
-    </div>
-</div>
-
--->

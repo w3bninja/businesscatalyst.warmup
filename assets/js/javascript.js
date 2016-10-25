@@ -1,5 +1,4 @@
-// Baton Rouge General Physicians
-// Programmer: Adam Culpepper
+// Developer: Adam Culpepper & Aaron Landry
 // Firm: Envoc (envoc.com)
 
 $(function () {
@@ -39,19 +38,21 @@ $(function () {
 	}
 	
 	// SMOOTH SCROLL
-	$(".scroll").click(function(event){
-         event.preventDefault();
-         //calculate destination place
-         var dest=0;
-		 var destOffset = 0;
-         if($(this.hash).offset().top > $(document).height()-$(window).height()){
-              dest=$(document).height()-$(window).height();
-         }else{
-              dest=$(this.hash).offset().top;
-         }
-         //go to destination
-         $('html,body').animate({scrollTop:dest-destOffset}, 1000,'swing');
-     });
+	if ($('.scroll').length > 0) {
+		$(".scroll").on("click", function(event){
+			 event.preventDefault();
+			 //calculate destination place
+			 var dest=0;
+			 var destOffset = 0;
+			 if($(this.hash).offset().top > $(document).height()-$(window).height()){
+				  dest=$(document).height()-$(window).height();
+			 }else{
+				  dest=$(this.hash).offset().top;
+			 }
+			 //go to destination
+			 $('html,body').animate({scrollTop:dest-destOffset}, 1000,'swing');
+		 });
+	 }
 	
 	
 	// LAYOUT
@@ -210,7 +211,7 @@ $(function () {
 	$('.gallery-item.main img').prop("src",s + "?Action=thumbnail&Width=1200&Height=800&algorithm=fill_proportional");
 	
 	
-	$('.custom-gallery .gallery-item a').click(function(e){
+	$('.custom-gallery .gallery-item a').on("click",function(e){
 		e.preventDefault();
 		var newSource = $(this).attr('href');
 		$('.gallery-item.main img').prop("src", newSource);
@@ -325,9 +326,21 @@ $(function () {
 		});
 	}
 	
+	
+	
 	/////////// BC FIXES ///////////
 });
 
+window.addToCartButtonClick = function(catalogId,productId,frame){
+	AddToCart(catalogId,productId,'',frame,'','',false);
+	$('.dropdown-toggle').dropdown(); // rerun the Bootstrap dropdowns
+};
+
+ window.alert = function(msg) {
+	msg = msg.replace('ERROR: ','');
+	$('.msg').text(msg);
+	$('.msg').parent().fadeIn().delay(5000).fadeOut()
+ }
 
 $(document).ready(function() {
 	
@@ -344,7 +357,7 @@ $(document).ready(function() {
 	if ($('.nav-accordion').length > 0) {
 		$(".nav-accordion li:has(ul li)").find("a:first").addClass("subs");
 		$( "<i class='fa fa-angle-down'></i>" ).appendTo( ".nav-accordion .subs" );
-		$('.nav-accordion .subs i').click(function(e){
+		$('.nav-accordion .subs i').on("click",function(e){
 			e.preventDefault();
 			$(this).parent().parent().find('ul:first').toggle();
 		});
@@ -395,7 +408,7 @@ $(document).ready(function() {
 	
 	var offset = 220;
     var duration = 500;
-    jQuery(window).scroll(function() {
+    jQuery(window).on("scroll",function() {
         if (jQuery(this).scrollTop() > offset) {
             jQuery('.back-to-top').fadeIn(duration);
         } else {
@@ -403,7 +416,7 @@ $(document).ready(function() {
         }
     });
     
-    jQuery('.back-to-top').click(function(event) {
+    jQuery('.back-to-top').on("click",function(event) {
         event.preventDefault();
         jQuery('html, body').animate({scrollTop: 0}, duration);
         return false;

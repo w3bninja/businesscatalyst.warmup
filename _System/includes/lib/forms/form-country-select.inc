@@ -231,7 +231,7 @@
 <option value="UA">UKRAINE</option>
 <option value="AE">UNITED ARAB EMIRATES</option>
 <option value="GB">UNITED KINGDOM</option>
-<option value="US" selected="selected">UNITED STATES</option>
+<option value="US">UNITED STATES</option>
 <option value="UM">UNITED STATES MINOR OUTLYING ISLANDS</option>
 <option value="UY">URUGUAY</option>
 <option value="UZ">UZBEKISTAN</option>

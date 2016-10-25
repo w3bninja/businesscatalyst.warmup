@@ -19,7 +19,7 @@
 		<li>
 			<a href="{{item.url}}">
 				<div class="row">
-					<div class="col-xs-4"><img src="{{item.smallImage}}" width="100%" class="thumbnail img-repsonsive"></div>
+					<div class="col-xs-4"><img src="{{item.smallImage}}" width="100%" class="thumbnail img-responsive"></div>
 					<div class="col-xs-8">{{item.name}} ({{item.quantity}})<br>{{item.totalPrice | money}}</div>
 				</div>
 			</a>

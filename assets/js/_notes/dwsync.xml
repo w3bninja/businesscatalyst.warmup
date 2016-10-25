@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="javascript.js" server="envoc.businesscatalyst.com" local="131201802127330582" remote="131201802100000000" Dst="2" />
+<file name="javascript.js" server="envoc.businesscatalyst.com" local="131215566364121336" remote="131215566410000000" Dst="2" />
 <file name="bootstrap-datepicker.js" server="envoc.businesscatalyst.com" local="130993678820000000" remote="130993642820000000" Dst="2" />
 <file name="dropdown.js" server="envoc.businesscatalyst.com" local="130993678820000000" remote="130993642820000000" Dst="2" />
 <file name="jPushMenu.js" server="envoc.businesscatalyst.com" local="130993678820000000" remote="130993642820000000" Dst="2" />
@@ -15,4 +15,6 @@
 <file name="searchfilter.js" server="envoc.businesscatalyst.com" local="131044265590000000" remote="131044265590000000" Dst="2" />
 <file name="store.js" server="envoc.businesscatalyst.com" local="131020918310000000" remote="131020918310000000" Dst="2" />
 <file name="parallax.min.js" server="envoc.businesscatalyst.com" local="131191373484527409" remote="131191373800000000" Dst="2" />
+<file name="store-addtocart-error-fix.js" server="envoc.businesscatalyst.com" local="131209324064622570" remote="131209324090000000" Dst="2" />
+<file name="bc-prototype-bug.js" server="envoc.businesscatalyst.com" local="131218204588194030" remote="131218204480000000" Dst="2" />
 </dwsync>

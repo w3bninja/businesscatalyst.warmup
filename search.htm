@@ -1,0 +1,73 @@
+<style>
+.search-results .row {margin-bottom:30px;}
+.search-results .row > div:first-of-type {}
+.search-results h2 {margin-bottom:10px;}
+.search-results span.term {background:#eee; padding:3px 5px;}
+.search-results .search-result {border-bottom:1px solid #ccc; margin-bottom:20px; padding-bottom:20px;}
+.search-results .search-result:first-of-type {border-top:1px solid #ccc; padding-top:20px;}
+.search-results .search-result h2 {margin:0;}
+.search-results .search-result .search-link {color:#006621;}
+.search-results nav {text-align:center;}
+</style>
+
+{module_searchresults render="collection" collection="search_results" template="" hidePageNumbers="false" hightlightType="span" resultsPerPage="10" characterLimit="440" emptySearchResultString="Your search did not match any results."}
+{% capture searchQuery %}{module_url, CAT_Search}{% endcapture %}
+{% assign searchQuery = searchQuery | remove: "  " | strip %}
+{% assign totalResults = search_results.pagination.totalItemsCount %}
+{% assign totalPages = search_results.pagination.numberOfPages %}
+{% assign resultsPageNumber = "{module_url, Page}" -%}
+
+<div class="col-sm-10 col-xs-push-1">
+	<div class="search-results">
+		<div class="row">
+			<div class="col-xs-12 no-gutter">
+				<h2>{{totalResults}} results found for "{{searchQuery}}"</h2>
+			</div>
+		</div>
+	
+		<div class="row">
+			<div class="col-xs-12">
+				{% include "/_System/includes/widgets/search.inc" -%}
+			</div>
+		</div>
+		
+		{% if resultsPageNumber > totalPages %}
+			<div class="alert alert-danger">Page number exceeds total number of pages.</div>
+		{% endif %}
+		
+		{% if totalResults < 1 %}
+			<div class="alert alert-danger">Your search did not match any results.</div>
+		{% endif %}
+	
+		<div class="row">
+			<div class="col-xs-12">
+				{% for item in search_results.items %}
+					{% assign name = item.['name'] %}
+					{% assign counter = item.['counter'] %}
+					{% assign desc = item.['description'] | default: '' %}
+					{% assign url = item.['url'] | split: '?A=SearchResult' | first %}
+					{% if url contains 'SearchResult' %}
+						{% assign url = item.['url'] | url_param_escape | split: '%26amp%3bA%3dSearchResult' | first | url_param_unescape %}
+					{% endif %}
+			
+					<div class="search-result">
+						<h3>{{counter}}. <a href="{{url}}">{{name}}</a></h3>
+						<span class="search-link">{module_sitehost}{{url}}</span>
+						{% if desc != '' %}<p>{{desc}}</p>{% endif %}
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	
+		{% if resultsPageNumber <= totalPages and totalPages > 1 %}			
+			<div class="row">
+				<div class="col-xs-12">
+					{% assign showNumberOfPages = 10 %}
+					{% include '/_System/includes/widgets/pagination.inc' %}
+				</div>
+			</div>
+		{% endif %}
+	
+	</div>
+</div>
+
