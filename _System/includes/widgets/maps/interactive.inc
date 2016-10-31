@@ -1,0 +1,1 @@
+<iframe src="http://maps.google.com/maps?q={{addressLink | split: "," | join: ",+"}}&output=embed" width="100%" height="{{mapHeight | default:'200'}}" frameborder="0" style="border:0" allowfullscreen></iframe>

@@ -2,7 +2,7 @@
 .navigation-inner li							{ margin:0; padding:0; }
 
 /* Level 1 */
-.navigation-inner ul						{ position:relative; list-style:none;  z-index:999;}
+.navigation-inner ul						{ position:relative; list-style:none;  z-index:9998;}
 .navigation-inner ul li						{ white-space:normal; list-style:none; zoom:1; margin:0; padding:0;}
 .navigation-inner ul li a:hover				{ }
 .navigation-inner ul li a:active			{ }
