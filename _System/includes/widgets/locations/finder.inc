@@ -1,11 +1,5 @@
-<script src="/assets/js/searchfilter.js"></script>
-<script src="//maps.googleapis.com/maps/api/js?v=3&sensor=false&key=" type="text/javascript"></script>
-<script src="/assets/js/custom_gmaps.js" type="text/javascript"></script>
+<!--<script src="/assets/js/searchfilter.js"></script>
 <script src="/assets/js/google_markerclusterer.js" type="text/javascript"></script>
-<div id="webapp-map" style="height: 400px; width: 100%;"></div>
-
-{module_webappsresults collection="results" template=""}
-{module_webapps id="{{app_id}}" filter="all" collection="locations" template=""}
 
 <script type="text/javascript">
     var locations = {{locations.['items'] | json}};
@@ -18,19 +12,21 @@
         width:400,
         points:convertedPoints
     });
-</script>
+</script>-->
 
-{% if page_url contains "PageID" -%}
-	{% if map.items != null -%}
-		{module_webappsresultsmap}
+{module_webapps id="{{app_id}}" filter="all" collection="locationItems" template=""}
+{module_webappsresults collection="results" template=""}
+{% capture results_map -%}
+    {% assign mapViewType = "m" -%}
+    {% assign mapResultsPins = true -%}
+    {% if results.items != null -%}
+    	{% assign mapResultsPins = true -%}
     {% else -%}
-        
+        {% assign mapResultsPins = false -%}
     {% endif -%}
-{% else -%}
-    {%comment%}
-    {module_webappsmap id="{{app_id}}" filter="all"}
-    {%endcomment%}
-{% endif -%}
+    {% include "/_System/includes/widgets/maps/map.inc" -%}
+{% endcapture -%}
+{{results_map}}
 
 <div class="location-search">
 <form name="catcustomcontentform62354" method="post" onsubmit="return checkWholeForm62354(this)" action="/Default.aspx?CCID={{app_id}}&amp;FID=533576&amp;ExcludeBoolFalse=True&amp;PageID={module_oid}">
@@ -72,16 +68,12 @@
     }
 </script>
 </div>
-
-
-
-
-{% if page_url contains "PageID" -%}
-	{% if results.items != null -%}
-		{module_webappsresults}
+{% if results.items != null -%}
+    {module_webappsresults}
+{% else -%}
+	{% if locationItems.items != null -%}
+        {module_webapps id="{{app_id}}" filter="all"}
     {% else -%}
         No Results Found.
     {% endif -%}
-{% else -%}
-	{module_webapps id="{{app_id}}" filter="all"}
 {% endif -%}

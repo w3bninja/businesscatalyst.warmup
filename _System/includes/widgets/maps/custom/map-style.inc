@@ -1,4 +1,3 @@
-// Google Map Styles - https://snazzymaps.com
 [
                         {
                             "featureType": "all",

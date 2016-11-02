@@ -1,30 +1,48 @@
 {% comment -%}
-    {% assign mapName = 'Test Map' -%}
-    {% assign pinImage = 'https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png' -%}
-    {% if this.phone != '' -%}
-        {% assign mapPhone = this.phone -%}
-    {% endif -%}
-    {% assign mapAddress = this.address1 -%}
-    {% assign mapCity = this.city -%}
-    {% assign mapState = this.state -%}
-    {% assign mapZip = this.zipcode -%}
+    {% assign mapAPI = "AIzaSyDNE12LS3cPYeL_f6gjV5GYRFh5Dez_Isk" -%} - API Key: https://developers.google.com/maps/documentation/javascript/get-api-key
     
-    {% assign mapViewType = "s" -%}
+    SETTINGS
+    {% assign mapAddress = '' -%}
+    {% assign mapCity = '' -%}
+    {% assign mapState = '' -%}
+    {% assign mapZip = '' -%}
+    
+    {% assign mapAddressFull = '' -%} - Full Address Override
+    
+    {% assign hideDirections = true -%}
+    {% assign mapViewType = '' -%}
         Types:
         s = Static - static.inc
         i = Interactive (Default) - single.inc
         d = Directions - direction.inc
         c = Custom - custom.inc
         m = Multiple Pins - multiple.inc
-     
+    
+    STANDARD
     {% assign mapWidth = "300" -%}
     {% assign mapHeight = "200" -%}
     {% assign mapZoom = "15" -%}
-    {% assign mapType = "terrain" -%}
-    	Static maps made using: http://staticmapmaker.com/google/
+    {% assign mapType = "terrain" -%} - Static maps made using: http://staticmapmaker.com/google/
     
-    {% assign hideDirections = true -%}
-    {% assign mapAddressFull = '' -%}
+    ADVANCED(Uses the API)
+    {% assign mapStyle = true -%}
+    
+    MULTIPLE
+    {% assign mapAppID = '' -%}
+    {% assign mapResultsPins = true -%}
+    
+    CUSTOM
+    {% assign mapPinName = 'Test Map' -%}
+    
+    Note: 
+    - Google Map Styles - https://snazzymaps.com 
+    - /_System/includes/widgets/maps/custom/map-style.inc
+    
+    DIRECTIONS (Uses v2)
+    {% assign mapDirectionsStart = '' -%}
+    {% assign mapDirectionsEnd = '' -%}
+    
+    
     {% include "/_System/includes/widgets/map.inc" -%}
 {% endcomment -%}
 
@@ -40,13 +58,13 @@
     {% elsif mapViewType == "i"  -%}
     	{% include "/_System/includes/widgets/maps/interactive.inc" -%}
     {% elsif mapViewType == "d"  -%}
-    	<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=AIzaSyBD95dE4wxd4xI6hNDNnJ4GIOgAkXdpTz4" type="text/javascript"></script>
+	    {% assign hideDirections = true -%}
     	{% include "/_System/includes/widgets/maps/directions.inc" -%}
     {% elsif mapViewType == "c"  -%}
-    	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+    	{% assign mapStyle = true -%}
     	{% include "/_System/includes/widgets/maps/custom.inc" -%}
     {% elsif mapViewType == "m"  -%}
-    	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+    	{% assign hideDirections = true -%}
     	{% include "/_System/includes/widgets/maps/multiple.inc" -%}
     {% else -%}
     	{% include "/_System/includes/widgets/maps/interactive.inc" -%}

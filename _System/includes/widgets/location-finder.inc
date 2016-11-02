@@ -1,10 +1,9 @@
 {% capture results -%}{module_webappsresults}{% endcapture -%}
-{% capture results_map -%}{module_webappsresultsmap}{% endcapture -%}
-{% if results_map != '' -%}
+{% capture results_map -%}
+    {% assign mapViewType = "m" -%}
+    {% include "/_System/includes/widgets/maps/map.inc" -%}
+{% endcapture -%}
     {{results_map}}
-{% else -%}
-    {module_webappsmap id="{{location_id}}" filter="all"}
-{% endif -%}
 
 <form name="catcustomcontentform62354" method="post" onsubmit="return checkWholeForm62354(this)" action="/Default.aspx?CCID={{location_id}}&amp;FID=533576&amp;ExcludeBoolFalse=True&amp;PageID={module_oid}">
 <div class="row">

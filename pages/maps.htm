@@ -5,7 +5,6 @@
 {% assign mapZip = '70710' -%}
 
 
-<body onload="initialize()" onunload="GUnload()">
 <div class="row">
 	<div class="col-sm-4">
     	<h4>Static Map</h4>
@@ -45,20 +44,14 @@
         {% include "/_System/includes/widgets/maps/map.inc" -%}
     </div>
 </div>
-{% assign mapViewType = "d" -%}
-{% include "/_System/includes/widgets/maps/map.inc" -%}
+
 <hr>
+<h4>Custom Map Styles</h4>
 {% assign mapViewType = "c" -%}
 {% assign mapName = 'Test Map' -%}
 {% assign pinImage = 'https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png' -%}
 {% include "/_System/includes/widgets/maps/map.inc" -%}
 
-
-<hr>
-{% assign mapViewType = "m" -%}
-{% include "/_System/includes/widgets/maps/map.inc" -%}
-
-</body>
 
 
 

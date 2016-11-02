@@ -22,7 +22,7 @@
         <script type="text/javascript">
 		
 		var geocoder = new google.maps.Geocoder();
-		var address = "{{addressLink}}";
+		var address = "{{mapAddressFull}}";
 		
 		geocoder.geocode( { 'address': address}, function(results, status) {
 		
@@ -41,7 +41,7 @@
 				var contentString = '<div id="content">'+
 					'<div id="siteNotice">'+
 					'</div>'+
-					'<h5 id="firstHeading" class="firstHeading">{{mapName}}</h5>'+
+					'<h5 id="firstHeading" class="firstHeading">{{mapPinName}}</h5>'+
 					'<div id="bodyContent">'+
 					'<p>{{mapAddressFull}}</p>'+
 					'</div>'+
@@ -60,15 +60,22 @@
 
                     // The latitude and longitude to center the map (always required)
                     center: new google.maps.LatLng(latitude, longitude), // New York
-
+					scrollwheel: false,
+					navigationControl: false,
+					mapTypeControl: false,
+					scaleControl: false,
+					draggable: true,
+					disableDefaultUI: true,
                     // How you would like to style the map. 
                     // This is where you would paste any style found on Snazzy Maps.
+					{% if mapStyle == true -%}
                     styles: {% include "/_System/includes/widgets/maps/custom/map-style.inc" -%}
+					{% endif -%}
                 };
 
                 // Get the HTML DOM element that will contain your map 
                 // We are using a div with id="map" seen below in the <body>
-                var mapElement = document.getElementById('map2');
+                var mapElement = document.getElementById('map');
 
                 // Create the Google Map using our element and options defined above
                 var map = new google.maps.Map(mapElement, mapOptions);
@@ -85,4 +92,4 @@
 				});
             }
         </script>
-        <div id="map2"></div>
+        <div id="map"></div>

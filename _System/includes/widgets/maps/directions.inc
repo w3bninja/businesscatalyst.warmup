@@ -4,7 +4,7 @@
 .adp-directions td{padding:10px; border-top:1px solid #EEE;}
 </style>
 
-
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key={{mapAPI | default : 'AIzaSyDNE12LS3cPYeL_f6gjV5GYRFh5Dez_Isk'}}" type="text/javascript"></script>
         
         <script type="text/javascript">
 
@@ -20,7 +20,7 @@
         GEvent.addListener(gdir, "load", onGDirectionsLoad);
         GEvent.addListener(gdir, "error", handleErrors);
     
-        setDirections("New Orleans", "Baton Rouge General Medical Center, 8585 Picardy Avenue, Baton Rouge, Louisiana 70809", "en_US");
+        setDirections("{{mapDirectionsStart | default: 'Hammond, la' }}", "{{mapDirectionsEnd | default:'Envoc, 10000 Perkins Rowe, Baton Rouge, Lousiana, 70810'}}", "en_US");
       }
     }
     
@@ -70,14 +70,11 @@
         	<div class="col-sm-8">
             	<div class="input-group">
                 <span class="input-group-addon"><label>From:</label></span>
-                <input class="form-control" type="text" id="fromAddress" name="from" value="New Orleans" />
+                <input class="form-control" type="text" id="fromAddress" name="from" value="{{mapDirectionsStart | default: 'Hammond, la' }}" />
                 <span class="input-group-addon"><label for="exampleInputEmail2">&nbsp;&nbsp;To:&nbsp;</label></span>
                 
-                <select class="form-control" id="toAddress" name="to">
-                        
-                    <option value="Baton Rouge General Medical Center, 8585 Picardy Avenue, Baton Rouge, LA 70809">Bluebonnet</option>
-                    <input type="hidden" id="locale" name="locale" value="en" />        
-                </select>
+                <input class="form-control" id="toAddress" name="to" value="{{mapDirectionsEnd | default:'Envoc, 10000 Perkins Rowe, Baton Rouge, Lousiana, 70710'}}">
+                    <input type="hidden" id="locale" name="locale" value="en" />
               </div>
             </div>
             <div class="col-sm-4"><input type="submit" name="submit" value="Get Directions!" class="btn btn-primary" /></div>
