@@ -138,3 +138,4 @@ function createMarker(latlng, name, address1, address2, postalCode){
    
 }
 </script>
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>

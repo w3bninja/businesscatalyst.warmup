@@ -345,6 +345,8 @@ q q:after { content: '\2019'; }
 
 .footer{background:#EEE; padding:20px; margin-top:40px;}
 
+.inline-full-container-inner{position:absolute; left:0; width:100%;}
+
 @media (max-width: 768px) {
 	.logo a{background-size:100%; width:135px; height:32px;}
 	

@@ -1,6 +1,6 @@
 {% comment -%}GLOBAL{% endcomment -%}
 {% capture page_url -%}{module_pageaddress}{% endcapture -%}
-{% capture is_home -%}http://{module_sitehost}/{% endcapture -%}
+{% capture is_home -%}{module_siteUrl,true,false}/{% endcapture -%}
 {% capture site_name_default -%}{module_sitename}{% endcapture -%}
 {% capture isloggedin -%}{module_isloggedin}{% endcapture -%}
 

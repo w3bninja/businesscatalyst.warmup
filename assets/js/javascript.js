@@ -94,6 +94,11 @@ $(function () {
 			 $columns.height(maxHeight);
 		});
 	});
+	
+	//set items container to full screen width
+	$(".inline-full").wrap("<div class='inline-full-container'></div>");
+	$(".inline-full").wrap("<div class='inline-full-container-inner'></div>");
+	$(".inline-full-container").height($(".inline-full-container-inner").height());
 
 	//Push Navigation Menu
 	$('.toggle-menu').jPushMenu({

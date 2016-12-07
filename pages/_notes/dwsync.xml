@@ -14,7 +14,7 @@
 <file name="tabs.htm" server="envoc.businesscatalyst.com" local="131123148870000000" remote="131123148870000000" Dst="2" />
 <file name="faqs.htm" server="envoc.businesscatalyst.com" local="130967619560000000" remote="130967619560000000" Dst="1" />
 <file name="popups.htm" server="envoc.businesscatalyst.com" local="130967620630000000" remote="130967620630000000" Dst="1" />
-<file name="location-finder.htm" server="envoc.businesscatalyst.com" local="131225128424748584" remote="131225128130000000" Dst="2" />
+<file name="location-finder.htm" server="envoc.businesscatalyst.com" local="131225164450000000" remote="131225164450000000" Dst="1" />
 <file name="careers.htm" server="envoc.businesscatalyst.com" local="130967619430000000" remote="130967619430000000" Dst="1" />
 <file name="directory.htm" server="envoc.businesscatalyst.com" local="131031567250000000" remote="131031567250000000" Dst="2" />
 <file name="search.htm" server="envoc.businesscatalyst.com" local="130967650120000000" remote="130967614120000000" Dst="2" />
@@ -34,4 +34,5 @@
 <file name="test.json" server="envoc.businesscatalyst.com" local="131191369610000000" remote="131191369610000000" Dst="2" />
 <file name="test.tpl" server="envoc.businesscatalyst.com" local="131191369620000000" remote="131191369620000000" Dst="2" />
 <file name="test_dummy_data.json" server="envoc.businesscatalyst.com" local="131191369630000000" remote="131191369630000000" Dst="2" />
+<file name="video-popup.html" server="envoc.businesscatalyst.com" local="131230384376359386" remote="131230384060000000" Dst="1" />
 </dwsync>
