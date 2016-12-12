@@ -2,6 +2,19 @@
 // Firm: Envoc (envoc.com)
 
 $(function () {
+	$.fn.gridBox = function() {
+		var $gridbox = $(this).imagesLoaded( function() {
+			$gridbox.each(function(){  
+				 var $columns = $('.item',this);
+				 var maxHeight = Math.max.apply(Math, $columns.map(function(){
+					 return $(this).height();
+				 }).get());
+				 $columns.height(maxHeight);
+			});
+		});
+	};
+	$('.grid-box').gridBox();
+	
 	$('#demo div').inview();
 	
 	window.location.origin || (window.location.origin = window.location.protocol + '//' + window.location.host);
@@ -75,6 +88,22 @@ $(function () {
 	if ($('.cycle-carousel-wrap .box').length <= 5) { 
 		$('.areas .controls').hide();
 	}
+	
+	//YouTube Video Feed
+	var htmlString = "";
+	var apiKey = 'AIzaSyAq2DUBu62DzVeunlPv2AtJ4VeBqqrSEN4'; //https://console.developers.google.com
+	var channelID = 'UCygLWm0hpaG0QJ5n0Udi1kQ';
+	var maxResults = 999;
+	$.getJSON('https://www.googleapis.com/youtube/v3/search?key=' + apiKey + '&channelId=' + channelID + '&part=snippet,id&order=date&maxResults=' + (maxResults > 50 ? 50 : maxResults), function(data) {
+		$.each(data.items, function(i, item) {
+			var videoID = item['id']['videoId'];
+			var title = item['snippet']['title'];
+			var videoEmbed = "https://www.youtube.com/embed/" + videoID;
+			htmlString += '<div class="col-sm-3"><div class="video">' + title + '<br /><a href="' + videoEmbed + '" class="lightbox" data-fancybox-type="iframe"><img src="http://img.youtube.com/vi/' + videoID + '/0.jpg" class="img-responsive"></a></div></div>';
+		});
+		$('#youtube-channel-feed').html(htmlString);
+	});
+	
 	
 	//Masonry Grid
 	var $grid = $('.grid').imagesLoaded( function() {
@@ -334,11 +363,13 @@ $(function () {
 	
 	
 	/////////// BC FIXES ///////////
+	
 });
 
 window.addToCartButtonClick = function(catalogId,productId,frame){
 	AddToCart(catalogId,productId,'',frame,'','',false);
 	$('.dropdown-toggle').dropdown(); // rerun the Bootstrap dropdowns
+	$('.productTextInput').addClass('form-control');
 };
 
  window.alert = function(msg) {
@@ -351,10 +382,10 @@ $(document).ready(function() {
 	
 	$('.pager .slide1').addClass('active');
 	$('.cycle-slideshow').on('cycle-after', function(e, opts) {
-		console.log(opts.slideNum);
+		//console.log(opts.slideNum);
 		var current = opts.slideNum;
 		var previous = current - 1;
-		console.log(previous + '|' + current);
+		//console.log(previous + '|' + current);
 		$('.pager a').removeClass('active');
 		$('.pager .slide' + current).addClass('active');
 	});
