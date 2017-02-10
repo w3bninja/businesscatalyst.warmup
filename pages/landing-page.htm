@@ -1,10 +1,13 @@
-<!DOCTYPE HTML>
-<html>
+{% assign appID = "42602" -%}
+{% assign classificationID = "669308" -%}
 
-    <head>
-        <title>Landing Page</title>
-    </head>
-
-    <body></body>
-
-</html>
+<div class="landing">
+<div class="fixed fixed-top">
+	<div class="container sticky">
+	{% assign landingType = "nav" -%}
+	{% include "/_System/includes/template/landing.inc" -%}
+	</div>
+</div>
+{% assign landingType = "section" -%}
+{% include "/_System/includes/template/landing.inc" -%}
+</div>

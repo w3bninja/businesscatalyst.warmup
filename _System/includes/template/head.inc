@@ -48,11 +48,12 @@
 <!-- PARALLAX -->
 <script src="/assets/js/parallax.min.js"></script>
 
-
 <!-- GRID -->
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.1.5/masonry.pkgd.min.js"></script>
 <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
 
+<!-- FITVIDS -->
+<script type="text/javascript" src="/assets/js/jquery.fitVids.js"></script>
 
 <script type="text/javascript" src="/assets/js/javascript.js"></script>
 <script>

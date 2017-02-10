@@ -99,7 +99,7 @@ $(function () {
 			var videoID = item['id']['videoId'];
 			var title = item['snippet']['title'];
 			var videoEmbed = "https://www.youtube.com/embed/" + videoID;
-			htmlString += '<div class="col-sm-3"><div class="video">' + title + '<br /><a href="' + videoEmbed + '" class="lightbox" data-fancybox-type="iframe"><img src="http://img.youtube.com/vi/' + videoID + '/0.jpg" class="img-responsive"></a></div></div>';
+			htmlString += '<div class="col-sm-3"><div class="video">' + title + '<br /><a href="' + videoEmbed + '" class="fancy" data-fancybox-type="iframe"><img src="http://img.youtube.com/vi/' + videoID + '/0.jpg" class="img-responsive"></a></div></div>';
 		});
 		$('#youtube-channel-feed').html(htmlString);
 	});
@@ -152,6 +152,31 @@ $(function () {
 	
 	if ($('.dropdown-toggle').length > 0) {
 		$('.dropdown-toggle').dropdown();
+	}
+	
+	if ($('.video-container').length > 0) {
+		// Initiate FitVid.js
+		$(".video-container").fitVids();
+
+		// Iframe/player variables
+		var iframe = $('#video')[0];
+		var player = $f(iframe);
+
+		// Open on play
+		$('.play').click(function(){
+			$('.overlay').css('left', 0).css('top', 0)
+			$('.overlay').addClass('show')
+			player.api("play");
+		})
+
+		// Closes on click outside
+		$('.overlay').click(function(){
+			$('.overlay').removeClass('show')
+			setTimeout(function() {
+			  $('.overlay').css('left', '-100%')
+			}, 300);
+			player.api("pause");
+		});
 	}
 	
 	
@@ -374,12 +399,15 @@ window.addToCartButtonClick = function(catalogId,productId,frame){
 
  window.alert = function(msg) {
 	msg = msg.replace('ERROR: ','');
+	$('body').append('<div class="msg text-center"></div>')
 	$('.msg').text(msg);
-	$('.msg').parent().fadeIn().delay(5000).fadeOut()
+	$('.msg').fadeIn().delay(5000).fadeOut();
+	$('.msg').prepend('<i class="fa fa-warning"></i>')
  }
+ 
 
-$(document).ready(function() {
-	
+
+$(document).ready(function() {	
 	$('.pager .slide1').addClass('active');
 	$('.cycle-slideshow').on('cycle-after', function(e, opts) {
 		//console.log(opts.slideNum);

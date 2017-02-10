@@ -188,6 +188,8 @@ ul.tab-nav .r-tabs-state-active{background:#EEE;}
 
 .parallax {background: transparent!important;}
 
+.msg{padding:20px; background:#FFF; box-shadow:0 0 10px rgba(0, 0, 0, .3); position:fixed; top:0; left:0; right:0; z-index:99999;}
+
 /* CONTENT */
 
 .secure-login{margin:0;}
