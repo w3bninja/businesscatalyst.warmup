@@ -96,7 +96,6 @@ table.webform td{padding:5px 2px;}
 .nav-footer .nav-justified li{display:block!important; float:left; width:auto;}
 
 .container-fixed{position:fixed!important; top:0; left:0; right:0; width:100%; position:relative; z-index:9999; box-shadow:0 0 10px rgba(0, 0, 0, .3); background:#FFF;}
-
 /* NAVIGATION */
 
 /* BANNER */
@@ -191,7 +190,6 @@ ul.tab-nav .r-tabs-state-active{background:#EEE;}
 .msg{padding:20px; background:#FFF; box-shadow:0 0 10px rgba(0, 0, 0, .3); position:fixed; top:0; left:0; right:0; z-index:99999;}
 
 /* CONTENT */
-
 .secure-login{margin:0;}
 .page-header{margin:0; /*height:200px;*/ border:0;}
 
@@ -303,8 +301,11 @@ q q:after { content: '\2019'; }
 .page-header{background:rgba(0, 0, 0, .1); padding:40px 0; margin:0 0 40px 0;}
 .content-header{background:rgba(0, 0, 0, .2); padding:10px 0; margin:0 0 40px 0;}
 
-
-
+/* MEDIA LIBRARY */
+#media .media-library .item {margin-bottom:20px;}
+#media .media-library img {margin-bottom:10px;}
+#media .media-library h4 {overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+#media .media-sidebar a {display:block;}
 
 /* ANIMATIONS */
 .animate{

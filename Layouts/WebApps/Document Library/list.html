@@ -1,0 +1,19 @@
+{% assign image = this.['Thumbnail Image'] %}
+{% if image == '' %}
+	{% assign image = '/assets/img/x.png' %}
+{% endif %}
+
+{% assign document_type = this.['Document Type'] %}
+
+<a href="{{this.['File Path']}}" class="col-sm-3 item" data-type="{{document_type}}">
+	<img src="{{image}}?Action=thumbnail&Width=270&Height=365&algorithm=fill_proportional" class="img-responsive">
+	<h4>{{this.['Name']}}</h4>
+</a>
+
+
+
+<style>
+body.documents .content .item {margin-bottom:20px;}
+body.documents .content .item img {margin-bottom:10px;}
+body.documents .content .item h4 {overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+</style>

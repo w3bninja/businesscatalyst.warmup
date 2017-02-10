@@ -17,6 +17,7 @@
 {% assign site_name = site_name_default -%}
 {% assign site_domain = is_home -%}
 {% assign is_facility = "false" -%}
+{% assign device = globals.visitor.deviceClass -%}
 {% assign logo = "/img/logo.png" -%}
 {% capture menu_id -%}1931027{% endcapture -%}
 {% capture class_id -%}669308{% endcapture -%}
