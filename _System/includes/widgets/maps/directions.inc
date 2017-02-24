@@ -4,7 +4,7 @@
 .adp-directions td{padding:10px; border-top:1px solid #EEE;}
 </style>
 
-<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key={{mapAPI | default : 'AIzaSyDNE12LS3cPYeL_f6gjV5GYRFh5Dez_Isk'}}" type="text/javascript"></script>
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=AIzaSyDNE12LS3cPYeL_f6gjV5GYRFh5Dez_Isk" type="text/javascript"></script>
         
         <script type="text/javascript">
 
@@ -20,7 +20,7 @@
         GEvent.addListener(gdir, "load", onGDirectionsLoad);
         GEvent.addListener(gdir, "error", handleErrors);
     
-        setDirections("{{mapDirectionsStart | default: 'Hammond, la' }}", "{{mapDirectionsEnd | default:'Envoc, 10000 Perkins Rowe, Baton Rouge, Lousiana, 70810'}}", "en_US");
+        setDirections("Hammond, la", "Envoc, 10000 Perkins Rowe, Baton Rouge, Lousiana, 70810", "en_US");
       }
     }
     
@@ -70,10 +70,10 @@
         	<div class="col-sm-8">
             	<div class="input-group">
                 <span class="input-group-addon"><label>From:</label></span>
-                <input class="form-control" type="text" id="fromAddress" name="from" value="{{mapDirectionsStart | default: 'Hammond, la' }}" />
+                <input class="form-control" type="text" id="fromAddress" name="from" value="Hammond, la" />
                 <span class="input-group-addon"><label for="exampleInputEmail2">&nbsp;&nbsp;To:&nbsp;</label></span>
                 
-                <input class="form-control" id="toAddress" name="to" value="{{mapDirectionsEnd | default:'Envoc, 10000 Perkins Rowe, Baton Rouge, Lousiana, 70710'}}">
+                <input class="form-control" id="toAddress" name="to" value="Envoc, 10000 Perkins Rowe, Baton Rouge, Lousiana, 70710">
                     <input type="hidden" id="locale" name="locale" value="en" />
               </div>
             </div>
