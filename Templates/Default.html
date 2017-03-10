@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>{module_pagetitle}</title>
 {% include "/_System/includes/template/head.inc" -%}
 {% include "/_System/includes/template/settings.inc" -%}
-{% capture content -%}{tag_pagecontent}{% endcapture -%}
+
 
 </head>
 <body class="{{page_slug}}">
+{% capture content -%}{tag_pagecontent}{% endcapture -%}
 {% include "/_System/includes/template/header.inc" -%}
 
 {% comment -%}HOME PAGE LAYOUT{% endcomment -%}

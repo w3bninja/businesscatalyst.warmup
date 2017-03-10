@@ -434,13 +434,11 @@ $(document).ready(function() {
 	$(".fancy").fancybox({
 		maxWidth	: 800,
 		maxHeight	: 600,
-		fitToView	: true,
-		width		: '70%',
-		height		: '70%',
-		autoSize	: true,
-		closeClick	: false,
-		openEffect	: 'none',
-		closeEffect	: 'none'
+		helpers: {
+			overlay: {
+			  locked: false
+			}
+		  }
 	});
 	$(".fancy.ajax").fancybox({type: 'ajax'});
 	$(".various").fancybox({
