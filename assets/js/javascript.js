@@ -37,7 +37,7 @@ $(function () {
 		var scrollTop	= $(window).scrollTop(),
 		elementOffset	= $('.sticky-container').offset().top,
 		distance		= (elementOffset - scrollTop);
-		$(".sticky-container").height($(".sticky-container-inner").height());
+		$(".sticky-container").outerHeight($(".sticky-container-inner").outerHeight());
 		if(distance < 0){
 			$('.sticky-container-inner').addClass('container-fixed');
 		} else {
@@ -434,6 +434,13 @@ $(document).ready(function() {
 	$(".fancy").fancybox({
 		maxWidth	: 800,
 		maxHeight	: 600,
+		fitToView	: true,
+		width		: '70%',
+		height		: '70%',
+		autoSize	: true,
+		closeClick	: false,
+		openEffect	: 'none',
+		closeEffect	: 'none',
 		helpers: {
 			overlay: {
 			  locked: false

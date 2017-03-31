@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="blog_list_home.tpl" server="envoc.businesscatalyst.com" local="130969975790000000" remote="130969975790000000" Dst="1" />
-<file name="career-list.tpl" server="envoc.businesscatalyst.com" local="130906105880000000" remote="130906105880000000" Dst="1" />
-<file name="comments.inc" server="envoc.businesscatalyst.com" local="130906105890000000" remote="130906105890000000" Dst="1" />
-<file name="full-calendar.tpl" server="envoc.businesscatalyst.com" local="130969975520000000" remote="130969975520000000" Dst="1" />
-<file name="home_header.tpl" server="envoc.businesscatalyst.com" local="130912953130000000" remote="130912917130000000" Dst="2" />
-<file name="home-slide.tpl" server="envoc.businesscatalyst.com" local="131177560970000000" remote="131177596970000000" Dst="1" />
-<file name="hslide.tpl" server="envoc.businesscatalyst.com" local="130967624240000000" remote="130967624240000000" Dst="1" />
-<file name="list.inc" server="envoc.businesscatalyst.com" local="130967624240000000" remote="130967624240000000" Dst="1" />
-<file name="list.tpl" server="envoc.businesscatalyst.com" local="130906105900000000" remote="130906105900000000" Dst="1" />
-<file name="post-list.tpl" server="envoc.businesscatalyst.com" local="130906105900000000" remote="130906105900000000" Dst="1" />
-<file name="slider.tpl" server="envoc.businesscatalyst.com" local="130912548500000000" remote="130912548500000000" Dst="1" />
-<file name="sp_list.tpl" server="envoc.businesscatalyst.com" local="130969975790000000" remote="130969975790000000" Dst="1" />
-<file name="sp_list_home.tpl" server="envoc.businesscatalyst.com" local="130967626410000000" remote="130967626410000000" Dst="1" />
-<file name="user-list.tpl" server="envoc.businesscatalyst.com" local="130965079020000000" remote="130965079020000000" Dst="1" />
+<file name="blog_list_home.tpl" server="envoc.businesscatalyst.com" local="130969975790000000" remote="130969939790000000" Dst="2" />
+<file name="career-list.tpl" server="envoc.businesscatalyst.com" local="130906105880000000" remote="130906069880000000" Dst="2" />
+<file name="comments.inc" server="envoc.businesscatalyst.com" local="130906105890000000" remote="130906069890000000" Dst="2" />
+<file name="full-calendar.tpl" server="envoc.businesscatalyst.com" local="130969975520000000" remote="130969939520000000" Dst="2" />
+<file name="home_header.tpl" server="envoc.businesscatalyst.com" local="130912953130000000" remote="131354678590000000" Dst="2" />
+<file name="home-slide.tpl" server="envoc.businesscatalyst.com" local="131177560970000000" remote="131177560970000000" Dst="2" />
+<file name="hslide.tpl" server="envoc.businesscatalyst.com" local="130967624240000000" remote="130967588240000000" Dst="2" />
+<file name="list.inc" server="envoc.businesscatalyst.com" local="130967624240000000" remote="130967588240000000" Dst="2" />
+<file name="list.tpl" server="envoc.businesscatalyst.com" local="130906105900000000" remote="130906069900000000" Dst="2" />
+<file name="post-list.tpl" server="envoc.businesscatalyst.com" local="130906105900000000" remote="130906069900000000" Dst="2" />
+<file name="slider.tpl" server="envoc.businesscatalyst.com" local="130912548500000000" remote="130912512500000000" Dst="2" />
+<file name="sp_list.tpl" server="envoc.businesscatalyst.com" local="130969975790000000" remote="130969939790000000" Dst="2" />
+<file name="sp_list_home.tpl" server="envoc.businesscatalyst.com" local="130967626410000000" remote="130967590410000000" Dst="2" />
+<file name="user-list.tpl" server="envoc.businesscatalyst.com" local="130965079020000000" remote="130965043020000000" Dst="2" />
 <file name="cart-summary.tpl" server="envoc.businesscatalyst.com" local="131218189620000000" remote="131218189620000000" Dst="2" />
 </dwsync>

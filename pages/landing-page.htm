@@ -2,12 +2,24 @@
 {% assign classificationID = "669308" -%}
 
 <div class="landing">
-<div class="fixed fixed-top">
-	<div class="container sticky">
-	{% assign landingType = "nav" -%}
-	{% include "/_System/includes/template/landing.inc" -%}
+<div class="header sticky">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-4 col-sm-2">
+				<h1 class="logo">
+					<a href="/">
+						<img src="/assets/img/logo.png" class="img-responsive">
+					</a>
+				</h1>
+			</div>
+			<div class="col-xs-12 col-sm-10">
+				{% assign landingType = "nav" -%}
+				{% include "/_System/includes/template/landing.inc" -%}
+			</div>
+		</div>
 	</div>
 </div>
 {% assign landingType = "section" -%}
 {% include "/_System/includes/template/landing.inc" -%}
+
 </div>

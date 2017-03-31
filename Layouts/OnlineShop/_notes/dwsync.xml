@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
 <file name="page_content.html" server="envoc.businesscatalyst.com" local="131209317110000000" remote="131209317110000000" Dst="2" />
-<file name="catalogue.html" server="envoc.businesscatalyst.com" local="130911498420000000" remote="130911498420000000" Dst="1" />
+<file name="catalogue.html" server="envoc.businesscatalyst.com" local="130911498420000000" remote="130911462420000000" Dst="2" />
 <file name="small_product.html" server="envoc.businesscatalyst.com" local="131215521110000000" remote="131215521110000000" Dst="2" />
 <file name="small_product_backup.html" server="envoc.businesscatalyst.com" local="130911498450000000" remote="130911462450000000" Dst="2" />
 <file name="large_product.html" server="envoc.businesscatalyst.com" local="131218175180000000" remote="131218175180000000" Dst="2" />
@@ -9,6 +9,6 @@
 <file name="order_registration-US.html" server="envoc.businesscatalyst.com" local="131218880947623222" remote="131215599030000000" Dst="2" />
 <file name="order_receipt-US.html" server="envoc.businesscatalyst.com" local="130865559910000000" remote="130865523910000000" Dst="2" />
 <file name="quote_receipt-US.html" server="envoc.businesscatalyst.com" local="129698136000000000" remote="129698100000000000" Dst="2" />
-<file name="quote_registration-US.html" server="envoc.businesscatalyst.com" local="129698136000000000" remote="129698136000000000" Dst="1" />
-<file name="gift_voucher-US.html" server="envoc.businesscatalyst.com" local="129698136000000000" remote="129698136000000000" Dst="1" />
+<file name="quote_registration-US.html" server="envoc.businesscatalyst.com" local="129698136000000000" remote="129698100000000000" Dst="2" />
+<file name="gift_voucher-US.html" server="envoc.businesscatalyst.com" local="129698136000000000" remote="129698100000000000" Dst="2" />
 </dwsync>

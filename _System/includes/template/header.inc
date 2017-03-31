@@ -32,23 +32,32 @@
             </div>
         </div>
         <div class="header-bottom sticky">
-            <div class="container">
+           <div class="container">
                 <div class="row">
-                    <div class="col-xs-5 col-sm-2">
-                    	<div class="logo">
-                        	<h1 title="{{site_name}}">
-                                <a href="{{site_domain}}" title="{{site_name}}">
-                                    <img src="/assets/img/logo.png" class="img-responsive">
-                                </a>
-                            </h1>
-                        </div>
+                   	
+                    <div class="col-xs-12 col-sm-2">
+                    	<div class="row">
+                    		<div class="col-xs-3 hidden-sm hidden-md hidden-lg">
+                    		<div class="mobile-navigation pull-left hidden-sm hidden-md hidden-lg">
+								<a class="nav-mobile-control btn btn-secondary toggle-menu menu-left push-body"><i class="fa fa-bars"></i></a>
+							</div>
+							</div>
+							<div class="logo col-xs-6 col-sm-12">
+								<h1 title="{{site_name}}">
+									<a href="{{site_domain}}" title="{{site_name}}">
+										<img src="/assets/img/logo.png" class="img-responsive">
+									</a>
+								</h1>
+							</div>
+                   			<div class="col-xs-3 hidden-sm hidden-md hidden-lg">
+                   				<a href="tel:{module_contentholder name="Phone Number"}" class="btn btn-secondary pull-right"><i class="fa fa-phone"></i></a>
+                   			</div>
+                    	</div>
+                    	
                     </div>
-                    <div class="col-xs-7 col-sm-10">
+                    <div class="col-xs-12 col-sm-10">
                         <div class="row">
                             <div class="col-sm-11">
-                            	<div class="mobile-navigation pull-left hidden-sm hidden-md hidden-lg">
-                                    <a class="nav-mobile-control btn btn-primary toggle-menu menu-left push-body"><i class="fa fa-bars"></i></a>
-                                </div>
                                 {% assign menu-sub-only = "false" -%}
                                 {% assign showMenuParentTitle = "false" -%}
                                 {% assign menu-type-value ="stripped" -%}
@@ -60,13 +69,22 @@
                             </div>
                             
                             <div class="col-sm-1 pull-right">
-                            	<a href="tel:{module_contentholder name="Phone Number"}" class="btn btn-primary pull-left hidden-sm hidden-md hidden-lg"><i class="fa fa-phone"></i></a>
                                 {% include "/_System/includes/shop/cart-summary.inc" -%}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           
         </div>
     </div>
     {% if page_url == is_home %}{% else -%}<div class="page-header text-center"><h2>{module_pagename}</h2></div>{% endif -%}
